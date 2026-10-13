@@ -1,0 +1,1146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="wm-audit" tests="532" failures="106" errors="0">
+  <testsuite name="Export" tests="24" failures="0" errors="0" skipped="24">
+    <properties>
+      <property name="werkzeug" value="wm-audit 1.0.0"/>
+      <property name="quelle" value="robust"/>
+      <property name="art" value="verzeichnis"/>
+      <property name="apis_gelesen" value="50"/>
+      <property name="apis_eindeutig" value="50"/>
+      <property name="gesperrt" value="4"/>
+      <property name="uebersprungen" value="24"/>
+    </properties>
+    <testcase classname="wm-audit.export" name="assets/API/API.k1/API.k1">
+      <skipped message="kein_json"/>
+    </testcase>
+    <testcase classname="wm-audit.export" name="assets/API/API.k10/API.k10">
+      <skipped message="ohne_apiname"/>
+    </testcase>
+    <testcase classname="wm-audit.export" name="assets/API/API.k13/API.k13">
+      <skipped message="kein_json"/>
+    </testcase>
+    <testcase classname="wm-audit.export" name="assets/API/API.k14/API.k14">
+      <skipped message="kein_json"/>
+    </testcase>
+    <testcase classname="wm-audit.export" name="assets/API/API.k15/API.k15">
+      <skipped message="kein_json"/>
+    </testcase>
+    <testcase classname="wm-audit.export" name="assets/API/API.k17/API.k17">
+      <skipped message="kein_json"/>
+    </testcase>
+    <testcase classname="wm-audit.export" name="assets/API/API.k2/API.k2">
+      <skipped message="kein_objekt"/>
+    </testcase>
+    <testcase classname="wm-audit.export" name="assets/API/API.k21/API.k21">
+      <skipped message="kein_json"/>
+    </testcase>
+    <testcase classname="wm-audit.export" name="assets/API/API.k22/API.k22">
+      <skipped message="kein_json"/>
+    </testcase>
+    <testcase classname="wm-audit.export" name="assets/API/API.k23/API.k23">
+      <skipped message="kein_json"/>
+    </testcase>
+    <testcase classname="wm-audit.export" name="assets/API/API.k24/API.k24">
+      <skipped message="kein_json"/>
+    </testcase>
+    <testcase classname="wm-audit.export" name="assets/API/API.k25/API.k25">
+      <skipped message="kein_objekt"/>
+    </testcase>
+    <testcase classname="wm-audit.export" name="assets/API/API.k26/API.k26">
+      <skipped message="zu_tief"/>
+    </testcase>
+    <testcase classname="wm-audit.export" name="assets/API/API.k28/API.k28">
+      <skipped message="kein_json"/>
+    </testcase>
+    <testcase classname="wm-audit.export" name="assets/API/API.k29/API.k29">
+      <skipped message="kein_utf8"/>
+    </testcase>
+    <testcase classname="wm-audit.export" name="assets/API/API.k3/API.k3">
+      <skipped message="kein_utf8"/>
+    </testcase>
+    <testcase classname="wm-audit.export" name="assets/API/API.k4/API.k4">
+      <skipped message="zu_tief"/>
+    </testcase>
+    <testcase classname="wm-audit.export" name="assets/API/API.k5/API.k5">
+      <skipped message="kein_json"/>
+    </testcase>
+    <testcase classname="wm-audit.export" name="assets/API/API.k6/API.k6">
+      <skipped message="kein_json"/>
+    </testcase>
+    <testcase classname="wm-audit.export" name="assets/API/API.k7/API.k7">
+      <skipped message="kein_json"/>
+    </testcase>
+    <testcase classname="wm-audit.export" name="assets/API/API.k8/API.k8">
+      <skipped message="kein_json"/>
+    </testcase>
+    <testcase classname="wm-audit.export" name="assets/API/API.k9/API.k9">
+      <skipped message="kein_json"/>
+    </testcase>
+    <testcase classname="wm-audit.export" name="assets/API/API.n1/Policy/Policy.pn1/PolicyAction/PolicyAction.n1-b">
+      <skipped message="nicht_zugeordnet"/>
+    </testcase>
+    <testcase classname="wm-audit.export" name="assets/API/API.oz/Policy/Policy.poz/PolicyAction/PolicyAction.o1">
+      <skipped message="ohne_api"/>
+    </testcase>
+  </testsuite>
+  <testsuite name="API: E10 1.0" tests="10" failures="3" errors="0" skipped="0">
+    <testcase classname="wm-audit.E10 1_0" name="gw.no_identify_policy">
+      <failure type="high" message="API ohne Identify-and-Authorize-Policy (durchgängig)">[HIGH, belegt] API ohne Identify-and-Authorize-Policy (durchgängig)
+Betrifft 47 von 50 APIs. Ein Merkmal, das nahezu überall auftritt, beschreibt eine Gewohnheit und wird deshalb gesammelt gemeldet statt je Endpunkt einzeln. Für diese API ist keine Identify-and-Authorize-Policy konfiguriert. Das Gateway identifiziert den Aufrufer damit nicht und reicht jede Anfrage an das Backend weiter.
+Empfehlung: Im Policy-Stage „Identify and Access“ eine Identify-and-Authorize-Policy einrichten. Ist die API bewusst öffentlich, sollte das dokumentiert und durch Threat-Protection und Rate-Limits abgesichert sein.</failure>
+    </testcase>
+    <testcase classname="wm-audit.E10 1_0" name="gw.anonymous_allowed"/>
+    <testcase classname="wm-audit.E10 1_0" name="gw.identify_or"/>
+    <testcase classname="wm-audit.E10 1_0" name="gw.application_identity_only"/>
+    <testcase classname="wm-audit.E10 1_0" name="gw.http_allowed"/>
+    <testcase classname="wm-audit.E10 1_0" name="gw.plaintext_backend">
+      <failure type="high" message="Weiterleitung an ein Klartext-Backend">[HIGH, belegt] Weiterleitung an ein Klartext-Backend
+Das Gateway leitet an http://***@host.example:1/p?q=@#f weiter. Die Verbindung endet damit am Gateway; im internen Netz laufen die Daten im Klartext.
+Empfehlung: Das Backend über HTTPS ansprechen.
+Fundstelle: API/API.e10/API.e10 → Routing | endpointUri: http://***@host.example:1/p?q=@#f</failure>
+    </testcase>
+    <testcase classname="wm-audit.E10 1_0" name="gw.pass_security_headers"/>
+    <testcase classname="wm-audit.E10 1_0" name="gw.no_traffic_limit">
+      <failure type="info" message="Keine Begrenzung von Anfragemenge oder Nachrichtengröße (durchgängig)">[INFO, wahrscheinlich] Keine Begrenzung von Anfragemenge oder Nachrichtengröße (durchgängig)
+Betrifft 49 von 50 APIs. Ein Merkmal, das nahezu überall auftritt, beschreibt eine Gewohnheit und wird deshalb gesammelt gemeldet statt je Endpunkt einzeln. Auf API-Ebene ist keine Traffic-Begrenzung konfiguriert. Eine global gesetzte Threat-Protection kann greifen — sie ist in diesem Export jedoch nicht enthalten und daher hier nicht nachweisbar.
+Empfehlung: Eine Traffic-Monitoring-Policy je API setzen oder die globale Threat-Protection-Konfiguration mit exportieren und prüfen.</failure>
+    </testcase>
+    <testcase classname="wm-audit.E10 1_0" name="gw.throttle_long_window"/>
+    <testcase classname="wm-audit.E10 1_0" name="gw.log_invocation"/>
+  </testsuite>
+  <testsuite name="API: E2 1.0" tests="10" failures="3" errors="0" skipped="0">
+    <testcase classname="wm-audit.E2 1_0" name="gw.no_identify_policy">
+      <failure type="high" message="API ohne Identify-and-Authorize-Policy (durchgängig)">[HIGH, belegt] API ohne Identify-and-Authorize-Policy (durchgängig)
+Betrifft 47 von 50 APIs. Ein Merkmal, das nahezu überall auftritt, beschreibt eine Gewohnheit und wird deshalb gesammelt gemeldet statt je Endpunkt einzeln. Für diese API ist keine Identify-and-Authorize-Policy konfiguriert. Das Gateway identifiziert den Aufrufer damit nicht und reicht jede Anfrage an das Backend weiter.
+Empfehlung: Im Policy-Stage „Identify and Access“ eine Identify-and-Authorize-Policy einrichten. Ist die API bewusst öffentlich, sollte das dokumentiert und durch Threat-Protection und Rate-Limits abgesichert sein.</failure>
+    </testcase>
+    <testcase classname="wm-audit.E2 1_0" name="gw.anonymous_allowed"/>
+    <testcase classname="wm-audit.E2 1_0" name="gw.identify_or"/>
+    <testcase classname="wm-audit.E2 1_0" name="gw.application_identity_only"/>
+    <testcase classname="wm-audit.E2 1_0" name="gw.http_allowed"/>
+    <testcase classname="wm-audit.E2 1_0" name="gw.plaintext_backend">
+      <failure type="high" message="Weiterleitung an ein Klartext-Backend">[HIGH, belegt] Weiterleitung an ein Klartext-Backend
+Das Gateway leitet an http://wurzel.example/x weiter. Die Verbindung endet damit am Gateway; im internen Netz laufen die Daten im Klartext.
+Empfehlung: Das Backend über HTTPS ansprechen.
+Fundstelle: API/API.e2/API.e2 → Routing | endpointUri: ${Ziel}/x | über Alias aufgelöst: http://wurzel.example/x</failure>
+    </testcase>
+    <testcase classname="wm-audit.E2 1_0" name="gw.pass_security_headers"/>
+    <testcase classname="wm-audit.E2 1_0" name="gw.no_traffic_limit">
+      <failure type="info" message="Keine Begrenzung von Anfragemenge oder Nachrichtengröße (durchgängig)">[INFO, wahrscheinlich] Keine Begrenzung von Anfragemenge oder Nachrichtengröße (durchgängig)
+Betrifft 49 von 50 APIs. Ein Merkmal, das nahezu überall auftritt, beschreibt eine Gewohnheit und wird deshalb gesammelt gemeldet statt je Endpunkt einzeln. Auf API-Ebene ist keine Traffic-Begrenzung konfiguriert. Eine global gesetzte Threat-Protection kann greifen — sie ist in diesem Export jedoch nicht enthalten und daher hier nicht nachweisbar.
+Empfehlung: Eine Traffic-Monitoring-Policy je API setzen oder die globale Threat-Protection-Konfiguration mit exportieren und prüfen.</failure>
+    </testcase>
+    <testcase classname="wm-audit.E2 1_0" name="gw.throttle_long_window"/>
+    <testcase classname="wm-audit.E2 1_0" name="gw.log_invocation"/>
+  </testsuite>
+  <testsuite name="API: E3 1.0" tests="10" failures="2" errors="0" skipped="0">
+    <testcase classname="wm-audit.E3 1_0" name="gw.no_identify_policy">
+      <failure type="high" message="API ohne Identify-and-Authorize-Policy (durchgängig)">[HIGH, belegt] API ohne Identify-and-Authorize-Policy (durchgängig)
+Betrifft 47 von 50 APIs. Ein Merkmal, das nahezu überall auftritt, beschreibt eine Gewohnheit und wird deshalb gesammelt gemeldet statt je Endpunkt einzeln. Für diese API ist keine Identify-and-Authorize-Policy konfiguriert. Das Gateway identifiziert den Aufrufer damit nicht und reicht jede Anfrage an das Backend weiter.
+Empfehlung: Im Policy-Stage „Identify and Access“ eine Identify-and-Authorize-Policy einrichten. Ist die API bewusst öffentlich, sollte das dokumentiert und durch Threat-Protection und Rate-Limits abgesichert sein.</failure>
+    </testcase>
+    <testcase classname="wm-audit.E3 1_0" name="gw.anonymous_allowed"/>
+    <testcase classname="wm-audit.E3 1_0" name="gw.identify_or"/>
+    <testcase classname="wm-audit.E3 1_0" name="gw.application_identity_only"/>
+    <testcase classname="wm-audit.E3 1_0" name="gw.http_allowed"/>
+    <testcase classname="wm-audit.E3 1_0" name="gw.plaintext_backend"/>
+    <testcase classname="wm-audit.E3 1_0" name="gw.pass_security_headers"/>
+    <testcase classname="wm-audit.E3 1_0" name="gw.no_traffic_limit">
+      <failure type="info" message="Keine Begrenzung von Anfragemenge oder Nachrichtengröße (durchgängig)">[INFO, wahrscheinlich] Keine Begrenzung von Anfragemenge oder Nachrichtengröße (durchgängig)
+Betrifft 49 von 50 APIs. Ein Merkmal, das nahezu überall auftritt, beschreibt eine Gewohnheit und wird deshalb gesammelt gemeldet statt je Endpunkt einzeln. Auf API-Ebene ist keine Traffic-Begrenzung konfiguriert. Eine global gesetzte Threat-Protection kann greifen — sie ist in diesem Export jedoch nicht enthalten und daher hier nicht nachweisbar.
+Empfehlung: Eine Traffic-Monitoring-Policy je API setzen oder die globale Threat-Protection-Konfiguration mit exportieren und prüfen.</failure>
+    </testcase>
+    <testcase classname="wm-audit.E3 1_0" name="gw.throttle_long_window"/>
+    <testcase classname="wm-audit.E3 1_0" name="gw.log_invocation"/>
+  </testsuite>
+  <testsuite name="API: E4 1.0" tests="10" failures="3" errors="0" skipped="0">
+    <testcase classname="wm-audit.E4 1_0" name="gw.no_identify_policy">
+      <failure type="high" message="API ohne Identify-and-Authorize-Policy (durchgängig)">[HIGH, belegt] API ohne Identify-and-Authorize-Policy (durchgängig)
+Betrifft 47 von 50 APIs. Ein Merkmal, das nahezu überall auftritt, beschreibt eine Gewohnheit und wird deshalb gesammelt gemeldet statt je Endpunkt einzeln. Für diese API ist keine Identify-and-Authorize-Policy konfiguriert. Das Gateway identifiziert den Aufrufer damit nicht und reicht jede Anfrage an das Backend weiter.
+Empfehlung: Im Policy-Stage „Identify and Access“ eine Identify-and-Authorize-Policy einrichten. Ist die API bewusst öffentlich, sollte das dokumentiert und durch Threat-Protection und Rate-Limits abgesichert sein.</failure>
+    </testcase>
+    <testcase classname="wm-audit.E4 1_0" name="gw.anonymous_allowed"/>
+    <testcase classname="wm-audit.E4 1_0" name="gw.identify_or"/>
+    <testcase classname="wm-audit.E4 1_0" name="gw.application_identity_only"/>
+    <testcase classname="wm-audit.E4 1_0" name="gw.http_allowed"/>
+    <testcase classname="wm-audit.E4 1_0" name="gw.plaintext_backend">
+      <failure type="high" message="Weiterleitung an ein Klartext-Backend">[HIGH, belegt] Weiterleitung an ein Klartext-Backend
+Das Gateway leitet an http://erster.example weiter. Die Verbindung endet damit am Gateway; im internen Netz laufen die Daten im Klartext.
+Empfehlung: Das Backend über HTTPS ansprechen.
+Fundstelle: API/API.e4/API.e4 → Routing | endpointUri: ${Dup} | über Alias aufgelöst: http://erster.example</failure>
+    </testcase>
+    <testcase classname="wm-audit.E4 1_0" name="gw.pass_security_headers"/>
+    <testcase classname="wm-audit.E4 1_0" name="gw.no_traffic_limit">
+      <failure type="info" message="Keine Begrenzung von Anfragemenge oder Nachrichtengröße (durchgängig)">[INFO, wahrscheinlich] Keine Begrenzung von Anfragemenge oder Nachrichtengröße (durchgängig)
+Betrifft 49 von 50 APIs. Ein Merkmal, das nahezu überall auftritt, beschreibt eine Gewohnheit und wird deshalb gesammelt gemeldet statt je Endpunkt einzeln. Auf API-Ebene ist keine Traffic-Begrenzung konfiguriert. Eine global gesetzte Threat-Protection kann greifen — sie ist in diesem Export jedoch nicht enthalten und daher hier nicht nachweisbar.
+Empfehlung: Eine Traffic-Monitoring-Policy je API setzen oder die globale Threat-Protection-Konfiguration mit exportieren und prüfen.</failure>
+    </testcase>
+    <testcase classname="wm-audit.E4 1_0" name="gw.throttle_long_window"/>
+    <testcase classname="wm-audit.E4 1_0" name="gw.log_invocation"/>
+  </testsuite>
+  <testsuite name="API: E5 1.0" tests="10" failures="2" errors="0" skipped="0">
+    <testcase classname="wm-audit.E5 1_0" name="gw.no_identify_policy">
+      <failure type="high" message="API ohne Identify-and-Authorize-Policy (durchgängig)">[HIGH, belegt] API ohne Identify-and-Authorize-Policy (durchgängig)
+Betrifft 47 von 50 APIs. Ein Merkmal, das nahezu überall auftritt, beschreibt eine Gewohnheit und wird deshalb gesammelt gemeldet statt je Endpunkt einzeln. Für diese API ist keine Identify-and-Authorize-Policy konfiguriert. Das Gateway identifiziert den Aufrufer damit nicht und reicht jede Anfrage an das Backend weiter.
+Empfehlung: Im Policy-Stage „Identify and Access“ eine Identify-and-Authorize-Policy einrichten. Ist die API bewusst öffentlich, sollte das dokumentiert und durch Threat-Protection und Rate-Limits abgesichert sein.</failure>
+    </testcase>
+    <testcase classname="wm-audit.E5 1_0" name="gw.anonymous_allowed"/>
+    <testcase classname="wm-audit.E5 1_0" name="gw.identify_or"/>
+    <testcase classname="wm-audit.E5 1_0" name="gw.application_identity_only"/>
+    <testcase classname="wm-audit.E5 1_0" name="gw.http_allowed"/>
+    <testcase classname="wm-audit.E5 1_0" name="gw.plaintext_backend"/>
+    <testcase classname="wm-audit.E5 1_0" name="gw.pass_security_headers"/>
+    <testcase classname="wm-audit.E5 1_0" name="gw.no_traffic_limit">
+      <failure type="info" message="Keine Begrenzung von Anfragemenge oder Nachrichtengröße (durchgängig)">[INFO, wahrscheinlich] Keine Begrenzung von Anfragemenge oder Nachrichtengröße (durchgängig)
+Betrifft 49 von 50 APIs. Ein Merkmal, das nahezu überall auftritt, beschreibt eine Gewohnheit und wird deshalb gesammelt gemeldet statt je Endpunkt einzeln. Auf API-Ebene ist keine Traffic-Begrenzung konfiguriert. Eine global gesetzte Threat-Protection kann greifen — sie ist in diesem Export jedoch nicht enthalten und daher hier nicht nachweisbar.
+Empfehlung: Eine Traffic-Monitoring-Policy je API setzen oder die globale Threat-Protection-Konfiguration mit exportieren und prüfen.</failure>
+    </testcase>
+    <testcase classname="wm-audit.E5 1_0" name="gw.throttle_long_window"/>
+    <testcase classname="wm-audit.E5 1_0" name="gw.log_invocation"/>
+  </testsuite>
+  <testsuite name="API: E6 1.0" tests="10" failures="3" errors="0" skipped="0">
+    <testcase classname="wm-audit.E6 1_0" name="gw.no_identify_policy">
+      <failure type="high" message="API ohne Identify-and-Authorize-Policy (durchgängig)">[HIGH, belegt] API ohne Identify-and-Authorize-Policy (durchgängig)
+Betrifft 47 von 50 APIs. Ein Merkmal, das nahezu überall auftritt, beschreibt eine Gewohnheit und wird deshalb gesammelt gemeldet statt je Endpunkt einzeln. Für diese API ist keine Identify-and-Authorize-Policy konfiguriert. Das Gateway identifiziert den Aufrufer damit nicht und reicht jede Anfrage an das Backend weiter.
+Empfehlung: Im Policy-Stage „Identify and Access“ eine Identify-and-Authorize-Policy einrichten. Ist die API bewusst öffentlich, sollte das dokumentiert und durch Threat-Protection und Rate-Limits abgesichert sein.</failure>
+    </testcase>
+    <testcase classname="wm-audit.E6 1_0" name="gw.anonymous_allowed"/>
+    <testcase classname="wm-audit.E6 1_0" name="gw.identify_or"/>
+    <testcase classname="wm-audit.E6 1_0" name="gw.application_identity_only"/>
+    <testcase classname="wm-audit.E6 1_0" name="gw.http_allowed"/>
+    <testcase classname="wm-audit.E6 1_0" name="gw.plaintext_backend">
+      <failure type="high" message="Weiterleitung an ein Klartext-Backend">[HIGH, belegt] Weiterleitung an ein Klartext-Backend
+Das Gateway leitet an http://a.example weiter. Die Verbindung endet damit am Gateway; im internen Netz laufen die Daten im Klartext.
+Empfehlung: Das Backend über HTTPS ansprechen.
+Fundstelle: API/API.e6/API.e6 | nativeEndpoint: http://a.example</failure>
+    </testcase>
+    <testcase classname="wm-audit.E6 1_0" name="gw.pass_security_headers"/>
+    <testcase classname="wm-audit.E6 1_0" name="gw.no_traffic_limit">
+      <failure type="info" message="Keine Begrenzung von Anfragemenge oder Nachrichtengröße (durchgängig)">[INFO, wahrscheinlich] Keine Begrenzung von Anfragemenge oder Nachrichtengröße (durchgängig)
+Betrifft 49 von 50 APIs. Ein Merkmal, das nahezu überall auftritt, beschreibt eine Gewohnheit und wird deshalb gesammelt gemeldet statt je Endpunkt einzeln. Auf API-Ebene ist keine Traffic-Begrenzung konfiguriert. Eine global gesetzte Threat-Protection kann greifen — sie ist in diesem Export jedoch nicht enthalten und daher hier nicht nachweisbar.
+Empfehlung: Eine Traffic-Monitoring-Policy je API setzen oder die globale Threat-Protection-Konfiguration mit exportieren und prüfen.</failure>
+    </testcase>
+    <testcase classname="wm-audit.E6 1_0" name="gw.throttle_long_window"/>
+    <testcase classname="wm-audit.E6 1_0" name="gw.log_invocation"/>
+  </testsuite>
+  <testsuite name="API: E7 1.0" tests="10" failures="3" errors="0" skipped="0">
+    <testcase classname="wm-audit.E7 1_0" name="gw.no_identify_policy">
+      <failure type="high" message="API ohne Identify-and-Authorize-Policy (durchgängig)">[HIGH, belegt] API ohne Identify-and-Authorize-Policy (durchgängig)
+Betrifft 47 von 50 APIs. Ein Merkmal, das nahezu überall auftritt, beschreibt eine Gewohnheit und wird deshalb gesammelt gemeldet statt je Endpunkt einzeln. Für diese API ist keine Identify-and-Authorize-Policy konfiguriert. Das Gateway identifiziert den Aufrufer damit nicht und reicht jede Anfrage an das Backend weiter.
+Empfehlung: Im Policy-Stage „Identify and Access“ eine Identify-and-Authorize-Policy einrichten. Ist die API bewusst öffentlich, sollte das dokumentiert und durch Threat-Protection und Rate-Limits abgesichert sein.</failure>
+    </testcase>
+    <testcase classname="wm-audit.E7 1_0" name="gw.anonymous_allowed"/>
+    <testcase classname="wm-audit.E7 1_0" name="gw.identify_or"/>
+    <testcase classname="wm-audit.E7 1_0" name="gw.application_identity_only"/>
+    <testcase classname="wm-audit.E7 1_0" name="gw.http_allowed"/>
+    <testcase classname="wm-audit.E7 1_0" name="gw.plaintext_backend">
+      <failure type="high" message="Weiterleitung an ein Klartext-Backend">[HIGH, belegt] Weiterleitung an ein Klartext-Backend
+Das Gateway leitet an http://lit.example/${sys:resource_path} weiter. Die Verbindung endet damit am Gateway; im internen Netz laufen die Daten im Klartext.
+Empfehlung: Das Backend über HTTPS ansprechen.
+Fundstelle: API/API.e7/API.e7 → Routing | endpointUri: http://lit.example/${sys:resource_path}</failure>
+    </testcase>
+    <testcase classname="wm-audit.E7 1_0" name="gw.pass_security_headers"/>
+    <testcase classname="wm-audit.E7 1_0" name="gw.no_traffic_limit">
+      <failure type="info" message="Keine Begrenzung von Anfragemenge oder Nachrichtengröße (durchgängig)">[INFO, wahrscheinlich] Keine Begrenzung von Anfragemenge oder Nachrichtengröße (durchgängig)
+Betrifft 49 von 50 APIs. Ein Merkmal, das nahezu überall auftritt, beschreibt eine Gewohnheit und wird deshalb gesammelt gemeldet statt je Endpunkt einzeln. Auf API-Ebene ist keine Traffic-Begrenzung konfiguriert. Eine global gesetzte Threat-Protection kann greifen — sie ist in diesem Export jedoch nicht enthalten und daher hier nicht nachweisbar.
+Empfehlung: Eine Traffic-Monitoring-Policy je API setzen oder die globale Threat-Protection-Konfiguration mit exportieren und prüfen.</failure>
+    </testcase>
+    <testcase classname="wm-audit.E7 1_0" name="gw.throttle_long_window"/>
+    <testcase classname="wm-audit.E7 1_0" name="gw.log_invocation"/>
+  </testsuite>
+  <testsuite name="API: E8 1.0" tests="10" failures="2" errors="0" skipped="0">
+    <testcase classname="wm-audit.E8 1_0" name="gw.no_identify_policy">
+      <failure type="high" message="API ohne Identify-and-Authorize-Policy (durchgängig)">[HIGH, belegt] API ohne Identify-and-Authorize-Policy (durchgängig)
+Betrifft 47 von 50 APIs. Ein Merkmal, das nahezu überall auftritt, beschreibt eine Gewohnheit und wird deshalb gesammelt gemeldet statt je Endpunkt einzeln. Für diese API ist keine Identify-and-Authorize-Policy konfiguriert. Das Gateway identifiziert den Aufrufer damit nicht und reicht jede Anfrage an das Backend weiter.
+Empfehlung: Im Policy-Stage „Identify and Access“ eine Identify-and-Authorize-Policy einrichten. Ist die API bewusst öffentlich, sollte das dokumentiert und durch Threat-Protection und Rate-Limits abgesichert sein.</failure>
+    </testcase>
+    <testcase classname="wm-audit.E8 1_0" name="gw.anonymous_allowed"/>
+    <testcase classname="wm-audit.E8 1_0" name="gw.identify_or"/>
+    <testcase classname="wm-audit.E8 1_0" name="gw.application_identity_only"/>
+    <testcase classname="wm-audit.E8 1_0" name="gw.http_allowed"/>
+    <testcase classname="wm-audit.E8 1_0" name="gw.plaintext_backend"/>
+    <testcase classname="wm-audit.E8 1_0" name="gw.pass_security_headers"/>
+    <testcase classname="wm-audit.E8 1_0" name="gw.no_traffic_limit">
+      <failure type="info" message="Keine Begrenzung von Anfragemenge oder Nachrichtengröße (durchgängig)">[INFO, wahrscheinlich] Keine Begrenzung von Anfragemenge oder Nachrichtengröße (durchgängig)
+Betrifft 49 von 50 APIs. Ein Merkmal, das nahezu überall auftritt, beschreibt eine Gewohnheit und wird deshalb gesammelt gemeldet statt je Endpunkt einzeln. Auf API-Ebene ist keine Traffic-Begrenzung konfiguriert. Eine global gesetzte Threat-Protection kann greifen — sie ist in diesem Export jedoch nicht enthalten und daher hier nicht nachweisbar.
+Empfehlung: Eine Traffic-Monitoring-Policy je API setzen oder die globale Threat-Protection-Konfiguration mit exportieren und prüfen.</failure>
+    </testcase>
+    <testcase classname="wm-audit.E8 1_0" name="gw.throttle_long_window"/>
+    <testcase classname="wm-audit.E8 1_0" name="gw.log_invocation"/>
+  </testsuite>
+  <testsuite name="API: E9 1.0" tests="10" failures="2" errors="0" skipped="0">
+    <testcase classname="wm-audit.E9 1_0" name="gw.no_identify_policy">
+      <failure type="high" message="API ohne Identify-and-Authorize-Policy (durchgängig)">[HIGH, belegt] API ohne Identify-and-Authorize-Policy (durchgängig)
+Betrifft 47 von 50 APIs. Ein Merkmal, das nahezu überall auftritt, beschreibt eine Gewohnheit und wird deshalb gesammelt gemeldet statt je Endpunkt einzeln. Für diese API ist keine Identify-and-Authorize-Policy konfiguriert. Das Gateway identifiziert den Aufrufer damit nicht und reicht jede Anfrage an das Backend weiter.
+Empfehlung: Im Policy-Stage „Identify and Access“ eine Identify-and-Authorize-Policy einrichten. Ist die API bewusst öffentlich, sollte das dokumentiert und durch Threat-Protection und Rate-Limits abgesichert sein.</failure>
+    </testcase>
+    <testcase classname="wm-audit.E9 1_0" name="gw.anonymous_allowed"/>
+    <testcase classname="wm-audit.E9 1_0" name="gw.identify_or"/>
+    <testcase classname="wm-audit.E9 1_0" name="gw.application_identity_only"/>
+    <testcase classname="wm-audit.E9 1_0" name="gw.http_allowed"/>
+    <testcase classname="wm-audit.E9 1_0" name="gw.plaintext_backend"/>
+    <testcase classname="wm-audit.E9 1_0" name="gw.pass_security_headers"/>
+    <testcase classname="wm-audit.E9 1_0" name="gw.no_traffic_limit">
+      <failure type="info" message="Keine Begrenzung von Anfragemenge oder Nachrichtengröße (durchgängig)">[INFO, wahrscheinlich] Keine Begrenzung von Anfragemenge oder Nachrichtengröße (durchgängig)
+Betrifft 49 von 50 APIs. Ein Merkmal, das nahezu überall auftritt, beschreibt eine Gewohnheit und wird deshalb gesammelt gemeldet statt je Endpunkt einzeln. Auf API-Ebene ist keine Traffic-Begrenzung konfiguriert. Eine global gesetzte Threat-Protection kann greifen — sie ist in diesem Export jedoch nicht enthalten und daher hier nicht nachweisbar.
+Empfehlung: Eine Traffic-Monitoring-Policy je API setzen oder die globale Threat-Protection-Konfiguration mit exportieren und prüfen.</failure>
+    </testcase>
+    <testcase classname="wm-audit.E9 1_0" name="gw.throttle_long_window"/>
+    <testcase classname="wm-audit.E9 1_0" name="gw.log_invocation"/>
+  </testsuite>
+  <testsuite name="API: PX nicht gesperrt" tests="10" failures="2" errors="0" skipped="0">
+    <testcase classname="wm-audit.PX nicht gesperrt" name="gw.no_identify_policy">
+      <failure type="high" message="API ohne Identify-and-Authorize-Policy (durchgängig)">[HIGH, belegt] API ohne Identify-and-Authorize-Policy (durchgängig)
+Betrifft 47 von 50 APIs. Ein Merkmal, das nahezu überall auftritt, beschreibt eine Gewohnheit und wird deshalb gesammelt gemeldet statt je Endpunkt einzeln. Für diese API ist keine Identify-and-Authorize-Policy konfiguriert. Das Gateway identifiziert den Aufrufer damit nicht und reicht jede Anfrage an das Backend weiter.
+Empfehlung: Im Policy-Stage „Identify and Access“ eine Identify-and-Authorize-Policy einrichten. Ist die API bewusst öffentlich, sollte das dokumentiert und durch Threat-Protection und Rate-Limits abgesichert sein.</failure>
+    </testcase>
+    <testcase classname="wm-audit.PX nicht gesperrt" name="gw.anonymous_allowed"/>
+    <testcase classname="wm-audit.PX nicht gesperrt" name="gw.identify_or"/>
+    <testcase classname="wm-audit.PX nicht gesperrt" name="gw.application_identity_only"/>
+    <testcase classname="wm-audit.PX nicht gesperrt" name="gw.http_allowed"/>
+    <testcase classname="wm-audit.PX nicht gesperrt" name="gw.plaintext_backend"/>
+    <testcase classname="wm-audit.PX nicht gesperrt" name="gw.pass_security_headers"/>
+    <testcase classname="wm-audit.PX nicht gesperrt" name="gw.no_traffic_limit">
+      <failure type="info" message="Keine Begrenzung von Anfragemenge oder Nachrichtengröße (durchgängig)">[INFO, wahrscheinlich] Keine Begrenzung von Anfragemenge oder Nachrichtengröße (durchgängig)
+Betrifft 49 von 50 APIs. Ein Merkmal, das nahezu überall auftritt, beschreibt eine Gewohnheit und wird deshalb gesammelt gemeldet statt je Endpunkt einzeln. Auf API-Ebene ist keine Traffic-Begrenzung konfiguriert. Eine global gesetzte Threat-Protection kann greifen — sie ist in diesem Export jedoch nicht enthalten und daher hier nicht nachweisbar.
+Empfehlung: Eine Traffic-Monitoring-Policy je API setzen oder die globale Threat-Protection-Konfiguration mit exportieren und prüfen.</failure>
+    </testcase>
+    <testcase classname="wm-audit.PX nicht gesperrt" name="gw.throttle_long_window"/>
+    <testcase classname="wm-audit.PX nicht gesperrt" name="gw.log_invocation"/>
+  </testsuite>
+  <testsuite name="API: Aussen 1.0" tests="10" failures="2" errors="0" skipped="0">
+    <testcase classname="wm-audit.Aussen 1_0" name="gw.no_identify_policy">
+      <failure type="high" message="API ohne Identify-and-Authorize-Policy (durchgängig)">[HIGH, belegt] API ohne Identify-and-Authorize-Policy (durchgängig)
+Betrifft 47 von 50 APIs. Ein Merkmal, das nahezu überall auftritt, beschreibt eine Gewohnheit und wird deshalb gesammelt gemeldet statt je Endpunkt einzeln. Für diese API ist keine Identify-and-Authorize-Policy konfiguriert. Das Gateway identifiziert den Aufrufer damit nicht und reicht jede Anfrage an das Backend weiter.
+Empfehlung: Im Policy-Stage „Identify and Access“ eine Identify-and-Authorize-Policy einrichten. Ist die API bewusst öffentlich, sollte das dokumentiert und durch Threat-Protection und Rate-Limits abgesichert sein.</failure>
+    </testcase>
+    <testcase classname="wm-audit.Aussen 1_0" name="gw.anonymous_allowed"/>
+    <testcase classname="wm-audit.Aussen 1_0" name="gw.identify_or"/>
+    <testcase classname="wm-audit.Aussen 1_0" name="gw.application_identity_only"/>
+    <testcase classname="wm-audit.Aussen 1_0" name="gw.http_allowed"/>
+    <testcase classname="wm-audit.Aussen 1_0" name="gw.plaintext_backend"/>
+    <testcase classname="wm-audit.Aussen 1_0" name="gw.pass_security_headers"/>
+    <testcase classname="wm-audit.Aussen 1_0" name="gw.no_traffic_limit">
+      <failure type="info" message="Keine Begrenzung von Anfragemenge oder Nachrichtengröße (durchgängig)">[INFO, wahrscheinlich] Keine Begrenzung von Anfragemenge oder Nachrichtengröße (durchgängig)
+Betrifft 49 von 50 APIs. Ein Merkmal, das nahezu überall auftritt, beschreibt eine Gewohnheit und wird deshalb gesammelt gemeldet statt je Endpunkt einzeln. Auf API-Ebene ist keine Traffic-Begrenzung konfiguriert. Eine global gesetzte Threat-Protection kann greifen — sie ist in diesem Export jedoch nicht enthalten und daher hier nicht nachweisbar.
+Empfehlung: Eine Traffic-Monitoring-Policy je API setzen oder die globale Threat-Protection-Konfiguration mit exportieren und prüfen.</failure>
+    </testcase>
+    <testcase classname="wm-audit.Aussen 1_0" name="gw.throttle_long_window"/>
+    <testcase classname="wm-audit.Aussen 1_0" name="gw.log_invocation"/>
+  </testsuite>
+  <testsuite name="API: Innen 1.0" tests="10" failures="1" errors="0" skipped="0">
+    <testcase classname="wm-audit.Innen 1_0" name="gw.no_identify_policy"/>
+    <testcase classname="wm-audit.Innen 1_0" name="gw.anonymous_allowed"/>
+    <testcase classname="wm-audit.Innen 1_0" name="gw.identify_or"/>
+    <testcase classname="wm-audit.Innen 1_0" name="gw.application_identity_only"/>
+    <testcase classname="wm-audit.Innen 1_0" name="gw.http_allowed"/>
+    <testcase classname="wm-audit.Innen 1_0" name="gw.plaintext_backend"/>
+    <testcase classname="wm-audit.Innen 1_0" name="gw.pass_security_headers"/>
+    <testcase classname="wm-audit.Innen 1_0" name="gw.no_traffic_limit">
+      <failure type="info" message="Keine Begrenzung von Anfragemenge oder Nachrichtengröße (durchgängig)">[INFO, wahrscheinlich] Keine Begrenzung von Anfragemenge oder Nachrichtengröße (durchgängig)
+Betrifft 49 von 50 APIs. Ein Merkmal, das nahezu überall auftritt, beschreibt eine Gewohnheit und wird deshalb gesammelt gemeldet statt je Endpunkt einzeln. Auf API-Ebene ist keine Traffic-Begrenzung konfiguriert. Eine global gesetzte Threat-Protection kann greifen — sie ist in diesem Export jedoch nicht enthalten und daher hier nicht nachweisbar.
+Empfehlung: Eine Traffic-Monitoring-Policy je API setzen oder die globale Threat-Protection-Konfiguration mit exportieren und prüfen.</failure>
+    </testcase>
+    <testcase classname="wm-audit.Innen 1_0" name="gw.throttle_long_window"/>
+    <testcase classname="wm-audit.Innen 1_0" name="gw.log_invocation"/>
+  </testsuite>
+  <testsuite name="API: K11" tests="10" failures="2" errors="0" skipped="0">
+    <testcase classname="wm-audit.K11" name="gw.no_identify_policy">
+      <failure type="high" message="API ohne Identify-and-Authorize-Policy (durchgängig)">[HIGH, belegt] API ohne Identify-and-Authorize-Policy (durchgängig)
+Betrifft 47 von 50 APIs. Ein Merkmal, das nahezu überall auftritt, beschreibt eine Gewohnheit und wird deshalb gesammelt gemeldet statt je Endpunkt einzeln. Für diese API ist keine Identify-and-Authorize-Policy konfiguriert. Das Gateway identifiziert den Aufrufer damit nicht und reicht jede Anfrage an das Backend weiter.
+Empfehlung: Im Policy-Stage „Identify and Access“ eine Identify-and-Authorize-Policy einrichten. Ist die API bewusst öffentlich, sollte das dokumentiert und durch Threat-Protection und Rate-Limits abgesichert sein.</failure>
+    </testcase>
+    <testcase classname="wm-audit.K11" name="gw.anonymous_allowed"/>
+    <testcase classname="wm-audit.K11" name="gw.identify_or"/>
+    <testcase classname="wm-audit.K11" name="gw.application_identity_only"/>
+    <testcase classname="wm-audit.K11" name="gw.http_allowed"/>
+    <testcase classname="wm-audit.K11" name="gw.plaintext_backend"/>
+    <testcase classname="wm-audit.K11" name="gw.pass_security_headers"/>
+    <testcase classname="wm-audit.K11" name="gw.no_traffic_limit">
+      <failure type="info" message="Keine Begrenzung von Anfragemenge oder Nachrichtengröße (durchgängig)">[INFO, wahrscheinlich] Keine Begrenzung von Anfragemenge oder Nachrichtengröße (durchgängig)
+Betrifft 49 von 50 APIs. Ein Merkmal, das nahezu überall auftritt, beschreibt eine Gewohnheit und wird deshalb gesammelt gemeldet statt je Endpunkt einzeln. Auf API-Ebene ist keine Traffic-Begrenzung konfiguriert. Eine global gesetzte Threat-Protection kann greifen — sie ist in diesem Export jedoch nicht enthalten und daher hier nicht nachweisbar.
+Empfehlung: Eine Traffic-Monitoring-Policy je API setzen oder die globale Threat-Protection-Konfiguration mit exportieren und prüfen.</failure>
+    </testcase>
+    <testcase classname="wm-audit.K11" name="gw.throttle_long_window"/>
+    <testcase classname="wm-audit.K11" name="gw.log_invocation"/>
+  </testsuite>
+  <testsuite name="API: K12" tests="10" failures="2" errors="0" skipped="0">
+    <testcase classname="wm-audit.K12" name="gw.no_identify_policy">
+      <failure type="high" message="API ohne Identify-and-Authorize-Policy (durchgängig)">[HIGH, belegt] API ohne Identify-and-Authorize-Policy (durchgängig)
+Betrifft 47 von 50 APIs. Ein Merkmal, das nahezu überall auftritt, beschreibt eine Gewohnheit und wird deshalb gesammelt gemeldet statt je Endpunkt einzeln. Für diese API ist keine Identify-and-Authorize-Policy konfiguriert. Das Gateway identifiziert den Aufrufer damit nicht und reicht jede Anfrage an das Backend weiter.
+Empfehlung: Im Policy-Stage „Identify and Access“ eine Identify-and-Authorize-Policy einrichten. Ist die API bewusst öffentlich, sollte das dokumentiert und durch Threat-Protection und Rate-Limits abgesichert sein.</failure>
+    </testcase>
+    <testcase classname="wm-audit.K12" name="gw.anonymous_allowed"/>
+    <testcase classname="wm-audit.K12" name="gw.identify_or"/>
+    <testcase classname="wm-audit.K12" name="gw.application_identity_only"/>
+    <testcase classname="wm-audit.K12" name="gw.http_allowed"/>
+    <testcase classname="wm-audit.K12" name="gw.plaintext_backend"/>
+    <testcase classname="wm-audit.K12" name="gw.pass_security_headers"/>
+    <testcase classname="wm-audit.K12" name="gw.no_traffic_limit">
+      <failure type="info" message="Keine Begrenzung von Anfragemenge oder Nachrichtengröße (durchgängig)">[INFO, wahrscheinlich] Keine Begrenzung von Anfragemenge oder Nachrichtengröße (durchgängig)
+Betrifft 49 von 50 APIs. Ein Merkmal, das nahezu überall auftritt, beschreibt eine Gewohnheit und wird deshalb gesammelt gemeldet statt je Endpunkt einzeln. Auf API-Ebene ist keine Traffic-Begrenzung konfiguriert. Eine global gesetzte Threat-Protection kann greifen — sie ist in diesem Export jedoch nicht enthalten und daher hier nicht nachweisbar.
+Empfehlung: Eine Traffic-Monitoring-Policy je API setzen oder die globale Threat-Protection-Konfiguration mit exportieren und prüfen.</failure>
+    </testcase>
+    <testcase classname="wm-audit.K12" name="gw.throttle_long_window"/>
+    <testcase classname="wm-audit.K12" name="gw.log_invocation"/>
+  </testsuite>
+  <testsuite name="API: K16" tests="10" failures="2" errors="0" skipped="0">
+    <testcase classname="wm-audit.K16" name="gw.no_identify_policy">
+      <failure type="high" message="API ohne Identify-and-Authorize-Policy (durchgängig)">[HIGH, belegt] API ohne Identify-and-Authorize-Policy (durchgängig)
+Betrifft 47 von 50 APIs. Ein Merkmal, das nahezu überall auftritt, beschreibt eine Gewohnheit und wird deshalb gesammelt gemeldet statt je Endpunkt einzeln. Für diese API ist keine Identify-and-Authorize-Policy konfiguriert. Das Gateway identifiziert den Aufrufer damit nicht und reicht jede Anfrage an das Backend weiter.
+Empfehlung: Im Policy-Stage „Identify and Access“ eine Identify-and-Authorize-Policy einrichten. Ist die API bewusst öffentlich, sollte das dokumentiert und durch Threat-Protection und Rate-Limits abgesichert sein.</failure>
+    </testcase>
+    <testcase classname="wm-audit.K16" name="gw.anonymous_allowed"/>
+    <testcase classname="wm-audit.K16" name="gw.identify_or"/>
+    <testcase classname="wm-audit.K16" name="gw.application_identity_only"/>
+    <testcase classname="wm-audit.K16" name="gw.http_allowed"/>
+    <testcase classname="wm-audit.K16" name="gw.plaintext_backend"/>
+    <testcase classname="wm-audit.K16" name="gw.pass_security_headers"/>
+    <testcase classname="wm-audit.K16" name="gw.no_traffic_limit">
+      <failure type="info" message="Keine Begrenzung von Anfragemenge oder Nachrichtengröße (durchgängig)">[INFO, wahrscheinlich] Keine Begrenzung von Anfragemenge oder Nachrichtengröße (durchgängig)
+Betrifft 49 von 50 APIs. Ein Merkmal, das nahezu überall auftritt, beschreibt eine Gewohnheit und wird deshalb gesammelt gemeldet statt je Endpunkt einzeln. Auf API-Ebene ist keine Traffic-Begrenzung konfiguriert. Eine global gesetzte Threat-Protection kann greifen — sie ist in diesem Export jedoch nicht enthalten und daher hier nicht nachweisbar.
+Empfehlung: Eine Traffic-Monitoring-Policy je API setzen oder die globale Threat-Protection-Konfiguration mit exportieren und prüfen.</failure>
+    </testcase>
+    <testcase classname="wm-audit.K16" name="gw.throttle_long_window"/>
+    <testcase classname="wm-audit.K16" name="gw.log_invocation"/>
+  </testsuite>
+  <testsuite name="API: K18" tests="10" failures="2" errors="0" skipped="0">
+    <testcase classname="wm-audit.K18" name="gw.no_identify_policy">
+      <failure type="high" message="API ohne Identify-and-Authorize-Policy (durchgängig)">[HIGH, belegt] API ohne Identify-and-Authorize-Policy (durchgängig)
+Betrifft 47 von 50 APIs. Ein Merkmal, das nahezu überall auftritt, beschreibt eine Gewohnheit und wird deshalb gesammelt gemeldet statt je Endpunkt einzeln. Für diese API ist keine Identify-and-Authorize-Policy konfiguriert. Das Gateway identifiziert den Aufrufer damit nicht und reicht jede Anfrage an das Backend weiter.
+Empfehlung: Im Policy-Stage „Identify and Access“ eine Identify-and-Authorize-Policy einrichten. Ist die API bewusst öffentlich, sollte das dokumentiert und durch Threat-Protection und Rate-Limits abgesichert sein.</failure>
+    </testcase>
+    <testcase classname="wm-audit.K18" name="gw.anonymous_allowed"/>
+    <testcase classname="wm-audit.K18" name="gw.identify_or"/>
+    <testcase classname="wm-audit.K18" name="gw.application_identity_only"/>
+    <testcase classname="wm-audit.K18" name="gw.http_allowed"/>
+    <testcase classname="wm-audit.K18" name="gw.plaintext_backend"/>
+    <testcase classname="wm-audit.K18" name="gw.pass_security_headers"/>
+    <testcase classname="wm-audit.K18" name="gw.no_traffic_limit">
+      <failure type="info" message="Keine Begrenzung von Anfragemenge oder Nachrichtengröße (durchgängig)">[INFO, wahrscheinlich] Keine Begrenzung von Anfragemenge oder Nachrichtengröße (durchgängig)
+Betrifft 49 von 50 APIs. Ein Merkmal, das nahezu überall auftritt, beschreibt eine Gewohnheit und wird deshalb gesammelt gemeldet statt je Endpunkt einzeln. Auf API-Ebene ist keine Traffic-Begrenzung konfiguriert. Eine global gesetzte Threat-Protection kann greifen — sie ist in diesem Export jedoch nicht enthalten und daher hier nicht nachweisbar.
+Empfehlung: Eine Traffic-Monitoring-Policy je API setzen oder die globale Threat-Protection-Konfiguration mit exportieren und prüfen.</failure>
+    </testcase>
+    <testcase classname="wm-audit.K18" name="gw.throttle_long_window"/>
+    <testcase classname="wm-audit.K18" name="gw.log_invocation"/>
+  </testsuite>
+  <testsuite name="API: 5" tests="10" failures="2" errors="0" skipped="0">
+    <testcase classname="wm-audit.5" name="gw.no_identify_policy">
+      <failure type="high" message="API ohne Identify-and-Authorize-Policy (durchgängig)">[HIGH, belegt] API ohne Identify-and-Authorize-Policy (durchgängig)
+Betrifft 47 von 50 APIs. Ein Merkmal, das nahezu überall auftritt, beschreibt eine Gewohnheit und wird deshalb gesammelt gemeldet statt je Endpunkt einzeln. Für diese API ist keine Identify-and-Authorize-Policy konfiguriert. Das Gateway identifiziert den Aufrufer damit nicht und reicht jede Anfrage an das Backend weiter.
+Empfehlung: Im Policy-Stage „Identify and Access“ eine Identify-and-Authorize-Policy einrichten. Ist die API bewusst öffentlich, sollte das dokumentiert und durch Threat-Protection und Rate-Limits abgesichert sein.</failure>
+    </testcase>
+    <testcase classname="wm-audit.5" name="gw.anonymous_allowed"/>
+    <testcase classname="wm-audit.5" name="gw.identify_or"/>
+    <testcase classname="wm-audit.5" name="gw.application_identity_only"/>
+    <testcase classname="wm-audit.5" name="gw.http_allowed"/>
+    <testcase classname="wm-audit.5" name="gw.plaintext_backend"/>
+    <testcase classname="wm-audit.5" name="gw.pass_security_headers"/>
+    <testcase classname="wm-audit.5" name="gw.no_traffic_limit">
+      <failure type="info" message="Keine Begrenzung von Anfragemenge oder Nachrichtengröße (durchgängig)">[INFO, wahrscheinlich] Keine Begrenzung von Anfragemenge oder Nachrichtengröße (durchgängig)
+Betrifft 49 von 50 APIs. Ein Merkmal, das nahezu überall auftritt, beschreibt eine Gewohnheit und wird deshalb gesammelt gemeldet statt je Endpunkt einzeln. Auf API-Ebene ist keine Traffic-Begrenzung konfiguriert. Eine global gesetzte Threat-Protection kann greifen — sie ist in diesem Export jedoch nicht enthalten und daher hier nicht nachweisbar.
+Empfehlung: Eine Traffic-Monitoring-Policy je API setzen oder die globale Threat-Protection-Konfiguration mit exportieren und prüfen.</failure>
+    </testcase>
+    <testcase classname="wm-audit.5" name="gw.throttle_long_window"/>
+    <testcase classname="wm-audit.5" name="gw.log_invocation"/>
+  </testsuite>
+  <testsuite name="API: K20" tests="10" failures="3" errors="0" skipped="0">
+    <testcase classname="wm-audit.K20" name="gw.no_identify_policy">
+      <failure type="high" message="API ohne Identify-and-Authorize-Policy (durchgängig)">[HIGH, belegt] API ohne Identify-and-Authorize-Policy (durchgängig)
+Betrifft 47 von 50 APIs. Ein Merkmal, das nahezu überall auftritt, beschreibt eine Gewohnheit und wird deshalb gesammelt gemeldet statt je Endpunkt einzeln. Für diese API ist keine Identify-and-Authorize-Policy konfiguriert. Das Gateway identifiziert den Aufrufer damit nicht und reicht jede Anfrage an das Backend weiter.
+Empfehlung: Im Policy-Stage „Identify and Access“ eine Identify-and-Authorize-Policy einrichten. Ist die API bewusst öffentlich, sollte das dokumentiert und durch Threat-Protection und Rate-Limits abgesichert sein.</failure>
+    </testcase>
+    <testcase classname="wm-audit.K20" name="gw.anonymous_allowed"/>
+    <testcase classname="wm-audit.K20" name="gw.identify_or"/>
+    <testcase classname="wm-audit.K20" name="gw.application_identity_only"/>
+    <testcase classname="wm-audit.K20" name="gw.http_allowed"/>
+    <testcase classname="wm-audit.K20" name="gw.plaintext_backend">
+      <failure type="high" message="Weiterleitung an ein Klartext-Backend">[HIGH, belegt] Weiterleitung an ein Klartext-Backend
+Das Gateway leitet an HTTP://***@K20.example weiter. Die Verbindung endet damit am Gateway; im internen Netz laufen die Daten im Klartext.
+Empfehlung: Das Backend über HTTPS ansprechen.
+Fundstelle: assets/API/API.k20/API.k20 | nativeEndpoint: HTTP://***@K20.example</failure>
+    </testcase>
+    <testcase classname="wm-audit.K20" name="gw.pass_security_headers"/>
+    <testcase classname="wm-audit.K20" name="gw.no_traffic_limit">
+      <failure type="info" message="Keine Begrenzung von Anfragemenge oder Nachrichtengröße (durchgängig)">[INFO, wahrscheinlich] Keine Begrenzung von Anfragemenge oder Nachrichtengröße (durchgängig)
+Betrifft 49 von 50 APIs. Ein Merkmal, das nahezu überall auftritt, beschreibt eine Gewohnheit und wird deshalb gesammelt gemeldet statt je Endpunkt einzeln. Auf API-Ebene ist keine Traffic-Begrenzung konfiguriert. Eine global gesetzte Threat-Protection kann greifen — sie ist in diesem Export jedoch nicht enthalten und daher hier nicht nachweisbar.
+Empfehlung: Eine Traffic-Monitoring-Policy je API setzen oder die globale Threat-Protection-Konfiguration mit exportieren und prüfen.</failure>
+    </testcase>
+    <testcase classname="wm-audit.K20" name="gw.throttle_long_window"/>
+    <testcase classname="wm-audit.K20" name="gw.log_invocation"/>
+  </testsuite>
+  <testsuite name="API: K27" tests="10" failures="2" errors="0" skipped="0">
+    <testcase classname="wm-audit.K27" name="gw.no_identify_policy">
+      <failure type="high" message="API ohne Identify-and-Authorize-Policy (durchgängig)">[HIGH, belegt] API ohne Identify-and-Authorize-Policy (durchgängig)
+Betrifft 47 von 50 APIs. Ein Merkmal, das nahezu überall auftritt, beschreibt eine Gewohnheit und wird deshalb gesammelt gemeldet statt je Endpunkt einzeln. Für diese API ist keine Identify-and-Authorize-Policy konfiguriert. Das Gateway identifiziert den Aufrufer damit nicht und reicht jede Anfrage an das Backend weiter.
+Empfehlung: Im Policy-Stage „Identify and Access“ eine Identify-and-Authorize-Policy einrichten. Ist die API bewusst öffentlich, sollte das dokumentiert und durch Threat-Protection und Rate-Limits abgesichert sein.</failure>
+    </testcase>
+    <testcase classname="wm-audit.K27" name="gw.anonymous_allowed"/>
+    <testcase classname="wm-audit.K27" name="gw.identify_or"/>
+    <testcase classname="wm-audit.K27" name="gw.application_identity_only"/>
+    <testcase classname="wm-audit.K27" name="gw.http_allowed"/>
+    <testcase classname="wm-audit.K27" name="gw.plaintext_backend"/>
+    <testcase classname="wm-audit.K27" name="gw.pass_security_headers"/>
+    <testcase classname="wm-audit.K27" name="gw.no_traffic_limit">
+      <failure type="info" message="Keine Begrenzung von Anfragemenge oder Nachrichtengröße (durchgängig)">[INFO, wahrscheinlich] Keine Begrenzung von Anfragemenge oder Nachrichtengröße (durchgängig)
+Betrifft 49 von 50 APIs. Ein Merkmal, das nahezu überall auftritt, beschreibt eine Gewohnheit und wird deshalb gesammelt gemeldet statt je Endpunkt einzeln. Auf API-Ebene ist keine Traffic-Begrenzung konfiguriert. Eine global gesetzte Threat-Protection kann greifen — sie ist in diesem Export jedoch nicht enthalten und daher hier nicht nachweisbar.
+Empfehlung: Eine Traffic-Monitoring-Policy je API setzen oder die globale Threat-Protection-Konfiguration mit exportieren und prüfen.</failure>
+    </testcase>
+    <testcase classname="wm-audit.K27" name="gw.throttle_long_window"/>
+    <testcase classname="wm-audit.K27" name="gw.log_invocation"/>
+  </testsuite>
+  <testsuite name="API: K30" tests="10" failures="2" errors="0" skipped="0">
+    <testcase classname="wm-audit.K30" name="gw.no_identify_policy">
+      <failure type="high" message="API ohne Identify-and-Authorize-Policy (durchgängig)">[HIGH, belegt] API ohne Identify-and-Authorize-Policy (durchgängig)
+Betrifft 47 von 50 APIs. Ein Merkmal, das nahezu überall auftritt, beschreibt eine Gewohnheit und wird deshalb gesammelt gemeldet statt je Endpunkt einzeln. Für diese API ist keine Identify-and-Authorize-Policy konfiguriert. Das Gateway identifiziert den Aufrufer damit nicht und reicht jede Anfrage an das Backend weiter.
+Empfehlung: Im Policy-Stage „Identify and Access“ eine Identify-and-Authorize-Policy einrichten. Ist die API bewusst öffentlich, sollte das dokumentiert und durch Threat-Protection und Rate-Limits abgesichert sein.</failure>
+    </testcase>
+    <testcase classname="wm-audit.K30" name="gw.anonymous_allowed"/>
+    <testcase classname="wm-audit.K30" name="gw.identify_or"/>
+    <testcase classname="wm-audit.K30" name="gw.application_identity_only"/>
+    <testcase classname="wm-audit.K30" name="gw.http_allowed"/>
+    <testcase classname="wm-audit.K30" name="gw.plaintext_backend"/>
+    <testcase classname="wm-audit.K30" name="gw.pass_security_headers"/>
+    <testcase classname="wm-audit.K30" name="gw.no_traffic_limit">
+      <failure type="info" message="Keine Begrenzung von Anfragemenge oder Nachrichtengröße (durchgängig)">[INFO, wahrscheinlich] Keine Begrenzung von Anfragemenge oder Nachrichtengröße (durchgängig)
+Betrifft 49 von 50 APIs. Ein Merkmal, das nahezu überall auftritt, beschreibt eine Gewohnheit und wird deshalb gesammelt gemeldet statt je Endpunkt einzeln. Auf API-Ebene ist keine Traffic-Begrenzung konfiguriert. Eine global gesetzte Threat-Protection kann greifen — sie ist in diesem Export jedoch nicht enthalten und daher hier nicht nachweisbar.
+Empfehlung: Eine Traffic-Monitoring-Policy je API setzen oder die globale Threat-Protection-Konfiguration mit exportieren und prüfen.</failure>
+    </testcase>
+    <testcase classname="wm-audit.K30" name="gw.throttle_long_window"/>
+    <testcase classname="wm-audit.K30" name="gw.log_invocation"/>
+  </testsuite>
+  <testsuite name="API: N1 1.0" tests="10" failures="0" errors="0" skipped="0">
+    <testcase classname="wm-audit.N1 1_0" name="gw.no_identify_policy"/>
+    <testcase classname="wm-audit.N1 1_0" name="gw.anonymous_allowed"/>
+    <testcase classname="wm-audit.N1 1_0" name="gw.identify_or"/>
+    <testcase classname="wm-audit.N1 1_0" name="gw.application_identity_only"/>
+    <testcase classname="wm-audit.N1 1_0" name="gw.http_allowed"/>
+    <testcase classname="wm-audit.N1 1_0" name="gw.plaintext_backend"/>
+    <testcase classname="wm-audit.N1 1_0" name="gw.pass_security_headers"/>
+    <testcase classname="wm-audit.N1 1_0" name="gw.no_traffic_limit"/>
+    <testcase classname="wm-audit.N1 1_0" name="gw.throttle_long_window"/>
+    <testcase classname="wm-audit.N1 1_0" name="gw.log_invocation"/>
+  </testsuite>
+  <testsuite name="API: N2 1.0" tests="10" failures="3" errors="0" skipped="0">
+    <testcase classname="wm-audit.N2 1_0" name="gw.no_identify_policy">
+      <failure type="high" message="API ohne Identify-and-Authorize-Policy (durchgängig)">[HIGH, belegt] API ohne Identify-and-Authorize-Policy (durchgängig)
+Betrifft 47 von 50 APIs. Ein Merkmal, das nahezu überall auftritt, beschreibt eine Gewohnheit und wird deshalb gesammelt gemeldet statt je Endpunkt einzeln. Für diese API ist keine Identify-and-Authorize-Policy konfiguriert. Das Gateway identifiziert den Aufrufer damit nicht und reicht jede Anfrage an das Backend weiter.
+Empfehlung: Im Policy-Stage „Identify and Access“ eine Identify-and-Authorize-Policy einrichten. Ist die API bewusst öffentlich, sollte das dokumentiert und durch Threat-Protection und Rate-Limits abgesichert sein.</failure>
+    </testcase>
+    <testcase classname="wm-audit.N2 1_0" name="gw.anonymous_allowed"/>
+    <testcase classname="wm-audit.N2 1_0" name="gw.identify_or"/>
+    <testcase classname="wm-audit.N2 1_0" name="gw.application_identity_only"/>
+    <testcase classname="wm-audit.N2 1_0" name="gw.http_allowed">
+      <failure type="high" message="Gateway akzeptiert unverschlüsseltes HTTP">[HIGH, belegt] Gateway akzeptiert unverschlüsseltes HTTP
+Die Entry-Protocol-Policy lässt HTTP zu. Zugangsdaten und Nutzdaten sind auf dem Weg zum Gateway mitlesbar.
+Empfehlung: Nur HTTPS zulassen und HTTP an der Kante umleiten oder abweisen.
+Fundstelle: assets/API/API.n2/API.n2 → Protocol | protocol: http</failure>
+    </testcase>
+    <testcase classname="wm-audit.N2 1_0" name="gw.plaintext_backend"/>
+    <testcase classname="wm-audit.N2 1_0" name="gw.pass_security_headers"/>
+    <testcase classname="wm-audit.N2 1_0" name="gw.no_traffic_limit">
+      <failure type="info" message="Keine Begrenzung von Anfragemenge oder Nachrichtengröße (durchgängig)">[INFO, wahrscheinlich] Keine Begrenzung von Anfragemenge oder Nachrichtengröße (durchgängig)
+Betrifft 49 von 50 APIs. Ein Merkmal, das nahezu überall auftritt, beschreibt eine Gewohnheit und wird deshalb gesammelt gemeldet statt je Endpunkt einzeln. Auf API-Ebene ist keine Traffic-Begrenzung konfiguriert. Eine global gesetzte Threat-Protection kann greifen — sie ist in diesem Export jedoch nicht enthalten und daher hier nicht nachweisbar.
+Empfehlung: Eine Traffic-Monitoring-Policy je API setzen oder die globale Threat-Protection-Konfiguration mit exportieren und prüfen.</failure>
+    </testcase>
+    <testcase classname="wm-audit.N2 1_0" name="gw.throttle_long_window"/>
+    <testcase classname="wm-audit.N2 1_0" name="gw.log_invocation"/>
+  </testsuite>
+  <testsuite name="API: R1 2" tests="10" failures="4" errors="0" skipped="0">
+    <testcase classname="wm-audit.R1 2" name="gw.no_identify_policy"/>
+    <testcase classname="wm-audit.R1 2" name="gw.anonymous_allowed">
+      <failure type="critical" message="Identify-Policy erlaubt anonymen Zugriff">[CRITICAL, belegt] Identify-Policy erlaubt anonymen Zugriff
+Die Identify-and-Authorize-Policy ist konfiguriert, lässt über allowAnonymous aber Anfragen ohne Identifikation durch. Die Policy sieht in der Oberfläche vorhanden aus und greift trotzdem nicht.
+Empfehlung: allowAnonymous auf false setzen.
+Fundstelle: assets/API/API.r1/API.r1 →  | allowAnonymous: true</failure>
+    </testcase>
+    <testcase classname="wm-audit.R1 2" name="gw.identify_or">
+      <failure type="high" message="Mehrere Identifikationsverfahren sind ODER-verknüpft">[HIGH, belegt] Mehrere Identifikationsverfahren sind ODER-verknüpft
+Die Policy akzeptiert apiKey oder hostName oder 7 — es genügt also das schwächste dieser Verfahren. Wo API-Key *und* Token gemeint waren, reicht dann der API-Key allein.
+Empfehlung: logicalConnector auf AND setzen, wenn beide Nachweise verlangt sind. Ist ODER beabsichtigt, muss jedes einzelne Verfahren für sich als ausreichend gelten.
+Fundstelle: assets/API/API.r1/API.r1 →  | logicalConnector: OR, identificationType: apiKey, hostName, 7</failure>
+    </testcase>
+    <testcase classname="wm-audit.R1 2" name="gw.application_identity_only"/>
+    <testcase classname="wm-audit.R1 2" name="gw.http_allowed">
+      <failure type="high" message="Gateway akzeptiert unverschlüsseltes HTTP">[HIGH, belegt] Gateway akzeptiert unverschlüsseltes HTTP
+Die Entry-Protocol-Policy lässt HTTP zu. Zugangsdaten und Nutzdaten sind auf dem Weg zum Gateway mitlesbar.
+Empfehlung: Nur HTTPS zulassen und HTTP an der Kante umleiten oder abweisen.
+Fundstelle: assets/API/API.r1/API.r1 → Aktion | protocol: http</failure>
+    </testcase>
+    <testcase classname="wm-audit.R1 2" name="gw.plaintext_backend"/>
+    <testcase classname="wm-audit.R1 2" name="gw.pass_security_headers"/>
+    <testcase classname="wm-audit.R1 2" name="gw.no_traffic_limit">
+      <failure type="info" message="Keine Begrenzung von Anfragemenge oder Nachrichtengröße (durchgängig)">[INFO, wahrscheinlich] Keine Begrenzung von Anfragemenge oder Nachrichtengröße (durchgängig)
+Betrifft 49 von 50 APIs. Ein Merkmal, das nahezu überall auftritt, beschreibt eine Gewohnheit und wird deshalb gesammelt gemeldet statt je Endpunkt einzeln. Auf API-Ebene ist keine Traffic-Begrenzung konfiguriert. Eine global gesetzte Threat-Protection kann greifen — sie ist in diesem Export jedoch nicht enthalten und daher hier nicht nachweisbar.
+Empfehlung: Eine Traffic-Monitoring-Policy je API setzen oder die globale Threat-Protection-Konfiguration mit exportieren und prüfen.</failure>
+    </testcase>
+    <testcase classname="wm-audit.R1 2" name="gw.throttle_long_window"/>
+    <testcase classname="wm-audit.R1 2" name="gw.log_invocation"/>
+  </testsuite>
+  <testsuite name="API: R10" tests="10" failures="2" errors="0" skipped="0">
+    <testcase classname="wm-audit.R10" name="gw.no_identify_policy">
+      <failure type="high" message="API ohne Identify-and-Authorize-Policy (durchgängig)">[HIGH, belegt] API ohne Identify-and-Authorize-Policy (durchgängig)
+Betrifft 47 von 50 APIs. Ein Merkmal, das nahezu überall auftritt, beschreibt eine Gewohnheit und wird deshalb gesammelt gemeldet statt je Endpunkt einzeln. Für diese API ist keine Identify-and-Authorize-Policy konfiguriert. Das Gateway identifiziert den Aufrufer damit nicht und reicht jede Anfrage an das Backend weiter.
+Empfehlung: Im Policy-Stage „Identify and Access“ eine Identify-and-Authorize-Policy einrichten. Ist die API bewusst öffentlich, sollte das dokumentiert und durch Threat-Protection und Rate-Limits abgesichert sein.</failure>
+    </testcase>
+    <testcase classname="wm-audit.R10" name="gw.anonymous_allowed"/>
+    <testcase classname="wm-audit.R10" name="gw.identify_or"/>
+    <testcase classname="wm-audit.R10" name="gw.application_identity_only"/>
+    <testcase classname="wm-audit.R10" name="gw.http_allowed"/>
+    <testcase classname="wm-audit.R10" name="gw.plaintext_backend"/>
+    <testcase classname="wm-audit.R10" name="gw.pass_security_headers"/>
+    <testcase classname="wm-audit.R10" name="gw.no_traffic_limit">
+      <failure type="info" message="Keine Begrenzung von Anfragemenge oder Nachrichtengröße (durchgängig)">[INFO, wahrscheinlich] Keine Begrenzung von Anfragemenge oder Nachrichtengröße (durchgängig)
+Betrifft 49 von 50 APIs. Ein Merkmal, das nahezu überall auftritt, beschreibt eine Gewohnheit und wird deshalb gesammelt gemeldet statt je Endpunkt einzeln. Auf API-Ebene ist keine Traffic-Begrenzung konfiguriert. Eine global gesetzte Threat-Protection kann greifen — sie ist in diesem Export jedoch nicht enthalten und daher hier nicht nachweisbar.
+Empfehlung: Eine Traffic-Monitoring-Policy je API setzen oder die globale Threat-Protection-Konfiguration mit exportieren und prüfen.</failure>
+    </testcase>
+    <testcase classname="wm-audit.R10" name="gw.throttle_long_window"/>
+    <testcase classname="wm-audit.R10" name="gw.log_invocation"/>
+  </testsuite>
+  <testsuite name="API: R11 18446744073709551615" tests="10" failures="2" errors="0" skipped="0">
+    <testcase classname="wm-audit.R11 18446744073709551615" name="gw.no_identify_policy">
+      <failure type="high" message="API ohne Identify-and-Authorize-Policy (durchgängig)">[HIGH, belegt] API ohne Identify-and-Authorize-Policy (durchgängig)
+Betrifft 47 von 50 APIs. Ein Merkmal, das nahezu überall auftritt, beschreibt eine Gewohnheit und wird deshalb gesammelt gemeldet statt je Endpunkt einzeln. Für diese API ist keine Identify-and-Authorize-Policy konfiguriert. Das Gateway identifiziert den Aufrufer damit nicht und reicht jede Anfrage an das Backend weiter.
+Empfehlung: Im Policy-Stage „Identify and Access“ eine Identify-and-Authorize-Policy einrichten. Ist die API bewusst öffentlich, sollte das dokumentiert und durch Threat-Protection und Rate-Limits abgesichert sein.</failure>
+    </testcase>
+    <testcase classname="wm-audit.R11 18446744073709551615" name="gw.anonymous_allowed"/>
+    <testcase classname="wm-audit.R11 18446744073709551615" name="gw.identify_or"/>
+    <testcase classname="wm-audit.R11 18446744073709551615" name="gw.application_identity_only"/>
+    <testcase classname="wm-audit.R11 18446744073709551615" name="gw.http_allowed"/>
+    <testcase classname="wm-audit.R11 18446744073709551615" name="gw.plaintext_backend"/>
+    <testcase classname="wm-audit.R11 18446744073709551615" name="gw.pass_security_headers"/>
+    <testcase classname="wm-audit.R11 18446744073709551615" name="gw.no_traffic_limit">
+      <failure type="info" message="Keine Begrenzung von Anfragemenge oder Nachrichtengröße (durchgängig)">[INFO, wahrscheinlich] Keine Begrenzung von Anfragemenge oder Nachrichtengröße (durchgängig)
+Betrifft 49 von 50 APIs. Ein Merkmal, das nahezu überall auftritt, beschreibt eine Gewohnheit und wird deshalb gesammelt gemeldet statt je Endpunkt einzeln. Auf API-Ebene ist keine Traffic-Begrenzung konfiguriert. Eine global gesetzte Threat-Protection kann greifen — sie ist in diesem Export jedoch nicht enthalten und daher hier nicht nachweisbar.
+Empfehlung: Eine Traffic-Monitoring-Policy je API setzen oder die globale Threat-Protection-Konfiguration mit exportieren und prüfen.</failure>
+    </testcase>
+    <testcase classname="wm-audit.R11 18446744073709551615" name="gw.throttle_long_window"/>
+    <testcase classname="wm-audit.R11 18446744073709551615" name="gw.log_invocation"/>
+  </testsuite>
+  <testsuite name="API: R12 -9223372036854775808" tests="10" failures="2" errors="0" skipped="0">
+    <testcase classname="wm-audit.R12 -9223372036854775808" name="gw.no_identify_policy">
+      <failure type="high" message="API ohne Identify-and-Authorize-Policy (durchgängig)">[HIGH, belegt] API ohne Identify-and-Authorize-Policy (durchgängig)
+Betrifft 47 von 50 APIs. Ein Merkmal, das nahezu überall auftritt, beschreibt eine Gewohnheit und wird deshalb gesammelt gemeldet statt je Endpunkt einzeln. Für diese API ist keine Identify-and-Authorize-Policy konfiguriert. Das Gateway identifiziert den Aufrufer damit nicht und reicht jede Anfrage an das Backend weiter.
+Empfehlung: Im Policy-Stage „Identify and Access“ eine Identify-and-Authorize-Policy einrichten. Ist die API bewusst öffentlich, sollte das dokumentiert und durch Threat-Protection und Rate-Limits abgesichert sein.</failure>
+    </testcase>
+    <testcase classname="wm-audit.R12 -9223372036854775808" name="gw.anonymous_allowed"/>
+    <testcase classname="wm-audit.R12 -9223372036854775808" name="gw.identify_or"/>
+    <testcase classname="wm-audit.R12 -9223372036854775808" name="gw.application_identity_only"/>
+    <testcase classname="wm-audit.R12 -9223372036854775808" name="gw.http_allowed"/>
+    <testcase classname="wm-audit.R12 -9223372036854775808" name="gw.plaintext_backend"/>
+    <testcase classname="wm-audit.R12 -9223372036854775808" name="gw.pass_security_headers"/>
+    <testcase classname="wm-audit.R12 -9223372036854775808" name="gw.no_traffic_limit">
+      <failure type="info" message="Keine Begrenzung von Anfragemenge oder Nachrichtengröße (durchgängig)">[INFO, wahrscheinlich] Keine Begrenzung von Anfragemenge oder Nachrichtengröße (durchgängig)
+Betrifft 49 von 50 APIs. Ein Merkmal, das nahezu überall auftritt, beschreibt eine Gewohnheit und wird deshalb gesammelt gemeldet statt je Endpunkt einzeln. Auf API-Ebene ist keine Traffic-Begrenzung konfiguriert. Eine global gesetzte Threat-Protection kann greifen — sie ist in diesem Export jedoch nicht enthalten und daher hier nicht nachweisbar.
+Empfehlung: Eine Traffic-Monitoring-Policy je API setzen oder die globale Threat-Protection-Konfiguration mit exportieren und prüfen.</failure>
+    </testcase>
+    <testcase classname="wm-audit.R12 -9223372036854775808" name="gw.throttle_long_window"/>
+    <testcase classname="wm-audit.R12 -9223372036854775808" name="gw.log_invocation"/>
+  </testsuite>
+  <testsuite name="API: R13 100.0" tests="10" failures="2" errors="0" skipped="0">
+    <testcase classname="wm-audit.R13 100_0" name="gw.no_identify_policy">
+      <failure type="high" message="API ohne Identify-and-Authorize-Policy (durchgängig)">[HIGH, belegt] API ohne Identify-and-Authorize-Policy (durchgängig)
+Betrifft 47 von 50 APIs. Ein Merkmal, das nahezu überall auftritt, beschreibt eine Gewohnheit und wird deshalb gesammelt gemeldet statt je Endpunkt einzeln. Für diese API ist keine Identify-and-Authorize-Policy konfiguriert. Das Gateway identifiziert den Aufrufer damit nicht und reicht jede Anfrage an das Backend weiter.
+Empfehlung: Im Policy-Stage „Identify and Access“ eine Identify-and-Authorize-Policy einrichten. Ist die API bewusst öffentlich, sollte das dokumentiert und durch Threat-Protection und Rate-Limits abgesichert sein.</failure>
+    </testcase>
+    <testcase classname="wm-audit.R13 100_0" name="gw.anonymous_allowed"/>
+    <testcase classname="wm-audit.R13 100_0" name="gw.identify_or"/>
+    <testcase classname="wm-audit.R13 100_0" name="gw.application_identity_only"/>
+    <testcase classname="wm-audit.R13 100_0" name="gw.http_allowed"/>
+    <testcase classname="wm-audit.R13 100_0" name="gw.plaintext_backend"/>
+    <testcase classname="wm-audit.R13 100_0" name="gw.pass_security_headers"/>
+    <testcase classname="wm-audit.R13 100_0" name="gw.no_traffic_limit">
+      <failure type="info" message="Keine Begrenzung von Anfragemenge oder Nachrichtengröße (durchgängig)">[INFO, wahrscheinlich] Keine Begrenzung von Anfragemenge oder Nachrichtengröße (durchgängig)
+Betrifft 49 von 50 APIs. Ein Merkmal, das nahezu überall auftritt, beschreibt eine Gewohnheit und wird deshalb gesammelt gemeldet statt je Endpunkt einzeln. Auf API-Ebene ist keine Traffic-Begrenzung konfiguriert. Eine global gesetzte Threat-Protection kann greifen — sie ist in diesem Export jedoch nicht enthalten und daher hier nicht nachweisbar.
+Empfehlung: Eine Traffic-Monitoring-Policy je API setzen oder die globale Threat-Protection-Konfiguration mit exportieren und prüfen.</failure>
+    </testcase>
+    <testcase classname="wm-audit.R13 100_0" name="gw.throttle_long_window"/>
+    <testcase classname="wm-audit.R13 100_0" name="gw.log_invocation"/>
+  </testsuite>
+  <testsuite name="API: R14 100.0" tests="10" failures="2" errors="0" skipped="0">
+    <testcase classname="wm-audit.R14 100_0" name="gw.no_identify_policy">
+      <failure type="high" message="API ohne Identify-and-Authorize-Policy (durchgängig)">[HIGH, belegt] API ohne Identify-and-Authorize-Policy (durchgängig)
+Betrifft 47 von 50 APIs. Ein Merkmal, das nahezu überall auftritt, beschreibt eine Gewohnheit und wird deshalb gesammelt gemeldet statt je Endpunkt einzeln. Für diese API ist keine Identify-and-Authorize-Policy konfiguriert. Das Gateway identifiziert den Aufrufer damit nicht und reicht jede Anfrage an das Backend weiter.
+Empfehlung: Im Policy-Stage „Identify and Access“ eine Identify-and-Authorize-Policy einrichten. Ist die API bewusst öffentlich, sollte das dokumentiert und durch Threat-Protection und Rate-Limits abgesichert sein.</failure>
+    </testcase>
+    <testcase classname="wm-audit.R14 100_0" name="gw.anonymous_allowed"/>
+    <testcase classname="wm-audit.R14 100_0" name="gw.identify_or"/>
+    <testcase classname="wm-audit.R14 100_0" name="gw.application_identity_only"/>
+    <testcase classname="wm-audit.R14 100_0" name="gw.http_allowed"/>
+    <testcase classname="wm-audit.R14 100_0" name="gw.plaintext_backend"/>
+    <testcase classname="wm-audit.R14 100_0" name="gw.pass_security_headers"/>
+    <testcase classname="wm-audit.R14 100_0" name="gw.no_traffic_limit">
+      <failure type="info" message="Keine Begrenzung von Anfragemenge oder Nachrichtengröße (durchgängig)">[INFO, wahrscheinlich] Keine Begrenzung von Anfragemenge oder Nachrichtengröße (durchgängig)
+Betrifft 49 von 50 APIs. Ein Merkmal, das nahezu überall auftritt, beschreibt eine Gewohnheit und wird deshalb gesammelt gemeldet statt je Endpunkt einzeln. Auf API-Ebene ist keine Traffic-Begrenzung konfiguriert. Eine global gesetzte Threat-Protection kann greifen — sie ist in diesem Export jedoch nicht enthalten und daher hier nicht nachweisbar.
+Empfehlung: Eine Traffic-Monitoring-Policy je API setzen oder die globale Threat-Protection-Konfiguration mit exportieren und prüfen.</failure>
+    </testcase>
+    <testcase classname="wm-audit.R14 100_0" name="gw.throttle_long_window"/>
+    <testcase classname="wm-audit.R14 100_0" name="gw.log_invocation"/>
+  </testsuite>
+  <testsuite name="API: R15 1" tests="10" failures="2" errors="0" skipped="0">
+    <testcase classname="wm-audit.R15 1" name="gw.no_identify_policy">
+      <failure type="high" message="API ohne Identify-and-Authorize-Policy (durchgängig)">[HIGH, belegt] API ohne Identify-and-Authorize-Policy (durchgängig)
+Betrifft 47 von 50 APIs. Ein Merkmal, das nahezu überall auftritt, beschreibt eine Gewohnheit und wird deshalb gesammelt gemeldet statt je Endpunkt einzeln. Für diese API ist keine Identify-and-Authorize-Policy konfiguriert. Das Gateway identifiziert den Aufrufer damit nicht und reicht jede Anfrage an das Backend weiter.
+Empfehlung: Im Policy-Stage „Identify and Access“ eine Identify-and-Authorize-Policy einrichten. Ist die API bewusst öffentlich, sollte das dokumentiert und durch Threat-Protection und Rate-Limits abgesichert sein.</failure>
+    </testcase>
+    <testcase classname="wm-audit.R15 1" name="gw.anonymous_allowed"/>
+    <testcase classname="wm-audit.R15 1" name="gw.identify_or"/>
+    <testcase classname="wm-audit.R15 1" name="gw.application_identity_only"/>
+    <testcase classname="wm-audit.R15 1" name="gw.http_allowed"/>
+    <testcase classname="wm-audit.R15 1" name="gw.plaintext_backend"/>
+    <testcase classname="wm-audit.R15 1" name="gw.pass_security_headers"/>
+    <testcase classname="wm-audit.R15 1" name="gw.no_traffic_limit">
+      <failure type="info" message="Keine Begrenzung von Anfragemenge oder Nachrichtengröße (durchgängig)">[INFO, wahrscheinlich] Keine Begrenzung von Anfragemenge oder Nachrichtengröße (durchgängig)
+Betrifft 49 von 50 APIs. Ein Merkmal, das nahezu überall auftritt, beschreibt eine Gewohnheit und wird deshalb gesammelt gemeldet statt je Endpunkt einzeln. Auf API-Ebene ist keine Traffic-Begrenzung konfiguriert. Eine global gesetzte Threat-Protection kann greifen — sie ist in diesem Export jedoch nicht enthalten und daher hier nicht nachweisbar.
+Empfehlung: Eine Traffic-Monitoring-Policy je API setzen oder die globale Threat-Protection-Konfiguration mit exportieren und prüfen.</failure>
+    </testcase>
+    <testcase classname="wm-audit.R15 1" name="gw.throttle_long_window"/>
+    <testcase classname="wm-audit.R15 1" name="gw.log_invocation"/>
+  </testsuite>
+  <testsuite name="API: Zählerstände 🔌 β" tests="10" failures="2" errors="0" skipped="0">
+    <testcase classname="wm-audit.Zählerstände 🔌 β" name="gw.no_identify_policy">
+      <failure type="high" message="API ohne Identify-and-Authorize-Policy (durchgängig)">[HIGH, belegt] API ohne Identify-and-Authorize-Policy (durchgängig)
+Betrifft 47 von 50 APIs. Ein Merkmal, das nahezu überall auftritt, beschreibt eine Gewohnheit und wird deshalb gesammelt gemeldet statt je Endpunkt einzeln. Für diese API ist keine Identify-and-Authorize-Policy konfiguriert. Das Gateway identifiziert den Aufrufer damit nicht und reicht jede Anfrage an das Backend weiter.
+Empfehlung: Im Policy-Stage „Identify and Access“ eine Identify-and-Authorize-Policy einrichten. Ist die API bewusst öffentlich, sollte das dokumentiert und durch Threat-Protection und Rate-Limits abgesichert sein.</failure>
+    </testcase>
+    <testcase classname="wm-audit.Zählerstände 🔌 β" name="gw.anonymous_allowed"/>
+    <testcase classname="wm-audit.Zählerstände 🔌 β" name="gw.identify_or"/>
+    <testcase classname="wm-audit.Zählerstände 🔌 β" name="gw.application_identity_only"/>
+    <testcase classname="wm-audit.Zählerstände 🔌 β" name="gw.http_allowed"/>
+    <testcase classname="wm-audit.Zählerstände 🔌 β" name="gw.plaintext_backend"/>
+    <testcase classname="wm-audit.Zählerstände 🔌 β" name="gw.pass_security_headers"/>
+    <testcase classname="wm-audit.Zählerstände 🔌 β" name="gw.no_traffic_limit">
+      <failure type="info" message="Keine Begrenzung von Anfragemenge oder Nachrichtengröße (durchgängig)">[INFO, wahrscheinlich] Keine Begrenzung von Anfragemenge oder Nachrichtengröße (durchgängig)
+Betrifft 49 von 50 APIs. Ein Merkmal, das nahezu überall auftritt, beschreibt eine Gewohnheit und wird deshalb gesammelt gemeldet statt je Endpunkt einzeln. Auf API-Ebene ist keine Traffic-Begrenzung konfiguriert. Eine global gesetzte Threat-Protection kann greifen — sie ist in diesem Export jedoch nicht enthalten und daher hier nicht nachweisbar.
+Empfehlung: Eine Traffic-Monitoring-Policy je API setzen oder die globale Threat-Protection-Konfiguration mit exportieren und prüfen.</failure>
+    </testcase>
+    <testcase classname="wm-audit.Zählerstände 🔌 β" name="gw.throttle_long_window"/>
+    <testcase classname="wm-audit.Zählerstände 🔌 β" name="gw.log_invocation"/>
+  </testsuite>
+  <testsuite name="API: R17 1e-05" tests="10" failures="2" errors="0" skipped="0">
+    <testcase classname="wm-audit.R17 1e-05" name="gw.no_identify_policy">
+      <failure type="high" message="API ohne Identify-and-Authorize-Policy (durchgängig)">[HIGH, belegt] API ohne Identify-and-Authorize-Policy (durchgängig)
+Betrifft 47 von 50 APIs. Ein Merkmal, das nahezu überall auftritt, beschreibt eine Gewohnheit und wird deshalb gesammelt gemeldet statt je Endpunkt einzeln. Für diese API ist keine Identify-and-Authorize-Policy konfiguriert. Das Gateway identifiziert den Aufrufer damit nicht und reicht jede Anfrage an das Backend weiter.
+Empfehlung: Im Policy-Stage „Identify and Access“ eine Identify-and-Authorize-Policy einrichten. Ist die API bewusst öffentlich, sollte das dokumentiert und durch Threat-Protection und Rate-Limits abgesichert sein.</failure>
+    </testcase>
+    <testcase classname="wm-audit.R17 1e-05" name="gw.anonymous_allowed"/>
+    <testcase classname="wm-audit.R17 1e-05" name="gw.identify_or"/>
+    <testcase classname="wm-audit.R17 1e-05" name="gw.application_identity_only"/>
+    <testcase classname="wm-audit.R17 1e-05" name="gw.http_allowed"/>
+    <testcase classname="wm-audit.R17 1e-05" name="gw.plaintext_backend"/>
+    <testcase classname="wm-audit.R17 1e-05" name="gw.pass_security_headers"/>
+    <testcase classname="wm-audit.R17 1e-05" name="gw.no_traffic_limit">
+      <failure type="info" message="Keine Begrenzung von Anfragemenge oder Nachrichtengröße (durchgängig)">[INFO, wahrscheinlich] Keine Begrenzung von Anfragemenge oder Nachrichtengröße (durchgängig)
+Betrifft 49 von 50 APIs. Ein Merkmal, das nahezu überall auftritt, beschreibt eine Gewohnheit und wird deshalb gesammelt gemeldet statt je Endpunkt einzeln. Auf API-Ebene ist keine Traffic-Begrenzung konfiguriert. Eine global gesetzte Threat-Protection kann greifen — sie ist in diesem Export jedoch nicht enthalten und daher hier nicht nachweisbar.
+Empfehlung: Eine Traffic-Monitoring-Policy je API setzen oder die globale Threat-Protection-Konfiguration mit exportieren und prüfen.</failure>
+    </testcase>
+    <testcase classname="wm-audit.R17 1e-05" name="gw.throttle_long_window"/>
+    <testcase classname="wm-audit.R17 1e-05" name="gw.log_invocation"/>
+  </testsuite>
+  <testsuite name="API: R18 1.8446744073709552e+19" tests="10" failures="2" errors="0" skipped="0">
+    <testcase classname="wm-audit.R18 1_8446744073709552e+19" name="gw.no_identify_policy">
+      <failure type="high" message="API ohne Identify-and-Authorize-Policy (durchgängig)">[HIGH, belegt] API ohne Identify-and-Authorize-Policy (durchgängig)
+Betrifft 47 von 50 APIs. Ein Merkmal, das nahezu überall auftritt, beschreibt eine Gewohnheit und wird deshalb gesammelt gemeldet statt je Endpunkt einzeln. Für diese API ist keine Identify-and-Authorize-Policy konfiguriert. Das Gateway identifiziert den Aufrufer damit nicht und reicht jede Anfrage an das Backend weiter.
+Empfehlung: Im Policy-Stage „Identify and Access“ eine Identify-and-Authorize-Policy einrichten. Ist die API bewusst öffentlich, sollte das dokumentiert und durch Threat-Protection und Rate-Limits abgesichert sein.</failure>
+    </testcase>
+    <testcase classname="wm-audit.R18 1_8446744073709552e+19" name="gw.anonymous_allowed"/>
+    <testcase classname="wm-audit.R18 1_8446744073709552e+19" name="gw.identify_or"/>
+    <testcase classname="wm-audit.R18 1_8446744073709552e+19" name="gw.application_identity_only"/>
+    <testcase classname="wm-audit.R18 1_8446744073709552e+19" name="gw.http_allowed"/>
+    <testcase classname="wm-audit.R18 1_8446744073709552e+19" name="gw.plaintext_backend"/>
+    <testcase classname="wm-audit.R18 1_8446744073709552e+19" name="gw.pass_security_headers"/>
+    <testcase classname="wm-audit.R18 1_8446744073709552e+19" name="gw.no_traffic_limit">
+      <failure type="info" message="Keine Begrenzung von Anfragemenge oder Nachrichtengröße (durchgängig)">[INFO, wahrscheinlich] Keine Begrenzung von Anfragemenge oder Nachrichtengröße (durchgängig)
+Betrifft 49 von 50 APIs. Ein Merkmal, das nahezu überall auftritt, beschreibt eine Gewohnheit und wird deshalb gesammelt gemeldet statt je Endpunkt einzeln. Auf API-Ebene ist keine Traffic-Begrenzung konfiguriert. Eine global gesetzte Threat-Protection kann greifen — sie ist in diesem Export jedoch nicht enthalten und daher hier nicht nachweisbar.
+Empfehlung: Eine Traffic-Monitoring-Policy je API setzen oder die globale Threat-Protection-Konfiguration mit exportieren und prüfen.</failure>
+    </testcase>
+    <testcase classname="wm-audit.R18 1_8446744073709552e+19" name="gw.throttle_long_window"/>
+    <testcase classname="wm-audit.R18 1_8446744073709552e+19" name="gw.log_invocation"/>
+  </testsuite>
+  <testsuite name="API: R19 -9.223372036854776e+18" tests="10" failures="2" errors="0" skipped="0">
+    <testcase classname="wm-audit.R19 -9_223372036854776e+18" name="gw.no_identify_policy">
+      <failure type="high" message="API ohne Identify-and-Authorize-Policy (durchgängig)">[HIGH, belegt] API ohne Identify-and-Authorize-Policy (durchgängig)
+Betrifft 47 von 50 APIs. Ein Merkmal, das nahezu überall auftritt, beschreibt eine Gewohnheit und wird deshalb gesammelt gemeldet statt je Endpunkt einzeln. Für diese API ist keine Identify-and-Authorize-Policy konfiguriert. Das Gateway identifiziert den Aufrufer damit nicht und reicht jede Anfrage an das Backend weiter.
+Empfehlung: Im Policy-Stage „Identify and Access“ eine Identify-and-Authorize-Policy einrichten. Ist die API bewusst öffentlich, sollte das dokumentiert und durch Threat-Protection und Rate-Limits abgesichert sein.</failure>
+    </testcase>
+    <testcase classname="wm-audit.R19 -9_223372036854776e+18" name="gw.anonymous_allowed"/>
+    <testcase classname="wm-audit.R19 -9_223372036854776e+18" name="gw.identify_or"/>
+    <testcase classname="wm-audit.R19 -9_223372036854776e+18" name="gw.application_identity_only"/>
+    <testcase classname="wm-audit.R19 -9_223372036854776e+18" name="gw.http_allowed"/>
+    <testcase classname="wm-audit.R19 -9_223372036854776e+18" name="gw.plaintext_backend"/>
+    <testcase classname="wm-audit.R19 -9_223372036854776e+18" name="gw.pass_security_headers"/>
+    <testcase classname="wm-audit.R19 -9_223372036854776e+18" name="gw.no_traffic_limit">
+      <failure type="info" message="Keine Begrenzung von Anfragemenge oder Nachrichtengröße (durchgängig)">[INFO, wahrscheinlich] Keine Begrenzung von Anfragemenge oder Nachrichtengröße (durchgängig)
+Betrifft 49 von 50 APIs. Ein Merkmal, das nahezu überall auftritt, beschreibt eine Gewohnheit und wird deshalb gesammelt gemeldet statt je Endpunkt einzeln. Auf API-Ebene ist keine Traffic-Begrenzung konfiguriert. Eine global gesetzte Threat-Protection kann greifen — sie ist in diesem Export jedoch nicht enthalten und daher hier nicht nachweisbar.
+Empfehlung: Eine Traffic-Monitoring-Policy je API setzen oder die globale Threat-Protection-Konfiguration mit exportieren und prüfen.</failure>
+    </testcase>
+    <testcase classname="wm-audit.R19 -9_223372036854776e+18" name="gw.throttle_long_window"/>
+    <testcase classname="wm-audit.R19 -9_223372036854776e+18" name="gw.log_invocation"/>
+  </testsuite>
+  <testsuite name="API: R2 1.5" tests="10" failures="2" errors="0" skipped="0">
+    <testcase classname="wm-audit.R2 1_5" name="gw.no_identify_policy">
+      <failure type="high" message="API ohne Identify-and-Authorize-Policy (durchgängig)">[HIGH, belegt] API ohne Identify-and-Authorize-Policy (durchgängig)
+Betrifft 47 von 50 APIs. Ein Merkmal, das nahezu überall auftritt, beschreibt eine Gewohnheit und wird deshalb gesammelt gemeldet statt je Endpunkt einzeln. Für diese API ist keine Identify-and-Authorize-Policy konfiguriert. Das Gateway identifiziert den Aufrufer damit nicht und reicht jede Anfrage an das Backend weiter.
+Empfehlung: Im Policy-Stage „Identify and Access“ eine Identify-and-Authorize-Policy einrichten. Ist die API bewusst öffentlich, sollte das dokumentiert und durch Threat-Protection und Rate-Limits abgesichert sein.</failure>
+    </testcase>
+    <testcase classname="wm-audit.R2 1_5" name="gw.anonymous_allowed"/>
+    <testcase classname="wm-audit.R2 1_5" name="gw.identify_or"/>
+    <testcase classname="wm-audit.R2 1_5" name="gw.application_identity_only"/>
+    <testcase classname="wm-audit.R2 1_5" name="gw.http_allowed"/>
+    <testcase classname="wm-audit.R2 1_5" name="gw.plaintext_backend"/>
+    <testcase classname="wm-audit.R2 1_5" name="gw.pass_security_headers"/>
+    <testcase classname="wm-audit.R2 1_5" name="gw.no_traffic_limit">
+      <failure type="info" message="Keine Begrenzung von Anfragemenge oder Nachrichtengröße (durchgängig)">[INFO, wahrscheinlich] Keine Begrenzung von Anfragemenge oder Nachrichtengröße (durchgängig)
+Betrifft 49 von 50 APIs. Ein Merkmal, das nahezu überall auftritt, beschreibt eine Gewohnheit und wird deshalb gesammelt gemeldet statt je Endpunkt einzeln. Auf API-Ebene ist keine Traffic-Begrenzung konfiguriert. Eine global gesetzte Threat-Protection kann greifen — sie ist in diesem Export jedoch nicht enthalten und daher hier nicht nachweisbar.
+Empfehlung: Eine Traffic-Monitoring-Policy je API setzen oder die globale Threat-Protection-Konfiguration mit exportieren und prüfen.</failure>
+    </testcase>
+    <testcase classname="wm-audit.R2 1_5" name="gw.throttle_long_window"/>
+    <testcase classname="wm-audit.R2 1_5" name="gw.log_invocation"/>
+  </testsuite>
+  <testsuite name="API: R20 123456789.125" tests="10" failures="2" errors="0" skipped="0">
+    <testcase classname="wm-audit.R20 123456789_125" name="gw.no_identify_policy">
+      <failure type="high" message="API ohne Identify-and-Authorize-Policy (durchgängig)">[HIGH, belegt] API ohne Identify-and-Authorize-Policy (durchgängig)
+Betrifft 47 von 50 APIs. Ein Merkmal, das nahezu überall auftritt, beschreibt eine Gewohnheit und wird deshalb gesammelt gemeldet statt je Endpunkt einzeln. Für diese API ist keine Identify-and-Authorize-Policy konfiguriert. Das Gateway identifiziert den Aufrufer damit nicht und reicht jede Anfrage an das Backend weiter.
+Empfehlung: Im Policy-Stage „Identify and Access“ eine Identify-and-Authorize-Policy einrichten. Ist die API bewusst öffentlich, sollte das dokumentiert und durch Threat-Protection und Rate-Limits abgesichert sein.</failure>
+    </testcase>
+    <testcase classname="wm-audit.R20 123456789_125" name="gw.anonymous_allowed"/>
+    <testcase classname="wm-audit.R20 123456789_125" name="gw.identify_or"/>
+    <testcase classname="wm-audit.R20 123456789_125" name="gw.application_identity_only"/>
+    <testcase classname="wm-audit.R20 123456789_125" name="gw.http_allowed"/>
+    <testcase classname="wm-audit.R20 123456789_125" name="gw.plaintext_backend"/>
+    <testcase classname="wm-audit.R20 123456789_125" name="gw.pass_security_headers"/>
+    <testcase classname="wm-audit.R20 123456789_125" name="gw.no_traffic_limit">
+      <failure type="info" message="Keine Begrenzung von Anfragemenge oder Nachrichtengröße (durchgängig)">[INFO, wahrscheinlich] Keine Begrenzung von Anfragemenge oder Nachrichtengröße (durchgängig)
+Betrifft 49 von 50 APIs. Ein Merkmal, das nahezu überall auftritt, beschreibt eine Gewohnheit und wird deshalb gesammelt gemeldet statt je Endpunkt einzeln. Auf API-Ebene ist keine Traffic-Begrenzung konfiguriert. Eine global gesetzte Threat-Protection kann greifen — sie ist in diesem Export jedoch nicht enthalten und daher hier nicht nachweisbar.
+Empfehlung: Eine Traffic-Monitoring-Policy je API setzen oder die globale Threat-Protection-Konfiguration mit exportieren und prüfen.</failure>
+    </testcase>
+    <testcase classname="wm-audit.R20 123456789_125" name="gw.throttle_long_window"/>
+    <testcase classname="wm-audit.R20 123456789_125" name="gw.log_invocation"/>
+  </testsuite>
+  <testsuite name="API: R21 1e-07" tests="10" failures="2" errors="0" skipped="0">
+    <testcase classname="wm-audit.R21 1e-07" name="gw.no_identify_policy">
+      <failure type="high" message="API ohne Identify-and-Authorize-Policy (durchgängig)">[HIGH, belegt] API ohne Identify-and-Authorize-Policy (durchgängig)
+Betrifft 47 von 50 APIs. Ein Merkmal, das nahezu überall auftritt, beschreibt eine Gewohnheit und wird deshalb gesammelt gemeldet statt je Endpunkt einzeln. Für diese API ist keine Identify-and-Authorize-Policy konfiguriert. Das Gateway identifiziert den Aufrufer damit nicht und reicht jede Anfrage an das Backend weiter.
+Empfehlung: Im Policy-Stage „Identify and Access“ eine Identify-and-Authorize-Policy einrichten. Ist die API bewusst öffentlich, sollte das dokumentiert und durch Threat-Protection und Rate-Limits abgesichert sein.</failure>
+    </testcase>
+    <testcase classname="wm-audit.R21 1e-07" name="gw.anonymous_allowed"/>
+    <testcase classname="wm-audit.R21 1e-07" name="gw.identify_or"/>
+    <testcase classname="wm-audit.R21 1e-07" name="gw.application_identity_only"/>
+    <testcase classname="wm-audit.R21 1e-07" name="gw.http_allowed"/>
+    <testcase classname="wm-audit.R21 1e-07" name="gw.plaintext_backend"/>
+    <testcase classname="wm-audit.R21 1e-07" name="gw.pass_security_headers"/>
+    <testcase classname="wm-audit.R21 1e-07" name="gw.no_traffic_limit">
+      <failure type="info" message="Keine Begrenzung von Anfragemenge oder Nachrichtengröße (durchgängig)">[INFO, wahrscheinlich] Keine Begrenzung von Anfragemenge oder Nachrichtengröße (durchgängig)
+Betrifft 49 von 50 APIs. Ein Merkmal, das nahezu überall auftritt, beschreibt eine Gewohnheit und wird deshalb gesammelt gemeldet statt je Endpunkt einzeln. Auf API-Ebene ist keine Traffic-Begrenzung konfiguriert. Eine global gesetzte Threat-Protection kann greifen — sie ist in diesem Export jedoch nicht enthalten und daher hier nicht nachweisbar.
+Empfehlung: Eine Traffic-Monitoring-Policy je API setzen oder die globale Threat-Protection-Konfiguration mit exportieren und prüfen.</failure>
+    </testcase>
+    <testcase classname="wm-audit.R21 1e-07" name="gw.throttle_long_window"/>
+    <testcase classname="wm-audit.R21 1e-07" name="gw.log_invocation"/>
+  </testsuite>
+  <testsuite name="API: R22 9007199254740992.0" tests="10" failures="2" errors="0" skipped="0">
+    <testcase classname="wm-audit.R22 9007199254740992_0" name="gw.no_identify_policy">
+      <failure type="high" message="API ohne Identify-and-Authorize-Policy (durchgängig)">[HIGH, belegt] API ohne Identify-and-Authorize-Policy (durchgängig)
+Betrifft 47 von 50 APIs. Ein Merkmal, das nahezu überall auftritt, beschreibt eine Gewohnheit und wird deshalb gesammelt gemeldet statt je Endpunkt einzeln. Für diese API ist keine Identify-and-Authorize-Policy konfiguriert. Das Gateway identifiziert den Aufrufer damit nicht und reicht jede Anfrage an das Backend weiter.
+Empfehlung: Im Policy-Stage „Identify and Access“ eine Identify-and-Authorize-Policy einrichten. Ist die API bewusst öffentlich, sollte das dokumentiert und durch Threat-Protection und Rate-Limits abgesichert sein.</failure>
+    </testcase>
+    <testcase classname="wm-audit.R22 9007199254740992_0" name="gw.anonymous_allowed"/>
+    <testcase classname="wm-audit.R22 9007199254740992_0" name="gw.identify_or"/>
+    <testcase classname="wm-audit.R22 9007199254740992_0" name="gw.application_identity_only"/>
+    <testcase classname="wm-audit.R22 9007199254740992_0" name="gw.http_allowed"/>
+    <testcase classname="wm-audit.R22 9007199254740992_0" name="gw.plaintext_backend"/>
+    <testcase classname="wm-audit.R22 9007199254740992_0" name="gw.pass_security_headers"/>
+    <testcase classname="wm-audit.R22 9007199254740992_0" name="gw.no_traffic_limit">
+      <failure type="info" message="Keine Begrenzung von Anfragemenge oder Nachrichtengröße (durchgängig)">[INFO, wahrscheinlich] Keine Begrenzung von Anfragemenge oder Nachrichtengröße (durchgängig)
+Betrifft 49 von 50 APIs. Ein Merkmal, das nahezu überall auftritt, beschreibt eine Gewohnheit und wird deshalb gesammelt gemeldet statt je Endpunkt einzeln. Auf API-Ebene ist keine Traffic-Begrenzung konfiguriert. Eine global gesetzte Threat-Protection kann greifen — sie ist in diesem Export jedoch nicht enthalten und daher hier nicht nachweisbar.
+Empfehlung: Eine Traffic-Monitoring-Policy je API setzen oder die globale Threat-Protection-Konfiguration mit exportieren und prüfen.</failure>
+    </testcase>
+    <testcase classname="wm-audit.R22 9007199254740992_0" name="gw.throttle_long_window"/>
+    <testcase classname="wm-audit.R22 9007199254740992_0" name="gw.log_invocation"/>
+  </testsuite>
+  <testsuite name="API: R23 1.0" tests="10" failures="2" errors="0" skipped="0">
+    <testcase classname="wm-audit.R23 1_0" name="gw.no_identify_policy">
+      <failure type="high" message="API ohne Identify-and-Authorize-Policy (durchgängig)">[HIGH, belegt] API ohne Identify-and-Authorize-Policy (durchgängig)
+Betrifft 47 von 50 APIs. Ein Merkmal, das nahezu überall auftritt, beschreibt eine Gewohnheit und wird deshalb gesammelt gemeldet statt je Endpunkt einzeln. Für diese API ist keine Identify-and-Authorize-Policy konfiguriert. Das Gateway identifiziert den Aufrufer damit nicht und reicht jede Anfrage an das Backend weiter.
+Empfehlung: Im Policy-Stage „Identify and Access“ eine Identify-and-Authorize-Policy einrichten. Ist die API bewusst öffentlich, sollte das dokumentiert und durch Threat-Protection und Rate-Limits abgesichert sein.</failure>
+    </testcase>
+    <testcase classname="wm-audit.R23 1_0" name="gw.anonymous_allowed"/>
+    <testcase classname="wm-audit.R23 1_0" name="gw.identify_or"/>
+    <testcase classname="wm-audit.R23 1_0" name="gw.application_identity_only"/>
+    <testcase classname="wm-audit.R23 1_0" name="gw.http_allowed"/>
+    <testcase classname="wm-audit.R23 1_0" name="gw.plaintext_backend"/>
+    <testcase classname="wm-audit.R23 1_0" name="gw.pass_security_headers"/>
+    <testcase classname="wm-audit.R23 1_0" name="gw.no_traffic_limit">
+      <failure type="info" message="Keine Begrenzung von Anfragemenge oder Nachrichtengröße (durchgängig)">[INFO, wahrscheinlich] Keine Begrenzung von Anfragemenge oder Nachrichtengröße (durchgängig)
+Betrifft 49 von 50 APIs. Ein Merkmal, das nahezu überall auftritt, beschreibt eine Gewohnheit und wird deshalb gesammelt gemeldet statt je Endpunkt einzeln. Auf API-Ebene ist keine Traffic-Begrenzung konfiguriert. Eine global gesetzte Threat-Protection kann greifen — sie ist in diesem Export jedoch nicht enthalten und daher hier nicht nachweisbar.
+Empfehlung: Eine Traffic-Monitoring-Policy je API setzen oder die globale Threat-Protection-Konfiguration mit exportieren und prüfen.</failure>
+    </testcase>
+    <testcase classname="wm-audit.R23 1_0" name="gw.throttle_long_window"/>
+    <testcase classname="wm-audit.R23 1_0" name="gw.log_invocation"/>
+  </testsuite>
+  <testsuite name="API: R24 5e-324" tests="10" failures="2" errors="0" skipped="0">
+    <testcase classname="wm-audit.R24 5e-324" name="gw.no_identify_policy">
+      <failure type="high" message="API ohne Identify-and-Authorize-Policy (durchgängig)">[HIGH, belegt] API ohne Identify-and-Authorize-Policy (durchgängig)
+Betrifft 47 von 50 APIs. Ein Merkmal, das nahezu überall auftritt, beschreibt eine Gewohnheit und wird deshalb gesammelt gemeldet statt je Endpunkt einzeln. Für diese API ist keine Identify-and-Authorize-Policy konfiguriert. Das Gateway identifiziert den Aufrufer damit nicht und reicht jede Anfrage an das Backend weiter.
+Empfehlung: Im Policy-Stage „Identify and Access“ eine Identify-and-Authorize-Policy einrichten. Ist die API bewusst öffentlich, sollte das dokumentiert und durch Threat-Protection und Rate-Limits abgesichert sein.</failure>
+    </testcase>
+    <testcase classname="wm-audit.R24 5e-324" name="gw.anonymous_allowed"/>
+    <testcase classname="wm-audit.R24 5e-324" name="gw.identify_or"/>
+    <testcase classname="wm-audit.R24 5e-324" name="gw.application_identity_only"/>
+    <testcase classname="wm-audit.R24 5e-324" name="gw.http_allowed"/>
+    <testcase classname="wm-audit.R24 5e-324" name="gw.plaintext_backend"/>
+    <testcase classname="wm-audit.R24 5e-324" name="gw.pass_security_headers"/>
+    <testcase classname="wm-audit.R24 5e-324" name="gw.no_traffic_limit">
+      <failure type="info" message="Keine Begrenzung von Anfragemenge oder Nachrichtengröße (durchgängig)">[INFO, wahrscheinlich] Keine Begrenzung von Anfragemenge oder Nachrichtengröße (durchgängig)
+Betrifft 49 von 50 APIs. Ein Merkmal, das nahezu überall auftritt, beschreibt eine Gewohnheit und wird deshalb gesammelt gemeldet statt je Endpunkt einzeln. Auf API-Ebene ist keine Traffic-Begrenzung konfiguriert. Eine global gesetzte Threat-Protection kann greifen — sie ist in diesem Export jedoch nicht enthalten und daher hier nicht nachweisbar.
+Empfehlung: Eine Traffic-Monitoring-Policy je API setzen oder die globale Threat-Protection-Konfiguration mit exportieren und prüfen.</failure>
+    </testcase>
+    <testcase classname="wm-audit.R24 5e-324" name="gw.throttle_long_window"/>
+    <testcase classname="wm-audit.R24 5e-324" name="gw.log_invocation"/>
+  </testsuite>
+  <testsuite name="API: R25 1.7976931348623157e+308" tests="10" failures="2" errors="0" skipped="0">
+    <testcase classname="wm-audit.R25 1_7976931348623157e+308" name="gw.no_identify_policy">
+      <failure type="high" message="API ohne Identify-and-Authorize-Policy (durchgängig)">[HIGH, belegt] API ohne Identify-and-Authorize-Policy (durchgängig)
+Betrifft 47 von 50 APIs. Ein Merkmal, das nahezu überall auftritt, beschreibt eine Gewohnheit und wird deshalb gesammelt gemeldet statt je Endpunkt einzeln. Für diese API ist keine Identify-and-Authorize-Policy konfiguriert. Das Gateway identifiziert den Aufrufer damit nicht und reicht jede Anfrage an das Backend weiter.
+Empfehlung: Im Policy-Stage „Identify and Access“ eine Identify-and-Authorize-Policy einrichten. Ist die API bewusst öffentlich, sollte das dokumentiert und durch Threat-Protection und Rate-Limits abgesichert sein.</failure>
+    </testcase>
+    <testcase classname="wm-audit.R25 1_7976931348623157e+308" name="gw.anonymous_allowed"/>
+    <testcase classname="wm-audit.R25 1_7976931348623157e+308" name="gw.identify_or"/>
+    <testcase classname="wm-audit.R25 1_7976931348623157e+308" name="gw.application_identity_only"/>
+    <testcase classname="wm-audit.R25 1_7976931348623157e+308" name="gw.http_allowed"/>
+    <testcase classname="wm-audit.R25 1_7976931348623157e+308" name="gw.plaintext_backend"/>
+    <testcase classname="wm-audit.R25 1_7976931348623157e+308" name="gw.pass_security_headers"/>
+    <testcase classname="wm-audit.R25 1_7976931348623157e+308" name="gw.no_traffic_limit">
+      <failure type="info" message="Keine Begrenzung von Anfragemenge oder Nachrichtengröße (durchgängig)">[INFO, wahrscheinlich] Keine Begrenzung von Anfragemenge oder Nachrichtengröße (durchgängig)
+Betrifft 49 von 50 APIs. Ein Merkmal, das nahezu überall auftritt, beschreibt eine Gewohnheit und wird deshalb gesammelt gemeldet statt je Endpunkt einzeln. Auf API-Ebene ist keine Traffic-Begrenzung konfiguriert. Eine global gesetzte Threat-Protection kann greifen — sie ist in diesem Export jedoch nicht enthalten und daher hier nicht nachweisbar.
+Empfehlung: Eine Traffic-Monitoring-Policy je API setzen oder die globale Threat-Protection-Konfiguration mit exportieren und prüfen.</failure>
+    </testcase>
+    <testcase classname="wm-audit.R25 1_7976931348623157e+308" name="gw.throttle_long_window"/>
+    <testcase classname="wm-audit.R25 1_7976931348623157e+308" name="gw.log_invocation"/>
+  </testsuite>
+  <testsuite name="API: R26 -0.0" tests="10" failures="2" errors="0" skipped="0">
+    <testcase classname="wm-audit.R26 -0_0" name="gw.no_identify_policy">
+      <failure type="high" message="API ohne Identify-and-Authorize-Policy (durchgängig)">[HIGH, belegt] API ohne Identify-and-Authorize-Policy (durchgängig)
+Betrifft 47 von 50 APIs. Ein Merkmal, das nahezu überall auftritt, beschreibt eine Gewohnheit und wird deshalb gesammelt gemeldet statt je Endpunkt einzeln. Für diese API ist keine Identify-and-Authorize-Policy konfiguriert. Das Gateway identifiziert den Aufrufer damit nicht und reicht jede Anfrage an das Backend weiter.
+Empfehlung: Im Policy-Stage „Identify and Access“ eine Identify-and-Authorize-Policy einrichten. Ist die API bewusst öffentlich, sollte das dokumentiert und durch Threat-Protection und Rate-Limits abgesichert sein.</failure>
+    </testcase>
+    <testcase classname="wm-audit.R26 -0_0" name="gw.anonymous_allowed"/>
+    <testcase classname="wm-audit.R26 -0_0" name="gw.identify_or"/>
+    <testcase classname="wm-audit.R26 -0_0" name="gw.application_identity_only"/>
+    <testcase classname="wm-audit.R26 -0_0" name="gw.http_allowed"/>
+    <testcase classname="wm-audit.R26 -0_0" name="gw.plaintext_backend"/>
+    <testcase classname="wm-audit.R26 -0_0" name="gw.pass_security_headers"/>
+    <testcase classname="wm-audit.R26 -0_0" name="gw.no_traffic_limit">
+      <failure type="info" message="Keine Begrenzung von Anfragemenge oder Nachrichtengröße (durchgängig)">[INFO, wahrscheinlich] Keine Begrenzung von Anfragemenge oder Nachrichtengröße (durchgängig)
+Betrifft 49 von 50 APIs. Ein Merkmal, das nahezu überall auftritt, beschreibt eine Gewohnheit und wird deshalb gesammelt gemeldet statt je Endpunkt einzeln. Auf API-Ebene ist keine Traffic-Begrenzung konfiguriert. Eine global gesetzte Threat-Protection kann greifen — sie ist in diesem Export jedoch nicht enthalten und daher hier nicht nachweisbar.
+Empfehlung: Eine Traffic-Monitoring-Policy je API setzen oder die globale Threat-Protection-Konfiguration mit exportieren und prüfen.</failure>
+    </testcase>
+    <testcase classname="wm-audit.R26 -0_0" name="gw.throttle_long_window"/>
+    <testcase classname="wm-audit.R26 -0_0" name="gw.log_invocation"/>
+  </testsuite>
+  <testsuite name="API: R27 0.30000000000000004" tests="10" failures="2" errors="0" skipped="0">
+    <testcase classname="wm-audit.R27 0_30000000000000004" name="gw.no_identify_policy">
+      <failure type="high" message="API ohne Identify-and-Authorize-Policy (durchgängig)">[HIGH, belegt] API ohne Identify-and-Authorize-Policy (durchgängig)
+Betrifft 47 von 50 APIs. Ein Merkmal, das nahezu überall auftritt, beschreibt eine Gewohnheit und wird deshalb gesammelt gemeldet statt je Endpunkt einzeln. Für diese API ist keine Identify-and-Authorize-Policy konfiguriert. Das Gateway identifiziert den Aufrufer damit nicht und reicht jede Anfrage an das Backend weiter.
+Empfehlung: Im Policy-Stage „Identify and Access“ eine Identify-and-Authorize-Policy einrichten. Ist die API bewusst öffentlich, sollte das dokumentiert und durch Threat-Protection und Rate-Limits abgesichert sein.</failure>
+    </testcase>
+    <testcase classname="wm-audit.R27 0_30000000000000004" name="gw.anonymous_allowed"/>
+    <testcase classname="wm-audit.R27 0_30000000000000004" name="gw.identify_or"/>
+    <testcase classname="wm-audit.R27 0_30000000000000004" name="gw.application_identity_only"/>
+    <testcase classname="wm-audit.R27 0_30000000000000004" name="gw.http_allowed"/>
+    <testcase classname="wm-audit.R27 0_30000000000000004" name="gw.plaintext_backend"/>
+    <testcase classname="wm-audit.R27 0_30000000000000004" name="gw.pass_security_headers"/>
+    <testcase classname="wm-audit.R27 0_30000000000000004" name="gw.no_traffic_limit">
+      <failure type="info" message="Keine Begrenzung von Anfragemenge oder Nachrichtengröße (durchgängig)">[INFO, wahrscheinlich] Keine Begrenzung von Anfragemenge oder Nachrichtengröße (durchgängig)
+Betrifft 49 von 50 APIs. Ein Merkmal, das nahezu überall auftritt, beschreibt eine Gewohnheit und wird deshalb gesammelt gemeldet statt je Endpunkt einzeln. Auf API-Ebene ist keine Traffic-Begrenzung konfiguriert. Eine global gesetzte Threat-Protection kann greifen — sie ist in diesem Export jedoch nicht enthalten und daher hier nicht nachweisbar.
+Empfehlung: Eine Traffic-Monitoring-Policy je API setzen oder die globale Threat-Protection-Konfiguration mit exportieren und prüfen.</failure>
+    </testcase>
+    <testcase classname="wm-audit.R27 0_30000000000000004" name="gw.throttle_long_window"/>
+    <testcase classname="wm-audit.R27 0_30000000000000004" name="gw.log_invocation"/>
+  </testsuite>
+  <testsuite name="API: R3 1e+16" tests="10" failures="2" errors="0" skipped="0">
+    <testcase classname="wm-audit.R3 1e+16" name="gw.no_identify_policy">
+      <failure type="high" message="API ohne Identify-and-Authorize-Policy (durchgängig)">[HIGH, belegt] API ohne Identify-and-Authorize-Policy (durchgängig)
+Betrifft 47 von 50 APIs. Ein Merkmal, das nahezu überall auftritt, beschreibt eine Gewohnheit und wird deshalb gesammelt gemeldet statt je Endpunkt einzeln. Für diese API ist keine Identify-and-Authorize-Policy konfiguriert. Das Gateway identifiziert den Aufrufer damit nicht und reicht jede Anfrage an das Backend weiter.
+Empfehlung: Im Policy-Stage „Identify and Access“ eine Identify-and-Authorize-Policy einrichten. Ist die API bewusst öffentlich, sollte das dokumentiert und durch Threat-Protection und Rate-Limits abgesichert sein.</failure>
+    </testcase>
+    <testcase classname="wm-audit.R3 1e+16" name="gw.anonymous_allowed"/>
+    <testcase classname="wm-audit.R3 1e+16" name="gw.identify_or"/>
+    <testcase classname="wm-audit.R3 1e+16" name="gw.application_identity_only"/>
+    <testcase classname="wm-audit.R3 1e+16" name="gw.http_allowed"/>
+    <testcase classname="wm-audit.R3 1e+16" name="gw.plaintext_backend"/>
+    <testcase classname="wm-audit.R3 1e+16" name="gw.pass_security_headers"/>
+    <testcase classname="wm-audit.R3 1e+16" name="gw.no_traffic_limit">
+      <failure type="info" message="Keine Begrenzung von Anfragemenge oder Nachrichtengröße (durchgängig)">[INFO, wahrscheinlich] Keine Begrenzung von Anfragemenge oder Nachrichtengröße (durchgängig)
+Betrifft 49 von 50 APIs. Ein Merkmal, das nahezu überall auftritt, beschreibt eine Gewohnheit und wird deshalb gesammelt gemeldet statt je Endpunkt einzeln. Auf API-Ebene ist keine Traffic-Begrenzung konfiguriert. Eine global gesetzte Threat-Protection kann greifen — sie ist in diesem Export jedoch nicht enthalten und daher hier nicht nachweisbar.
+Empfehlung: Eine Traffic-Monitoring-Policy je API setzen oder die globale Threat-Protection-Konfiguration mit exportieren und prüfen.</failure>
+    </testcase>
+    <testcase classname="wm-audit.R3 1e+16" name="gw.throttle_long_window"/>
+    <testcase classname="wm-audit.R3 1e+16" name="gw.log_invocation"/>
+  </testsuite>
+  <testsuite name="API: R4 0.0001" tests="10" failures="2" errors="0" skipped="0">
+    <testcase classname="wm-audit.R4 0_0001" name="gw.no_identify_policy">
+      <failure type="high" message="API ohne Identify-and-Authorize-Policy (durchgängig)">[HIGH, belegt] API ohne Identify-and-Authorize-Policy (durchgängig)
+Betrifft 47 von 50 APIs. Ein Merkmal, das nahezu überall auftritt, beschreibt eine Gewohnheit und wird deshalb gesammelt gemeldet statt je Endpunkt einzeln. Für diese API ist keine Identify-and-Authorize-Policy konfiguriert. Das Gateway identifiziert den Aufrufer damit nicht und reicht jede Anfrage an das Backend weiter.
+Empfehlung: Im Policy-Stage „Identify and Access“ eine Identify-and-Authorize-Policy einrichten. Ist die API bewusst öffentlich, sollte das dokumentiert und durch Threat-Protection und Rate-Limits abgesichert sein.</failure>
+    </testcase>
+    <testcase classname="wm-audit.R4 0_0001" name="gw.anonymous_allowed"/>
+    <testcase classname="wm-audit.R4 0_0001" name="gw.identify_or"/>
+    <testcase classname="wm-audit.R4 0_0001" name="gw.application_identity_only"/>
+    <testcase classname="wm-audit.R4 0_0001" name="gw.http_allowed"/>
+    <testcase classname="wm-audit.R4 0_0001" name="gw.plaintext_backend"/>
+    <testcase classname="wm-audit.R4 0_0001" name="gw.pass_security_headers"/>
+    <testcase classname="wm-audit.R4 0_0001" name="gw.no_traffic_limit">
+      <failure type="info" message="Keine Begrenzung von Anfragemenge oder Nachrichtengröße (durchgängig)">[INFO, wahrscheinlich] Keine Begrenzung von Anfragemenge oder Nachrichtengröße (durchgängig)
+Betrifft 49 von 50 APIs. Ein Merkmal, das nahezu überall auftritt, beschreibt eine Gewohnheit und wird deshalb gesammelt gemeldet statt je Endpunkt einzeln. Auf API-Ebene ist keine Traffic-Begrenzung konfiguriert. Eine global gesetzte Threat-Protection kann greifen — sie ist in diesem Export jedoch nicht enthalten und daher hier nicht nachweisbar.
+Empfehlung: Eine Traffic-Monitoring-Policy je API setzen oder die globale Threat-Protection-Konfiguration mit exportieren und prüfen.</failure>
+    </testcase>
+    <testcase classname="wm-audit.R4 0_0001" name="gw.throttle_long_window"/>
+    <testcase classname="wm-audit.R4 0_0001" name="gw.log_invocation"/>
+  </testsuite>
+  <testsuite name="API: R5 1e-05" tests="10" failures="2" errors="0" skipped="0">
+    <testcase classname="wm-audit.R5 1e-05" name="gw.no_identify_policy">
+      <failure type="high" message="API ohne Identify-and-Authorize-Policy (durchgängig)">[HIGH, belegt] API ohne Identify-and-Authorize-Policy (durchgängig)
+Betrifft 47 von 50 APIs. Ein Merkmal, das nahezu überall auftritt, beschreibt eine Gewohnheit und wird deshalb gesammelt gemeldet statt je Endpunkt einzeln. Für diese API ist keine Identify-and-Authorize-Policy konfiguriert. Das Gateway identifiziert den Aufrufer damit nicht und reicht jede Anfrage an das Backend weiter.
+Empfehlung: Im Policy-Stage „Identify and Access“ eine Identify-and-Authorize-Policy einrichten. Ist die API bewusst öffentlich, sollte das dokumentiert und durch Threat-Protection und Rate-Limits abgesichert sein.</failure>
+    </testcase>
+    <testcase classname="wm-audit.R5 1e-05" name="gw.anonymous_allowed"/>
+    <testcase classname="wm-audit.R5 1e-05" name="gw.identify_or"/>
+    <testcase classname="wm-audit.R5 1e-05" name="gw.application_identity_only"/>
+    <testcase classname="wm-audit.R5 1e-05" name="gw.http_allowed"/>
+    <testcase classname="wm-audit.R5 1e-05" name="gw.plaintext_backend"/>
+    <testcase classname="wm-audit.R5 1e-05" name="gw.pass_security_headers"/>
+    <testcase classname="wm-audit.R5 1e-05" name="gw.no_traffic_limit">
+      <failure type="info" message="Keine Begrenzung von Anfragemenge oder Nachrichtengröße (durchgängig)">[INFO, wahrscheinlich] Keine Begrenzung von Anfragemenge oder Nachrichtengröße (durchgängig)
+Betrifft 49 von 50 APIs. Ein Merkmal, das nahezu überall auftritt, beschreibt eine Gewohnheit und wird deshalb gesammelt gemeldet statt je Endpunkt einzeln. Auf API-Ebene ist keine Traffic-Begrenzung konfiguriert. Eine global gesetzte Threat-Protection kann greifen — sie ist in diesem Export jedoch nicht enthalten und daher hier nicht nachweisbar.
+Empfehlung: Eine Traffic-Monitoring-Policy je API setzen oder die globale Threat-Protection-Konfiguration mit exportieren und prüfen.</failure>
+    </testcase>
+    <testcase classname="wm-audit.R5 1e-05" name="gw.throttle_long_window"/>
+    <testcase classname="wm-audit.R5 1e-05" name="gw.log_invocation"/>
+  </testsuite>
+  <testsuite name="API: R6 -0.0" tests="10" failures="2" errors="0" skipped="0">
+    <testcase classname="wm-audit.R6 -0_0" name="gw.no_identify_policy">
+      <failure type="high" message="API ohne Identify-and-Authorize-Policy (durchgängig)">[HIGH, belegt] API ohne Identify-and-Authorize-Policy (durchgängig)
+Betrifft 47 von 50 APIs. Ein Merkmal, das nahezu überall auftritt, beschreibt eine Gewohnheit und wird deshalb gesammelt gemeldet statt je Endpunkt einzeln. Für diese API ist keine Identify-and-Authorize-Policy konfiguriert. Das Gateway identifiziert den Aufrufer damit nicht und reicht jede Anfrage an das Backend weiter.
+Empfehlung: Im Policy-Stage „Identify and Access“ eine Identify-and-Authorize-Policy einrichten. Ist die API bewusst öffentlich, sollte das dokumentiert und durch Threat-Protection und Rate-Limits abgesichert sein.</failure>
+    </testcase>
+    <testcase classname="wm-audit.R6 -0_0" name="gw.anonymous_allowed"/>
+    <testcase classname="wm-audit.R6 -0_0" name="gw.identify_or"/>
+    <testcase classname="wm-audit.R6 -0_0" name="gw.application_identity_only"/>
+    <testcase classname="wm-audit.R6 -0_0" name="gw.http_allowed"/>
+    <testcase classname="wm-audit.R6 -0_0" name="gw.plaintext_backend"/>
+    <testcase classname="wm-audit.R6 -0_0" name="gw.pass_security_headers"/>
+    <testcase classname="wm-audit.R6 -0_0" name="gw.no_traffic_limit">
+      <failure type="info" message="Keine Begrenzung von Anfragemenge oder Nachrichtengröße (durchgängig)">[INFO, wahrscheinlich] Keine Begrenzung von Anfragemenge oder Nachrichtengröße (durchgängig)
+Betrifft 49 von 50 APIs. Ein Merkmal, das nahezu überall auftritt, beschreibt eine Gewohnheit und wird deshalb gesammelt gemeldet statt je Endpunkt einzeln. Auf API-Ebene ist keine Traffic-Begrenzung konfiguriert. Eine global gesetzte Threat-Protection kann greifen — sie ist in diesem Export jedoch nicht enthalten und daher hier nicht nachweisbar.
+Empfehlung: Eine Traffic-Monitoring-Policy je API setzen oder die globale Threat-Protection-Konfiguration mit exportieren und prüfen.</failure>
+    </testcase>
+    <testcase classname="wm-audit.R6 -0_0" name="gw.throttle_long_window"/>
+    <testcase classname="wm-audit.R6 -0_0" name="gw.log_invocation"/>
+  </testsuite>
+  <testsuite name="API: R7 1.2345678901234568e+22" tests="10" failures="2" errors="0" skipped="0">
+    <testcase classname="wm-audit.R7 1_2345678901234568e+22" name="gw.no_identify_policy">
+      <failure type="high" message="API ohne Identify-and-Authorize-Policy (durchgängig)">[HIGH, belegt] API ohne Identify-and-Authorize-Policy (durchgängig)
+Betrifft 47 von 50 APIs. Ein Merkmal, das nahezu überall auftritt, beschreibt eine Gewohnheit und wird deshalb gesammelt gemeldet statt je Endpunkt einzeln. Für diese API ist keine Identify-and-Authorize-Policy konfiguriert. Das Gateway identifiziert den Aufrufer damit nicht und reicht jede Anfrage an das Backend weiter.
+Empfehlung: Im Policy-Stage „Identify and Access“ eine Identify-and-Authorize-Policy einrichten. Ist die API bewusst öffentlich, sollte das dokumentiert und durch Threat-Protection und Rate-Limits abgesichert sein.</failure>
+    </testcase>
+    <testcase classname="wm-audit.R7 1_2345678901234568e+22" name="gw.anonymous_allowed"/>
+    <testcase classname="wm-audit.R7 1_2345678901234568e+22" name="gw.identify_or"/>
+    <testcase classname="wm-audit.R7 1_2345678901234568e+22" name="gw.application_identity_only"/>
+    <testcase classname="wm-audit.R7 1_2345678901234568e+22" name="gw.http_allowed"/>
+    <testcase classname="wm-audit.R7 1_2345678901234568e+22" name="gw.plaintext_backend"/>
+    <testcase classname="wm-audit.R7 1_2345678901234568e+22" name="gw.pass_security_headers"/>
+    <testcase classname="wm-audit.R7 1_2345678901234568e+22" name="gw.no_traffic_limit">
+      <failure type="info" message="Keine Begrenzung von Anfragemenge oder Nachrichtengröße (durchgängig)">[INFO, wahrscheinlich] Keine Begrenzung von Anfragemenge oder Nachrichtengröße (durchgängig)
+Betrifft 49 von 50 APIs. Ein Merkmal, das nahezu überall auftritt, beschreibt eine Gewohnheit und wird deshalb gesammelt gemeldet statt je Endpunkt einzeln. Auf API-Ebene ist keine Traffic-Begrenzung konfiguriert. Eine global gesetzte Threat-Protection kann greifen — sie ist in diesem Export jedoch nicht enthalten und daher hier nicht nachweisbar.
+Empfehlung: Eine Traffic-Monitoring-Policy je API setzen oder die globale Threat-Protection-Konfiguration mit exportieren und prüfen.</failure>
+    </testcase>
+    <testcase classname="wm-audit.R7 1_2345678901234568e+22" name="gw.throttle_long_window"/>
+    <testcase classname="wm-audit.R7 1_2345678901234568e+22" name="gw.log_invocation"/>
+  </testsuite>
+  <testsuite name="API: R8" tests="10" failures="2" errors="0" skipped="0">
+    <testcase classname="wm-audit.R8" name="gw.no_identify_policy">
+      <failure type="high" message="API ohne Identify-and-Authorize-Policy (durchgängig)">[HIGH, belegt] API ohne Identify-and-Authorize-Policy (durchgängig)
+Betrifft 47 von 50 APIs. Ein Merkmal, das nahezu überall auftritt, beschreibt eine Gewohnheit und wird deshalb gesammelt gemeldet statt je Endpunkt einzeln. Für diese API ist keine Identify-and-Authorize-Policy konfiguriert. Das Gateway identifiziert den Aufrufer damit nicht und reicht jede Anfrage an das Backend weiter.
+Empfehlung: Im Policy-Stage „Identify and Access“ eine Identify-and-Authorize-Policy einrichten. Ist die API bewusst öffentlich, sollte das dokumentiert und durch Threat-Protection und Rate-Limits abgesichert sein.</failure>
+    </testcase>
+    <testcase classname="wm-audit.R8" name="gw.anonymous_allowed"/>
+    <testcase classname="wm-audit.R8" name="gw.identify_or"/>
+    <testcase classname="wm-audit.R8" name="gw.application_identity_only"/>
+    <testcase classname="wm-audit.R8" name="gw.http_allowed"/>
+    <testcase classname="wm-audit.R8" name="gw.plaintext_backend"/>
+    <testcase classname="wm-audit.R8" name="gw.pass_security_headers"/>
+    <testcase classname="wm-audit.R8" name="gw.no_traffic_limit">
+      <failure type="info" message="Keine Begrenzung von Anfragemenge oder Nachrichtengröße (durchgängig)">[INFO, wahrscheinlich] Keine Begrenzung von Anfragemenge oder Nachrichtengröße (durchgängig)
+Betrifft 49 von 50 APIs. Ein Merkmal, das nahezu überall auftritt, beschreibt eine Gewohnheit und wird deshalb gesammelt gemeldet statt je Endpunkt einzeln. Auf API-Ebene ist keine Traffic-Begrenzung konfiguriert. Eine global gesetzte Threat-Protection kann greifen — sie ist in diesem Export jedoch nicht enthalten und daher hier nicht nachweisbar.
+Empfehlung: Eine Traffic-Monitoring-Policy je API setzen oder die globale Threat-Protection-Konfiguration mit exportieren und prüfen.</failure>
+    </testcase>
+    <testcase classname="wm-audit.R8" name="gw.throttle_long_window"/>
+    <testcase classname="wm-audit.R8" name="gw.log_invocation"/>
+  </testsuite>
+  <testsuite name="API: R9 true" tests="10" failures="2" errors="0" skipped="0">
+    <testcase classname="wm-audit.R9 true" name="gw.no_identify_policy">
+      <failure type="high" message="API ohne Identify-and-Authorize-Policy (durchgängig)">[HIGH, belegt] API ohne Identify-and-Authorize-Policy (durchgängig)
+Betrifft 47 von 50 APIs. Ein Merkmal, das nahezu überall auftritt, beschreibt eine Gewohnheit und wird deshalb gesammelt gemeldet statt je Endpunkt einzeln. Für diese API ist keine Identify-and-Authorize-Policy konfiguriert. Das Gateway identifiziert den Aufrufer damit nicht und reicht jede Anfrage an das Backend weiter.
+Empfehlung: Im Policy-Stage „Identify and Access“ eine Identify-and-Authorize-Policy einrichten. Ist die API bewusst öffentlich, sollte das dokumentiert und durch Threat-Protection und Rate-Limits abgesichert sein.</failure>
+    </testcase>
+    <testcase classname="wm-audit.R9 true" name="gw.anonymous_allowed"/>
+    <testcase classname="wm-audit.R9 true" name="gw.identify_or"/>
+    <testcase classname="wm-audit.R9 true" name="gw.application_identity_only"/>
+    <testcase classname="wm-audit.R9 true" name="gw.http_allowed"/>
+    <testcase classname="wm-audit.R9 true" name="gw.plaintext_backend"/>
+    <testcase classname="wm-audit.R9 true" name="gw.pass_security_headers"/>
+    <testcase classname="wm-audit.R9 true" name="gw.no_traffic_limit">
+      <failure type="info" message="Keine Begrenzung von Anfragemenge oder Nachrichtengröße (durchgängig)">[INFO, wahrscheinlich] Keine Begrenzung von Anfragemenge oder Nachrichtengröße (durchgängig)
+Betrifft 49 von 50 APIs. Ein Merkmal, das nahezu überall auftritt, beschreibt eine Gewohnheit und wird deshalb gesammelt gemeldet statt je Endpunkt einzeln. Auf API-Ebene ist keine Traffic-Begrenzung konfiguriert. Eine global gesetzte Threat-Protection kann greifen — sie ist in diesem Export jedoch nicht enthalten und daher hier nicht nachweisbar.
+Empfehlung: Eine Traffic-Monitoring-Policy je API setzen oder die globale Threat-Protection-Konfiguration mit exportieren und prüfen.</failure>
+    </testcase>
+    <testcase classname="wm-audit.R9 true" name="gw.throttle_long_window"/>
+    <testcase classname="wm-audit.R9 true" name="gw.log_invocation"/>
+  </testsuite>
+  <testsuite name="API: E1 1.0" tests="10" failures="2" errors="0" skipped="0">
+    <testcase classname="wm-audit.E1 1_0" name="gw.no_identify_policy">
+      <failure type="high" message="API ohne Identify-and-Authorize-Policy (durchgängig)">[HIGH, belegt] API ohne Identify-and-Authorize-Policy (durchgängig)
+Betrifft 47 von 50 APIs. Ein Merkmal, das nahezu überall auftritt, beschreibt eine Gewohnheit und wird deshalb gesammelt gemeldet statt je Endpunkt einzeln. Für diese API ist keine Identify-and-Authorize-Policy konfiguriert. Das Gateway identifiziert den Aufrufer damit nicht und reicht jede Anfrage an das Backend weiter.
+Empfehlung: Im Policy-Stage „Identify and Access“ eine Identify-and-Authorize-Policy einrichten. Ist die API bewusst öffentlich, sollte das dokumentiert und durch Threat-Protection und Rate-Limits abgesichert sein.</failure>
+    </testcase>
+    <testcase classname="wm-audit.E1 1_0" name="gw.anonymous_allowed"/>
+    <testcase classname="wm-audit.E1 1_0" name="gw.identify_or"/>
+    <testcase classname="wm-audit.E1 1_0" name="gw.application_identity_only"/>
+    <testcase classname="wm-audit.E1 1_0" name="gw.http_allowed"/>
+    <testcase classname="wm-audit.E1 1_0" name="gw.plaintext_backend"/>
+    <testcase classname="wm-audit.E1 1_0" name="gw.pass_security_headers"/>
+    <testcase classname="wm-audit.E1 1_0" name="gw.no_traffic_limit">
+      <failure type="info" message="Keine Begrenzung von Anfragemenge oder Nachrichtengröße (durchgängig)">[INFO, wahrscheinlich] Keine Begrenzung von Anfragemenge oder Nachrichtengröße (durchgängig)
+Betrifft 49 von 50 APIs. Ein Merkmal, das nahezu überall auftritt, beschreibt eine Gewohnheit und wird deshalb gesammelt gemeldet statt je Endpunkt einzeln. Auf API-Ebene ist keine Traffic-Begrenzung konfiguriert. Eine global gesetzte Threat-Protection kann greifen — sie ist in diesem Export jedoch nicht enthalten und daher hier nicht nachweisbar.
+Empfehlung: Eine Traffic-Monitoring-Policy je API setzen oder die globale Threat-Protection-Konfiguration mit exportieren und prüfen.</failure>
+    </testcase>
+    <testcase classname="wm-audit.E1 1_0" name="gw.throttle_long_window"/>
+    <testcase classname="wm-audit.E1 1_0" name="gw.log_invocation"/>
+  </testsuite>
+  <testsuite name="Statisch nicht prüfbar" tests="8" failures="0" errors="0" skipped="8">
+    <testcase classname="wm-audit.laufzeit" name="key_verification">
+      <skipped message="Wird ein erfundener API-Key tatsächlich abgewiesen? Ob die Policy im Betrieb greift, zeigt erst eine Anfrage."/>
+    </testcase>
+    <testcase classname="wm-audit.laufzeit" name="jwt_signature">
+      <skipped message="Wird die JWT-Signatur wirklich geprüft? Die Konfiguration nennt das Verfahren, nicht dessen Umsetzung."/>
+    </testcase>
+    <testcase classname="wm-audit.laufzeit" name="object_authorization">
+      <skipped message="Erreicht ein Aufrufer fremde Objekte? Objektbezogene Berechtigung liegt im Backend und braucht zwei Identitäten."/>
+    </testcase>
+    <testcase classname="wm-audit.laufzeit" name="role_enforcement">
+      <skipped message="Wird die Rollenprüfung durchgesetzt? Das Gateway identifiziert; autorisieren muss das Backend."/>
+    </testcase>
+    <testcase classname="wm-audit.laufzeit" name="trust_header">
+      <skipped message="Lässt sich ein Trust-Header fälschen? Hängt davon ab, wie das Backend eingehende Header behandelt."/>
+    </testcase>
+    <testcase classname="wm-audit.laufzeit" name="global_threat_protection">
+      <skipped message="Greift eine globale Threat-Protection? Globale Konfiguration liegt außerhalb des API-Exports."/>
+    </testcase>
+    <testcase classname="wm-audit.laufzeit" name="security_headers">
+      <skipped message="Werden Security-Header in Antworten gesetzt? Antwort-Header stehen in keiner Konfigurationsdatei."/>
+    </testcase>
+    <testcase classname="wm-audit.laufzeit" name="cors">
+      <skipped message="Wie verhält sich CORS tatsächlich? Erst eine Preflight-Anfrage zeigt die wirksame Regel."/>
+    </testcase>
+  </testsuite>
+</testsuites>

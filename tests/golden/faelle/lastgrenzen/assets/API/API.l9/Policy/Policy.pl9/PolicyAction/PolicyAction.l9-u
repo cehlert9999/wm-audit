@@ -1,0 +1,54 @@
+{
+ "id": "l9-u",
+ "names": [
+  {
+   "value": "19 Ziffern",
+   "locale": "en"
+  }
+ ],
+ "templateKey": "throttle",
+ "parameters": [
+  {
+   "templateKey": "throttleRule",
+   "parameters": [
+    {
+     "templateKey": "throttleRuleName",
+     "values": [
+      "requestCount"
+     ]
+    },
+    {
+     "templateKey": "monitorRuleOperator",
+     "values": [
+      "GT"
+     ]
+    },
+    {
+     "templateKey": "value",
+     "values": [
+      "1234567890123456789"
+     ]
+    }
+   ]
+  },
+  {
+   "templateKey": "alertInterval",
+   "values": [
+    "1"
+   ]
+  },
+  {
+   "templateKey": "alertIntervalUnit",
+   "values": [
+    "days"
+   ]
+  },
+  {
+   "templateKey": "alertFrequency",
+   "values": [
+    "once"
+   ]
+  }
+ ],
+ "active": false
+}

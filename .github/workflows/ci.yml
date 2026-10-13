@@ -1,0 +1,33 @@
+name: ci
+on:
+  push:
+  pull_request:
+  schedule:
+    # Montags: neue Schwachstellen tauchen auch ohne Codeänderung auf.
+    - cron: "17 5 * * 1"
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: rustup toolchain install stable --profile minimal --component rustfmt,clippy && rustup default stable
+      - run: cargo fmt --check
+      - run: cargo clippy --all-targets --locked -- -D warnings
+      - run: cargo test --locked
+  lieferkette:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: rustup toolchain install stable --profile minimal && rustup default stable
+      - uses: taiki-e/install-action@v2
+        with:
+          tool: cargo-deny,cargo-audit
+      - name: Lizenzen, Bann-Liste, Herkunft, Schwachstellen (cargo-deny)
+        run: cargo deny check
+      - name: Bekannte Schwachstellen, auch Warnungen (cargo-audit, RustSec)
+        run: cargo audit --deny warnings
+      - name: Keine Netzwerk-Crates im Abhängigkeitsbaum
+        run: |
+          if cargo tree -e normal --prefix none | grep -Ei '^(reqwest|hyper|tokio|mio|socket2|curl|ureq|native-tls|openssl|rustls) '; then
+            echo "Netzwerk-Crate gefunden" >&2; exit 1
+          fi

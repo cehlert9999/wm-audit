@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="wm-audit" tests="58" failures="8" errors="0">
+  <testsuite name="Export" tests="0" failures="0" errors="0" skipped="0">
+    <properties>
+      <property name="werkzeug" value="wm-audit 1.0.0"/>
+      <property name="quelle" value="aggregat"/>
+      <property name="art" value="verzeichnis"/>
+      <property name="apis_gelesen" value="5"/>
+      <property name="apis_eindeutig" value="5"/>
+      <property name="gesperrt" value="0"/>
+      <property name="uebersprungen" value="0"/>
+    </properties>
+  </testsuite>
+  <testsuite name="API: G1 1.0" tests="10" failures="3" errors="0" skipped="0">
+    <testcase classname="wm-audit.G1 1_0" name="gw.no_identify_policy"/>
+    <testcase classname="wm-audit.G1 1_0" name="gw.anonymous_allowed"/>
+    <testcase classname="wm-audit.G1 1_0" name="gw.identify_or"/>
+    <testcase classname="wm-audit.G1 1_0" name="gw.application_identity_only"/>
+    <testcase classname="wm-audit.G1 1_0" name="gw.http_allowed">
+      <failure type="high" message="Gateway akzeptiert unverschlüsseltes HTTP (durchgängig)">[HIGH, belegt] Gateway akzeptiert unverschlüsseltes HTTP (durchgängig)
+Betrifft 3 von 5 APIs. Ein Merkmal, das nahezu überall auftritt, beschreibt eine Gewohnheit und wird deshalb gesammelt gemeldet statt je Endpunkt einzeln. Die Entry-Protocol-Policy lässt HTTP zu. Zugangsdaten und Nutzdaten sind auf dem Weg zum Gateway mitlesbar.
+Empfehlung: Nur HTTPS zulassen und HTTP an der Kante umleiten oder abweisen.</failure>
+    </testcase>
+    <testcase classname="wm-audit.G1 1_0" name="gw.plaintext_backend">
+      <failure type="high" message="Weiterleitung an ein Klartext-Backend">[HIGH, belegt] Weiterleitung an ein Klartext-Backend
+Das Gateway leitet an http://g1.example weiter. Die Verbindung endet damit am Gateway; im internen Netz laufen die Daten im Klartext.
+Empfehlung: Das Backend über HTTPS ansprechen.
+Fundstelle: assets/API/API.g1/API.g1 | nativeEndpoint: http://g1.example</failure>
+    </testcase>
+    <testcase classname="wm-audit.G1 1_0" name="gw.pass_security_headers"/>
+    <testcase classname="wm-audit.G1 1_0" name="gw.no_traffic_limit">
+      <failure type="info" message="Keine Begrenzung von Anfragemenge oder Nachrichtengröße (durchgängig)">[INFO, wahrscheinlich] Keine Begrenzung von Anfragemenge oder Nachrichtengröße (durchgängig)
+Betrifft 3 von 5 APIs. Ein Merkmal, das nahezu überall auftritt, beschreibt eine Gewohnheit und wird deshalb gesammelt gemeldet statt je Endpunkt einzeln. Auf API-Ebene ist keine Traffic-Begrenzung konfiguriert. Eine global gesetzte Threat-Protection kann greifen — sie ist in diesem Export jedoch nicht enthalten und daher hier nicht nachweisbar.
+Empfehlung: Eine Traffic-Monitoring-Policy je API setzen oder die globale Threat-Protection-Konfiguration mit exportieren und prüfen.</failure>
+    </testcase>
+    <testcase classname="wm-audit.G1 1_0" name="gw.throttle_long_window"/>
+    <testcase classname="wm-audit.G1 1_0" name="gw.log_invocation"/>
+  </testsuite>
+  <testsuite name="API: G2 1.0" tests="10" failures="3" errors="0" skipped="0">
+    <testcase classname="wm-audit.G2 1_0" name="gw.no_identify_policy"/>
+    <testcase classname="wm-audit.G2 1_0" name="gw.anonymous_allowed"/>
+    <testcase classname="wm-audit.G2 1_0" name="gw.identify_or"/>
+    <testcase classname="wm-audit.G2 1_0" name="gw.application_identity_only"/>
+    <testcase classname="wm-audit.G2 1_0" name="gw.http_allowed">
+      <failure type="high" message="Gateway akzeptiert unverschlüsseltes HTTP (durchgängig)">[HIGH, belegt] Gateway akzeptiert unverschlüsseltes HTTP (durchgängig)
+Betrifft 3 von 5 APIs. Ein Merkmal, das nahezu überall auftritt, beschreibt eine Gewohnheit und wird deshalb gesammelt gemeldet statt je Endpunkt einzeln. Die Entry-Protocol-Policy lässt HTTP zu. Zugangsdaten und Nutzdaten sind auf dem Weg zum Gateway mitlesbar.
+Empfehlung: Nur HTTPS zulassen und HTTP an der Kante umleiten oder abweisen.</failure>
+    </testcase>
+    <testcase classname="wm-audit.G2 1_0" name="gw.plaintext_backend">
+      <failure type="high" message="Weiterleitung an ein Klartext-Backend">[HIGH, belegt] Weiterleitung an ein Klartext-Backend
+Das Gateway leitet an http://g2.example weiter. Die Verbindung endet damit am Gateway; im internen Netz laufen die Daten im Klartext.
+Empfehlung: Das Backend über HTTPS ansprechen.
+Fundstelle: assets/API/API.g2/API.g2 | nativeEndpoint: http://g2.example</failure>
+    </testcase>
+    <testcase classname="wm-audit.G2 1_0" name="gw.pass_security_headers"/>
+    <testcase classname="wm-audit.G2 1_0" name="gw.no_traffic_limit">
+      <failure type="info" message="Keine Begrenzung von Anfragemenge oder Nachrichtengröße (durchgängig)">[INFO, wahrscheinlich] Keine Begrenzung von Anfragemenge oder Nachrichtengröße (durchgängig)
+Betrifft 3 von 5 APIs. Ein Merkmal, das nahezu überall auftritt, beschreibt eine Gewohnheit und wird deshalb gesammelt gemeldet statt je Endpunkt einzeln. Auf API-Ebene ist keine Traffic-Begrenzung konfiguriert. Eine global gesetzte Threat-Protection kann greifen — sie ist in diesem Export jedoch nicht enthalten und daher hier nicht nachweisbar.
+Empfehlung: Eine Traffic-Monitoring-Policy je API setzen oder die globale Threat-Protection-Konfiguration mit exportieren und prüfen.</failure>
+    </testcase>
+    <testcase classname="wm-audit.G2 1_0" name="gw.throttle_long_window"/>
+    <testcase classname="wm-audit.G2 1_0" name="gw.log_invocation"/>
+  </testsuite>
+  <testsuite name="API: G3 1.0" tests="10" failures="2" errors="0" skipped="0">
+    <testcase classname="wm-audit.G3 1_0" name="gw.no_identify_policy"/>
+    <testcase classname="wm-audit.G3 1_0" name="gw.anonymous_allowed"/>
+    <testcase classname="wm-audit.G3 1_0" name="gw.identify_or"/>
+    <testcase classname="wm-audit.G3 1_0" name="gw.application_identity_only"/>
+    <testcase classname="wm-audit.G3 1_0" name="gw.http_allowed">
+      <failure type="high" message="Gateway akzeptiert unverschlüsseltes HTTP (durchgängig)">[HIGH, belegt] Gateway akzeptiert unverschlüsseltes HTTP (durchgängig)
+Betrifft 3 von 5 APIs. Ein Merkmal, das nahezu überall auftritt, beschreibt eine Gewohnheit und wird deshalb gesammelt gemeldet statt je Endpunkt einzeln. Die Entry-Protocol-Policy lässt HTTP zu. Zugangsdaten und Nutzdaten sind auf dem Weg zum Gateway mitlesbar.
+Empfehlung: Nur HTTPS zulassen und HTTP an der Kante umleiten oder abweisen.</failure>
+    </testcase>
+    <testcase classname="wm-audit.G3 1_0" name="gw.plaintext_backend"/>
+    <testcase classname="wm-audit.G3 1_0" name="gw.pass_security_headers"/>
+    <testcase classname="wm-audit.G3 1_0" name="gw.no_traffic_limit">
+      <failure type="info" message="Keine Begrenzung von Anfragemenge oder Nachrichtengröße (durchgängig)">[INFO, wahrscheinlich] Keine Begrenzung von Anfragemenge oder Nachrichtengröße (durchgängig)
+Betrifft 3 von 5 APIs. Ein Merkmal, das nahezu überall auftritt, beschreibt eine Gewohnheit und wird deshalb gesammelt gemeldet statt je Endpunkt einzeln. Auf API-Ebene ist keine Traffic-Begrenzung konfiguriert. Eine global gesetzte Threat-Protection kann greifen — sie ist in diesem Export jedoch nicht enthalten und daher hier nicht nachweisbar.
+Empfehlung: Eine Traffic-Monitoring-Policy je API setzen oder die globale Threat-Protection-Konfiguration mit exportieren und prüfen.</failure>
+    </testcase>
+    <testcase classname="wm-audit.G3 1_0" name="gw.throttle_long_window"/>
+    <testcase classname="wm-audit.G3 1_0" name="gw.log_invocation"/>
+  </testsuite>
+  <testsuite name="API: G4 1.0" tests="10" failures="0" errors="0" skipped="0">
+    <testcase classname="wm-audit.G4 1_0" name="gw.no_identify_policy"/>
+    <testcase classname="wm-audit.G4 1_0" name="gw.anonymous_allowed"/>
+    <testcase classname="wm-audit.G4 1_0" name="gw.identify_or"/>
+    <testcase classname="wm-audit.G4 1_0" name="gw.application_identity_only"/>
+    <testcase classname="wm-audit.G4 1_0" name="gw.http_allowed"/>
+    <testcase classname="wm-audit.G4 1_0" name="gw.plaintext_backend"/>
+    <testcase classname="wm-audit.G4 1_0" name="gw.pass_security_headers"/>
+    <testcase classname="wm-audit.G4 1_0" name="gw.no_traffic_limit"/>
+    <testcase classname="wm-audit.G4 1_0" name="gw.throttle_long_window"/>
+    <testcase classname="wm-audit.G4 1_0" name="gw.log_invocation"/>
+  </testsuite>
+  <testsuite name="API: G5 1.0" tests="10" failures="0" errors="0" skipped="0">
+    <testcase classname="wm-audit.G5 1_0" name="gw.no_identify_policy"/>
+    <testcase classname="wm-audit.G5 1_0" name="gw.anonymous_allowed"/>
+    <testcase classname="wm-audit.G5 1_0" name="gw.identify_or"/>
+    <testcase classname="wm-audit.G5 1_0" name="gw.application_identity_only"/>
+    <testcase classname="wm-audit.G5 1_0" name="gw.http_allowed"/>
+    <testcase classname="wm-audit.G5 1_0" name="gw.plaintext_backend"/>
+    <testcase classname="wm-audit.G5 1_0" name="gw.pass_security_headers"/>
+    <testcase classname="wm-audit.G5 1_0" name="gw.no_traffic_limit"/>
+    <testcase classname="wm-audit.G5 1_0" name="gw.throttle_long_window"/>
+    <testcase classname="wm-audit.G5 1_0" name="gw.log_invocation"/>
+  </testsuite>
+  <testsuite name="Statisch nicht prüfbar" tests="8" failures="0" errors="0" skipped="8">
+    <testcase classname="wm-audit.laufzeit" name="key_verification">
+      <skipped message="Wird ein erfundener API-Key tatsächlich abgewiesen? Ob die Policy im Betrieb greift, zeigt erst eine Anfrage."/>
+    </testcase>
+    <testcase classname="wm-audit.laufzeit" name="jwt_signature">
+      <skipped message="Wird die JWT-Signatur wirklich geprüft? Die Konfiguration nennt das Verfahren, nicht dessen Umsetzung."/>
+    </testcase>
+    <testcase classname="wm-audit.laufzeit" name="object_authorization">
+      <skipped message="Erreicht ein Aufrufer fremde Objekte? Objektbezogene Berechtigung liegt im Backend und braucht zwei Identitäten."/>
+    </testcase>
+    <testcase classname="wm-audit.laufzeit" name="role_enforcement">
+      <skipped message="Wird die Rollenprüfung durchgesetzt? Das Gateway identifiziert; autorisieren muss das Backend."/>
+    </testcase>
+    <testcase classname="wm-audit.laufzeit" name="trust_header">
+      <skipped message="Lässt sich ein Trust-Header fälschen? Hängt davon ab, wie das Backend eingehende Header behandelt."/>
+    </testcase>
+    <testcase classname="wm-audit.laufzeit" name="global_threat_protection">
+      <skipped message="Greift eine globale Threat-Protection? Globale Konfiguration liegt außerhalb des API-Exports."/>
+    </testcase>
+    <testcase classname="wm-audit.laufzeit" name="security_headers">
+      <skipped message="Werden Security-Header in Antworten gesetzt? Antwort-Header stehen in keiner Konfigurationsdatei."/>
+    </testcase>
+    <testcase classname="wm-audit.laufzeit" name="cors">
+      <skipped message="Wie verhält sich CORS tatsächlich? Erst eine Preflight-Anfrage zeigt die wirksame Regel."/>
+    </testcase>
+  </testsuite>
+</testsuites>

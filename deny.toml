@@ -1,0 +1,47 @@
+# cargo-deny: Lizenzen, bekannte Schwachstellen, verbotene Crates, Herkunft.
+# Ausführen: cargo deny check
+
+[graph]
+all-features = false
+
+[advisories]
+version = 2
+yanked = "deny"
+
+[licenses]
+version = 2
+confidence-threshold = 0.9
+# Nur permissive Lizenzen — keine Copyleft-Pflichten für den Kunden.
+allow = ["Apache-2.0", "MIT", "Zlib"]
+
+[bans]
+multiple-versions = "warn"
+wildcards = "deny"
+# Netzwerk, TLS und asynchrone Laufzeiten haben in einem Offline-Werkzeug
+# nichts zu suchen; C-Bibliotheken ebenso wenig.
+deny = [
+    { name = "reqwest" },
+    { name = "hyper" },
+    { name = "h2" },
+    { name = "tokio" },
+    { name = "async-std" },
+    { name = "mio" },
+    { name = "socket2" },
+    { name = "curl" },
+    { name = "curl-sys" },
+    { name = "ureq" },
+    { name = "native-tls" },
+    { name = "openssl" },
+    { name = "openssl-sys" },
+    { name = "rustls" },
+    { name = "ring" },
+    { name = "libz-sys" },
+    { name = "bzip2-sys" },
+    { name = "zstd-sys" },
+    { name = "cc" },
+]
+
+[sources]
+unknown-registry = "deny"
+unknown-git = "deny"
+allow-registry = ["https://github.com/rust-lang/crates.io-index"]

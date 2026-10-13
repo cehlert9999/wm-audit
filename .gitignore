@@ -1,0 +1,5 @@
+/target
+# Wird von pruefen.sh je Lauf neu erzeugt (Zeitstempel, Seriennummer) und
+# mit dem Release ausgeliefert, nicht versioniert.
+/wm-audit.cdx.json
+/dist

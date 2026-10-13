@@ -1,0 +1,48 @@
+{
+ "id": "l10-u",
+ "names": [
+  {
+   "value": "ohne Operator",
+   "locale": "en"
+  }
+ ],
+ "templateKey": "throttle",
+ "parameters": [
+  {
+   "templateKey": "throttleRule",
+   "parameters": [
+    {
+     "templateKey": "throttleRuleName",
+     "values": [
+      "requestCount"
+     ]
+    },
+    {
+     "templateKey": "value",
+     "values": [
+      "100"
+     ]
+    }
+   ]
+  },
+  {
+   "templateKey": "alertInterval",
+   "values": [
+    "1"
+   ]
+  },
+  {
+   "templateKey": "alertIntervalUnit",
+   "values": [
+    "days"
+   ]
+  },
+  {
+   "templateKey": "alertFrequency",
+   "values": [
+    "once"
+   ]
+  }
+ ],
+ "active": false
+}

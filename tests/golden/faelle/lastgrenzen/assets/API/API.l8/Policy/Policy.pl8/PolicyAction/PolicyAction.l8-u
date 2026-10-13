@@ -1,0 +1,54 @@
+{
+ "id": "l8-u",
+ "names": [
+  {
+   "value": "Leerzeichen",
+   "locale": "en"
+  }
+ ],
+ "templateKey": "throttle",
+ "parameters": [
+  {
+   "templateKey": "throttleRule",
+   "parameters": [
+    {
+     "templateKey": "throttleRuleName",
+     "values": [
+      "requestCount"
+     ]
+    },
+    {
+     "templateKey": "monitorRuleOperator",
+     "values": [
+      "GT"
+     ]
+    },
+    {
+     "templateKey": "value",
+     "values": [
+      " 5"
+     ]
+    }
+   ]
+  },
+  {
+   "templateKey": "alertInterval",
+   "values": [
+    "1"
+   ]
+  },
+  {
+   "templateKey": "alertIntervalUnit",
+   "values": [
+    "days"
+   ]
+  },
+  {
+   "templateKey": "alertFrequency",
+   "values": [
+    "once"
+   ]
+  }
+ ],
+ "active": false
+}

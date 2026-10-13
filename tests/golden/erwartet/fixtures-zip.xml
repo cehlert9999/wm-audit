@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="wm-audit" tests="109" failures="12" errors="0">
+  <testsuite name="Export" tests="1" failures="0" errors="0" skipped="1">
+    <properties>
+      <property name="werkzeug" value="wm-audit 1.0.0"/>
+      <property name="quelle" value="fixtures.zip"/>
+      <property name="art" value="zip"/>
+      <property name="sha256" value="ed633e7584cc1ba63d2f81203c0fa6e2b69f2797cf31abbf9c01c20eb9cd4387"/>
+      <property name="apis_gelesen" value="10"/>
+      <property name="apis_eindeutig" value="10"/>
+      <property name="gesperrt" value="2"/>
+      <property name="uebersprungen" value="1"/>
+    </properties>
+    <testcase classname="wm-audit.export" name="echt/spec-http/API/API.c2/Policy/Policy.p-c2/PolicyAction/PolicyAction.c2-verwaist">
+      <skipped message="nicht_zugeordnet"/>
+    </testcase>
+  </testsuite>
+  <testsuite name="API: RoutingKlartextAPI 2.0" tests="10" failures="1" errors="0" skipped="0">
+    <testcase classname="wm-audit.RoutingKlartextAPI 2_0" name="gw.no_identify_policy"/>
+    <testcase classname="wm-audit.RoutingKlartextAPI 2_0" name="gw.anonymous_allowed"/>
+    <testcase classname="wm-audit.RoutingKlartextAPI 2_0" name="gw.identify_or"/>
+    <testcase classname="wm-audit.RoutingKlartextAPI 2_0" name="gw.application_identity_only"/>
+    <testcase classname="wm-audit.RoutingKlartextAPI 2_0" name="gw.http_allowed"/>
+    <testcase classname="wm-audit.RoutingKlartextAPI 2_0" name="gw.plaintext_backend">
+      <failure type="high" message="Weiterleitung an ein Klartext-Backend">[HIGH, belegt] Weiterleitung an ein Klartext-Backend
+Das Gateway leitet an http://***@backend.intern:8080/${sys:resource_path} weiter. Die Verbindung endet damit am Gateway; im internen Netz laufen die Daten im Klartext.
+Empfehlung: Das Backend über HTTPS ansprechen.
+Fundstelle: echt/routing-klartext/API/API.c1/API.c1 → Straight Through Routing | endpointUri: ${Backend}/${sys:resource_path} | über Alias aufgelöst: http://***@backend.intern:8080/${sys:resource_path}</failure>
+    </testcase>
+    <testcase classname="wm-audit.RoutingKlartextAPI 2_0" name="gw.pass_security_headers"/>
+    <testcase classname="wm-audit.RoutingKlartextAPI 2_0" name="gw.no_traffic_limit"/>
+    <testcase classname="wm-audit.RoutingKlartextAPI 2_0" name="gw.throttle_long_window"/>
+    <testcase classname="wm-audit.RoutingKlartextAPI 2_0" name="gw.log_invocation"/>
+  </testsuite>
+  <testsuite name="API: SpecHttpAPI 1.0" tests="10" failures="1" errors="0" skipped="0">
+    <testcase classname="wm-audit.SpecHttpAPI 1_0" name="gw.no_identify_policy">
+      <failure type="high" message="API ohne Identify-and-Authorize-Policy">[HIGH, belegt] API ohne Identify-and-Authorize-Policy
+Für diese API ist keine Identify-and-Authorize-Policy konfiguriert. Das Gateway identifiziert den Aufrufer damit nicht und reicht jede Anfrage an das Backend weiter.
+Empfehlung: Im Policy-Stage „Identify and Access“ eine Identify-and-Authorize-Policy einrichten. Ist die API bewusst öffentlich, sollte das dokumentiert und durch Threat-Protection und Rate-Limits abgesichert sein.
+Fundstelle: echt/spec-http/API/API.c2/API.c2 | policyActions: entryProtocolPolicy, straightThroughRouting, throttle | kein evaluatePolicy vorhanden</failure>
+    </testcase>
+    <testcase classname="wm-audit.SpecHttpAPI 1_0" name="gw.anonymous_allowed"/>
+    <testcase classname="wm-audit.SpecHttpAPI 1_0" name="gw.identify_or"/>
+    <testcase classname="wm-audit.SpecHttpAPI 1_0" name="gw.application_identity_only"/>
+    <testcase classname="wm-audit.SpecHttpAPI 1_0" name="gw.http_allowed"/>
+    <testcase classname="wm-audit.SpecHttpAPI 1_0" name="gw.plaintext_backend"/>
+    <testcase classname="wm-audit.SpecHttpAPI 1_0" name="gw.pass_security_headers"/>
+    <testcase classname="wm-audit.SpecHttpAPI 1_0" name="gw.no_traffic_limit"/>
+    <testcase classname="wm-audit.SpecHttpAPI 1_0" name="gw.throttle_long_window"/>
+    <testcase classname="wm-audit.SpecHttpAPI 1_0" name="gw.log_invocation"/>
+  </testsuite>
+  <testsuite name="API: OffeneAPI 1.0" tests="10" failures="1" errors="0" skipped="0">
+    <testcase classname="wm-audit.OffeneAPI 1_0" name="gw.no_identify_policy">
+      <failure type="high" message="API ohne Identify-and-Authorize-Policy">[HIGH, belegt] API ohne Identify-and-Authorize-Policy
+Für diese API ist keine Identify-and-Authorize-Policy konfiguriert. Das Gateway identifiziert den Aufrufer damit nicht und reicht jede Anfrage an das Backend weiter.
+Empfehlung: Im Policy-Stage „Identify and Access“ eine Identify-and-Authorize-Policy einrichten. Ist die API bewusst öffentlich, sollte das dokumentiert und durch Threat-Protection und Rate-Limits abgesichert sein.
+Fundstelle: fehler/assets/API/API.b1/API.b1 | policyActions: entryProtocolPolicy, throttlingPolicy | kein evaluatePolicy vorhanden</failure>
+    </testcase>
+    <testcase classname="wm-audit.OffeneAPI 1_0" name="gw.anonymous_allowed"/>
+    <testcase classname="wm-audit.OffeneAPI 1_0" name="gw.identify_or"/>
+    <testcase classname="wm-audit.OffeneAPI 1_0" name="gw.application_identity_only"/>
+    <testcase classname="wm-audit.OffeneAPI 1_0" name="gw.http_allowed"/>
+    <testcase classname="wm-audit.OffeneAPI 1_0" name="gw.plaintext_backend"/>
+    <testcase classname="wm-audit.OffeneAPI 1_0" name="gw.pass_security_headers"/>
+    <testcase classname="wm-audit.OffeneAPI 1_0" name="gw.no_traffic_limit"/>
+    <testcase classname="wm-audit.OffeneAPI 1_0" name="gw.throttle_long_window"/>
+    <testcase classname="wm-audit.OffeneAPI 1_0" name="gw.log_invocation"/>
+  </testsuite>
+  <testsuite name="API: AnonymAPI 1.0" tests="10" failures="2" errors="0" skipped="0">
+    <testcase classname="wm-audit.AnonymAPI 1_0" name="gw.no_identify_policy"/>
+    <testcase classname="wm-audit.AnonymAPI 1_0" name="gw.anonymous_allowed">
+      <failure type="critical" message="Identify-Policy erlaubt anonymen Zugriff">[CRITICAL, belegt] Identify-Policy erlaubt anonymen Zugriff
+Die Identify-and-Authorize-Policy ist konfiguriert, lässt über allowAnonymous aber Anfragen ohne Identifikation durch. Die Policy sieht in der Oberfläche vorhanden aus und greift trotzdem nicht.
+Empfehlung: allowAnonymous auf false setzen.
+Fundstelle: fehler/assets/API/API.b2/API.b2 → Identify &amp; Authorize | allowAnonymous: true</failure>
+    </testcase>
+    <testcase classname="wm-audit.AnonymAPI 1_0" name="gw.identify_or"/>
+    <testcase classname="wm-audit.AnonymAPI 1_0" name="gw.application_identity_only">
+      <failure type="medium" message="Nur Anwendungs-Identifikation, keine Benutzer-Authentifizierung">[MEDIUM, wahrscheinlich] Nur Anwendungs-Identifikation, keine Benutzer-Authentifizierung
+Identifiziert wird ausschließlich über apiKey. Das weist eine Anwendung aus, nicht den handelnden Benutzer — jede benutzerbezogene Autorisierung muss dann vollständig im Backend stattfinden.
+Empfehlung: Prüfen, ob das Backend die Benutzeridentität selbst auswertet. Für benutzerbezogene Daten zusätzlich OAuth2 oder JWT verlangen.
+Fundstelle: fehler/assets/API/API.b2/API.b2 → Identify &amp; Authorize | identificationType: apiKey</failure>
+    </testcase>
+    <testcase classname="wm-audit.AnonymAPI 1_0" name="gw.http_allowed"/>
+    <testcase classname="wm-audit.AnonymAPI 1_0" name="gw.plaintext_backend"/>
+    <testcase classname="wm-audit.AnonymAPI 1_0" name="gw.pass_security_headers"/>
+    <testcase classname="wm-audit.AnonymAPI 1_0" name="gw.no_traffic_limit"/>
+    <testcase classname="wm-audit.AnonymAPI 1_0" name="gw.throttle_long_window"/>
+    <testcase classname="wm-audit.AnonymAPI 1_0" name="gw.log_invocation"/>
+  </testsuite>
+  <testsuite name="API: OderAPI 1.0" tests="10" failures="1" errors="0" skipped="0">
+    <testcase classname="wm-audit.OderAPI 1_0" name="gw.no_identify_policy"/>
+    <testcase classname="wm-audit.OderAPI 1_0" name="gw.anonymous_allowed"/>
+    <testcase classname="wm-audit.OderAPI 1_0" name="gw.identify_or">
+      <failure type="high" message="Mehrere Identifikationsverfahren sind ODER-verknüpft">[HIGH, belegt] Mehrere Identifikationsverfahren sind ODER-verknüpft
+Die Policy akzeptiert apiKey oder oAuth2Token — es genügt also das schwächste dieser Verfahren. Wo API-Key *und* Token gemeint waren, reicht dann der API-Key allein.
+Empfehlung: logicalConnector auf AND setzen, wenn beide Nachweise verlangt sind. Ist ODER beabsichtigt, muss jedes einzelne Verfahren für sich als ausreichend gelten.
+Fundstelle: fehler/assets/API/API.b3/API.b3 → Identify &amp; Authorize | logicalConnector: OR, identificationType: apiKey, oAuth2Token</failure>
+    </testcase>
+    <testcase classname="wm-audit.OderAPI 1_0" name="gw.application_identity_only"/>
+    <testcase classname="wm-audit.OderAPI 1_0" name="gw.http_allowed"/>
+    <testcase classname="wm-audit.OderAPI 1_0" name="gw.plaintext_backend"/>
+    <testcase classname="wm-audit.OderAPI 1_0" name="gw.pass_security_headers"/>
+    <testcase classname="wm-audit.OderAPI 1_0" name="gw.no_traffic_limit"/>
+    <testcase classname="wm-audit.OderAPI 1_0" name="gw.throttle_long_window"/>
+    <testcase classname="wm-audit.OderAPI 1_0" name="gw.log_invocation"/>
+  </testsuite>
+  <testsuite name="API: KlartextAPI 1.0" tests="10" failures="3" errors="0" skipped="0">
+    <testcase classname="wm-audit.KlartextAPI 1_0" name="gw.no_identify_policy"/>
+    <testcase classname="wm-audit.KlartextAPI 1_0" name="gw.anonymous_allowed"/>
+    <testcase classname="wm-audit.KlartextAPI 1_0" name="gw.identify_or"/>
+    <testcase classname="wm-audit.KlartextAPI 1_0" name="gw.application_identity_only"/>
+    <testcase classname="wm-audit.KlartextAPI 1_0" name="gw.http_allowed">
+      <failure type="high" message="Gateway akzeptiert unverschlüsseltes HTTP">[HIGH, belegt] Gateway akzeptiert unverschlüsseltes HTTP
+Die Entry-Protocol-Policy lässt HTTP zu. Zugangsdaten und Nutzdaten sind auf dem Weg zum Gateway mitlesbar.
+Empfehlung: Nur HTTPS zulassen und HTTP an der Kante umleiten oder abweisen.
+Fundstelle: fehler/assets/API/API.b4/API.b4 → HTTP+HTTPS | protocol: http, https</failure>
+    </testcase>
+    <testcase classname="wm-audit.KlartextAPI 1_0" name="gw.plaintext_backend">
+      <failure type="high" message="Weiterleitung an ein Klartext-Backend">[HIGH, belegt] Weiterleitung an ein Klartext-Backend
+Das Gateway leitet an http://intern.example/v1 weiter. Die Verbindung endet damit am Gateway; im internen Netz laufen die Daten im Klartext.
+Empfehlung: Das Backend über HTTPS ansprechen.
+Fundstelle: fehler/assets/API/API.b4/API.b4 | nativeEndpoint: http://intern.example/v1</failure>
+    </testcase>
+    <testcase classname="wm-audit.KlartextAPI 1_0" name="gw.pass_security_headers">
+      <failure type="medium" message="Security-Header werden an das Backend durchgereicht">[MEDIUM, wahrscheinlich] Security-Header werden an das Backend durchgereicht
+Authorization- und weitere Security-Header des Aufrufers gehen unverändert an das Backend. Vertraut das Backend ihnen, entscheidet am Ende der Aufrufer über seine eigene Berechtigung.
+Empfehlung: Prüfen, ob das Backend die durchgereichten Header auswertet. Wenn nicht benötigt, passSecurityHeaders abschalten.
+Fundstelle: fehler/assets/API/API.b4/API.b4 | passSecurityHeaders: true (http://intern.example/v1)</failure>
+    </testcase>
+    <testcase classname="wm-audit.KlartextAPI 1_0" name="gw.no_traffic_limit"/>
+    <testcase classname="wm-audit.KlartextAPI 1_0" name="gw.throttle_long_window"/>
+    <testcase classname="wm-audit.KlartextAPI 1_0" name="gw.log_invocation"/>
+  </testsuite>
+  <testsuite name="API: OhneLimitAPI 1.0" tests="10" failures="1" errors="0" skipped="0">
+    <testcase classname="wm-audit.OhneLimitAPI 1_0" name="gw.no_identify_policy"/>
+    <testcase classname="wm-audit.OhneLimitAPI 1_0" name="gw.anonymous_allowed"/>
+    <testcase classname="wm-audit.OhneLimitAPI 1_0" name="gw.identify_or"/>
+    <testcase classname="wm-audit.OhneLimitAPI 1_0" name="gw.application_identity_only"/>
+    <testcase classname="wm-audit.OhneLimitAPI 1_0" name="gw.http_allowed"/>
+    <testcase classname="wm-audit.OhneLimitAPI 1_0" name="gw.plaintext_backend"/>
+    <testcase classname="wm-audit.OhneLimitAPI 1_0" name="gw.pass_security_headers"/>
+    <testcase classname="wm-audit.OhneLimitAPI 1_0" name="gw.no_traffic_limit">
+      <failure type="medium" message="Keine Begrenzung von Anfragemenge oder Nachrichtengröße">[MEDIUM, wahrscheinlich] Keine Begrenzung von Anfragemenge oder Nachrichtengröße
+Auf API-Ebene ist keine Traffic-Begrenzung konfiguriert. Eine global gesetzte Threat-Protection kann greifen — sie ist in diesem Export jedoch nicht enthalten und daher hier nicht nachweisbar.
+Empfehlung: Eine Traffic-Monitoring-Policy je API setzen oder die globale Threat-Protection-Konfiguration mit exportieren und prüfen.
+Fundstelle: fehler/assets/API/API.b5/API.b5 | keine Traffic-Optimization-Policy (throttle)</failure>
+    </testcase>
+    <testcase classname="wm-audit.OhneLimitAPI 1_0" name="gw.throttle_long_window"/>
+    <testcase classname="wm-audit.OhneLimitAPI 1_0" name="gw.log_invocation"/>
+  </testsuite>
+  <testsuite name="API: LogAPI 1.0" tests="10" failures="1" errors="0" skipped="0">
+    <testcase classname="wm-audit.LogAPI 1_0" name="gw.no_identify_policy"/>
+    <testcase classname="wm-audit.LogAPI 1_0" name="gw.anonymous_allowed"/>
+    <testcase classname="wm-audit.LogAPI 1_0" name="gw.identify_or"/>
+    <testcase classname="wm-audit.LogAPI 1_0" name="gw.application_identity_only"/>
+    <testcase classname="wm-audit.LogAPI 1_0" name="gw.http_allowed"/>
+    <testcase classname="wm-audit.LogAPI 1_0" name="gw.plaintext_backend"/>
+    <testcase classname="wm-audit.LogAPI 1_0" name="gw.pass_security_headers"/>
+    <testcase classname="wm-audit.LogAPI 1_0" name="gw.no_traffic_limit"/>
+    <testcase classname="wm-audit.LogAPI 1_0" name="gw.throttle_long_window"/>
+    <testcase classname="wm-audit.LogAPI 1_0" name="gw.log_invocation">
+      <failure type="low" message="Log-Invocation-Policy aktiv">[LOW, wahrscheinlich] Log-Invocation-Policy aktiv
+Anfragen werden protokolliert. Sind Nutzdaten eingeschlossen, landen personenbezogene Daten und Zugangsdaten in den Logs.
+Empfehlung: Prüfen, welche Bestandteile protokolliert werden, und Nutzdaten nur mit dokumentiertem Zweck und Löschfrist aufzeichnen.
+Fundstelle: fehler/assets/API/API.b6/API.b6 → Log Invocation | logInvocation</failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="API: TageskontingentAPI 1.0" tests="10" failures="1" errors="0" skipped="0">
+    <testcase classname="wm-audit.TageskontingentAPI 1_0" name="gw.no_identify_policy"/>
+    <testcase classname="wm-audit.TageskontingentAPI 1_0" name="gw.anonymous_allowed"/>
+    <testcase classname="wm-audit.TageskontingentAPI 1_0" name="gw.identify_or"/>
+    <testcase classname="wm-audit.TageskontingentAPI 1_0" name="gw.application_identity_only"/>
+    <testcase classname="wm-audit.TageskontingentAPI 1_0" name="gw.http_allowed"/>
+    <testcase classname="wm-audit.TageskontingentAPI 1_0" name="gw.plaintext_backend"/>
+    <testcase classname="wm-audit.TageskontingentAPI 1_0" name="gw.pass_security_headers"/>
+    <testcase classname="wm-audit.TageskontingentAPI 1_0" name="gw.no_traffic_limit"/>
+    <testcase classname="wm-audit.TageskontingentAPI 1_0" name="gw.throttle_long_window">
+      <failure type="low" message="Lange Zählperiode: das Kontingent bremst keine Lastspitzen">[LOW, wahrscheinlich] Lange Zählperiode: das Kontingent bremst keine Lastspitzen
+Die Traffic-Optimization-Policy erlaubt 50.000 Aufrufe je Tag. Laut IBM-Dokumentation zählt das Gateway nach dem Token-Bucket-Verfahren und füllt das Kontingent erst nach Ablauf des Intervalls wieder auf. Innerhalb des Intervalls dürfen alle Aufrufe auch in wenigen Minuten eintreffen. Gleichzeitige Aufrufe begrenzt der Bulkhead — ob er gesetzt ist, zeigt dieser Export nicht.
+Empfehlung: Prüfen, ob das Backend eine solche Spitze verkraftet. Wenn nicht: zusätzlich eine Grenze mit kurzem Intervall (etwa je Minute) oder den Bulkhead setzen. Der Lastrechner im HTML-Bericht zeigt die Wirkung.
+Fundstelle: fehler/assets/API/API.b7/API.b7 → Traffic Optimization | throttleRule value: 50000, alertInterval: 1, alertIntervalUnit: days</failure>
+    </testcase>
+    <testcase classname="wm-audit.TageskontingentAPI 1_0" name="gw.log_invocation"/>
+  </testsuite>
+  <testsuite name="API: SauberAPI 1.0" tests="10" failures="0" errors="0" skipped="0">
+    <testcase classname="wm-audit.SauberAPI 1_0" name="gw.no_identify_policy"/>
+    <testcase classname="wm-audit.SauberAPI 1_0" name="gw.anonymous_allowed"/>
+    <testcase classname="wm-audit.SauberAPI 1_0" name="gw.identify_or"/>
+    <testcase classname="wm-audit.SauberAPI 1_0" name="gw.application_identity_only"/>
+    <testcase classname="wm-audit.SauberAPI 1_0" name="gw.http_allowed"/>
+    <testcase classname="wm-audit.SauberAPI 1_0" name="gw.plaintext_backend"/>
+    <testcase classname="wm-audit.SauberAPI 1_0" name="gw.pass_security_headers"/>
+    <testcase classname="wm-audit.SauberAPI 1_0" name="gw.no_traffic_limit"/>
+    <testcase classname="wm-audit.SauberAPI 1_0" name="gw.throttle_long_window"/>
+    <testcase classname="wm-audit.SauberAPI 1_0" name="gw.log_invocation"/>
+  </testsuite>
+  <testsuite name="Statisch nicht prüfbar" tests="8" failures="0" errors="0" skipped="8">
+    <testcase classname="wm-audit.laufzeit" name="key_verification">
+      <skipped message="Wird ein erfundener API-Key tatsächlich abgewiesen? Ob die Policy im Betrieb greift, zeigt erst eine Anfrage."/>
+    </testcase>
+    <testcase classname="wm-audit.laufzeit" name="jwt_signature">
+      <skipped message="Wird die JWT-Signatur wirklich geprüft? Die Konfiguration nennt das Verfahren, nicht dessen Umsetzung."/>
+    </testcase>
+    <testcase classname="wm-audit.laufzeit" name="object_authorization">
+      <skipped message="Erreicht ein Aufrufer fremde Objekte? Objektbezogene Berechtigung liegt im Backend und braucht zwei Identitäten."/>
+    </testcase>
+    <testcase classname="wm-audit.laufzeit" name="role_enforcement">
+      <skipped message="Wird die Rollenprüfung durchgesetzt? Das Gateway identifiziert; autorisieren muss das Backend."/>
+    </testcase>
+    <testcase classname="wm-audit.laufzeit" name="trust_header">
+      <skipped message="Lässt sich ein Trust-Header fälschen? Hängt davon ab, wie das Backend eingehende Header behandelt."/>
+    </testcase>
+    <testcase classname="wm-audit.laufzeit" name="global_threat_protection">
+      <skipped message="Greift eine globale Threat-Protection? Globale Konfiguration liegt außerhalb des API-Exports."/>
+    </testcase>
+    <testcase classname="wm-audit.laufzeit" name="security_headers">
+      <skipped message="Werden Security-Header in Antworten gesetzt? Antwort-Header stehen in keiner Konfigurationsdatei."/>
+    </testcase>
+    <testcase classname="wm-audit.laufzeit" name="cors">
+      <skipped message="Wie verhält sich CORS tatsächlich? Erst eine Preflight-Anfrage zeigt die wirksame Regel."/>
+    </testcase>
+  </testsuite>
+</testsuites>

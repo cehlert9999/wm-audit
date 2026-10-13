@@ -1,0 +1,35 @@
+[package]
+name = "wm-audit"
+version = "1.0.0"
+edition = "2024"
+rust-version = "1.88"
+license = "Apache-2.0"
+description = "Statische Security-Analyse für webMethods-API-Gateway-Exporte — Rust-Portierung von wm-audit"
+authors = ["Christian Ehlert"]
+publish = false
+
+# Bewusst wenige, verbreitete Abhängigkeiten ohne Netzwerk- und ohne C-Code.
+# Jede weitere Abhängigkeit braucht eine Begründung in SICHERHEIT.md.
+[dependencies]
+serde_json = { version = "1.0.140", default-features = false, features = ["std", "float_roundtrip"] }
+zip = { version = "9", default-features = false, features = ["deflate-flate2-zlib-rs"] }
+sha1 = { version = "0.11", default-features = false }
+sha2 = { version = "0.11", default-features = false }
+
+[lints.rust]
+unsafe_code = "forbid"
+missing_debug_implementations = "warn"
+
+[lints.clippy]
+unwrap_used = "deny"
+expect_used = "deny"
+panic = "deny"
+indexing_slicing = "warn"
+
+[profile.release]
+lto = true
+codegen-units = 1
+panic = "abort"
+strip = true
+overflow-checks = true
+debug = false

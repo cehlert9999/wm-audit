@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="wm-audit" tests="148" failures="19" errors="0">
+  <testsuite name="Export" tests="0" failures="0" errors="0" skipped="0">
+    <properties>
+      <property name="werkzeug" value="wm-audit 1.0.0"/>
+      <property name="quelle" value="lastgrenzen"/>
+      <property name="art" value="verzeichnis"/>
+      <property name="apis_gelesen" value="14"/>
+      <property name="apis_eindeutig" value="14"/>
+      <property name="gesperrt" value="0"/>
+      <property name="uebersprungen" value="0"/>
+    </properties>
+  </testsuite>
+  <testsuite name="API: L1 1.0" tests="10" failures="1" errors="0" skipped="0">
+    <testcase classname="wm-audit.L1 1_0" name="gw.no_identify_policy"/>
+    <testcase classname="wm-audit.L1 1_0" name="gw.anonymous_allowed"/>
+    <testcase classname="wm-audit.L1 1_0" name="gw.identify_or"/>
+    <testcase classname="wm-audit.L1 1_0" name="gw.application_identity_only">
+      <failure type="info" message="Nur Anwendungs-Identifikation, keine Benutzer-Authentifizierung (durchgängig)">[INFO, wahrscheinlich] Nur Anwendungs-Identifikation, keine Benutzer-Authentifizierung (durchgängig)
+Betrifft 14 von 14 APIs. Ein Merkmal, das nahezu überall auftritt, beschreibt eine Gewohnheit und wird deshalb gesammelt gemeldet statt je Endpunkt einzeln. Identifiziert wird ausschließlich über apiKey. Das weist eine Anwendung aus, nicht den handelnden Benutzer — jede benutzerbezogene Autorisierung muss dann vollständig im Backend stattfinden.
+Empfehlung: Prüfen, ob das Backend die Benutzeridentität selbst auswertet. Für benutzerbezogene Daten zusätzlich OAuth2 oder JWT verlangen.</failure>
+    </testcase>
+    <testcase classname="wm-audit.L1 1_0" name="gw.http_allowed"/>
+    <testcase classname="wm-audit.L1 1_0" name="gw.plaintext_backend"/>
+    <testcase classname="wm-audit.L1 1_0" name="gw.pass_security_headers"/>
+    <testcase classname="wm-audit.L1 1_0" name="gw.no_traffic_limit"/>
+    <testcase classname="wm-audit.L1 1_0" name="gw.throttle_long_window"/>
+    <testcase classname="wm-audit.L1 1_0" name="gw.log_invocation"/>
+  </testsuite>
+  <testsuite name="API: L10 1.0" tests="10" failures="1" errors="0" skipped="0">
+    <testcase classname="wm-audit.L10 1_0" name="gw.no_identify_policy"/>
+    <testcase classname="wm-audit.L10 1_0" name="gw.anonymous_allowed"/>
+    <testcase classname="wm-audit.L10 1_0" name="gw.identify_or"/>
+    <testcase classname="wm-audit.L10 1_0" name="gw.application_identity_only">
+      <failure type="info" message="Nur Anwendungs-Identifikation, keine Benutzer-Authentifizierung (durchgängig)">[INFO, wahrscheinlich] Nur Anwendungs-Identifikation, keine Benutzer-Authentifizierung (durchgängig)
+Betrifft 14 von 14 APIs. Ein Merkmal, das nahezu überall auftritt, beschreibt eine Gewohnheit und wird deshalb gesammelt gemeldet statt je Endpunkt einzeln. Identifiziert wird ausschließlich über apiKey. Das weist eine Anwendung aus, nicht den handelnden Benutzer — jede benutzerbezogene Autorisierung muss dann vollständig im Backend stattfinden.
+Empfehlung: Prüfen, ob das Backend die Benutzeridentität selbst auswertet. Für benutzerbezogene Daten zusätzlich OAuth2 oder JWT verlangen.</failure>
+    </testcase>
+    <testcase classname="wm-audit.L10 1_0" name="gw.http_allowed"/>
+    <testcase classname="wm-audit.L10 1_0" name="gw.plaintext_backend"/>
+    <testcase classname="wm-audit.L10 1_0" name="gw.pass_security_headers"/>
+    <testcase classname="wm-audit.L10 1_0" name="gw.no_traffic_limit"/>
+    <testcase classname="wm-audit.L10 1_0" name="gw.throttle_long_window"/>
+    <testcase classname="wm-audit.L10 1_0" name="gw.log_invocation"/>
+  </testsuite>
+  <testsuite name="API: L11 1.0" tests="10" failures="2" errors="0" skipped="0">
+    <testcase classname="wm-audit.L11 1_0" name="gw.no_identify_policy"/>
+    <testcase classname="wm-audit.L11 1_0" name="gw.anonymous_allowed"/>
+    <testcase classname="wm-audit.L11 1_0" name="gw.identify_or"/>
+    <testcase classname="wm-audit.L11 1_0" name="gw.application_identity_only">
+      <failure type="info" message="Nur Anwendungs-Identifikation, keine Benutzer-Authentifizierung (durchgängig)">[INFO, wahrscheinlich] Nur Anwendungs-Identifikation, keine Benutzer-Authentifizierung (durchgängig)
+Betrifft 14 von 14 APIs. Ein Merkmal, das nahezu überall auftritt, beschreibt eine Gewohnheit und wird deshalb gesammelt gemeldet statt je Endpunkt einzeln. Identifiziert wird ausschließlich über apiKey. Das weist eine Anwendung aus, nicht den handelnden Benutzer — jede benutzerbezogene Autorisierung muss dann vollständig im Backend stattfinden.
+Empfehlung: Prüfen, ob das Backend die Benutzeridentität selbst auswertet. Für benutzerbezogene Daten zusätzlich OAuth2 oder JWT verlangen.</failure>
+    </testcase>
+    <testcase classname="wm-audit.L11 1_0" name="gw.http_allowed"/>
+    <testcase classname="wm-audit.L11 1_0" name="gw.plaintext_backend"/>
+    <testcase classname="wm-audit.L11 1_0" name="gw.pass_security_headers"/>
+    <testcase classname="wm-audit.L11 1_0" name="gw.no_traffic_limit"/>
+    <testcase classname="wm-audit.L11 1_0" name="gw.throttle_long_window">
+      <failure type="low" message="Lange Zählperiode: das Kontingent bremst keine Lastspitzen">[LOW, wahrscheinlich] Lange Zählperiode: das Kontingent bremst keine Lastspitzen
+Die Traffic-Optimization-Policy erlaubt 250 Aufrufe je 2 Tage. Laut IBM-Dokumentation zählt das Gateway nach dem Token-Bucket-Verfahren und füllt das Kontingent erst nach Ablauf des Intervalls wieder auf. Innerhalb des Intervalls dürfen alle Aufrufe auch in wenigen Minuten eintreffen. Gleichzeitige Aufrufe begrenzt der Bulkhead — ob er gesetzt ist, zeigt dieser Export nicht.
+Empfehlung: Prüfen, ob das Backend eine solche Spitze verkraftet. Wenn nicht: zusätzlich eine Grenze mit kurzem Intervall (etwa je Minute) oder den Bulkhead setzen. Der Lastrechner im HTML-Bericht zeigt die Wirkung.
+Fundstelle: assets/API/API.l11/API.l11 → Traffic Optimization | throttleRule value: 250, alertInterval: 2, alertIntervalUnit: days</failure>
+    </testcase>
+    <testcase classname="wm-audit.L11 1_0" name="gw.log_invocation"/>
+  </testsuite>
+  <testsuite name="API: L12 1.0" tests="10" failures="2" errors="0" skipped="0">
+    <testcase classname="wm-audit.L12 1_0" name="gw.no_identify_policy"/>
+    <testcase classname="wm-audit.L12 1_0" name="gw.anonymous_allowed"/>
+    <testcase classname="wm-audit.L12 1_0" name="gw.identify_or"/>
+    <testcase classname="wm-audit.L12 1_0" name="gw.application_identity_only">
+      <failure type="info" message="Nur Anwendungs-Identifikation, keine Benutzer-Authentifizierung (durchgängig)">[INFO, wahrscheinlich] Nur Anwendungs-Identifikation, keine Benutzer-Authentifizierung (durchgängig)
+Betrifft 14 von 14 APIs. Ein Merkmal, das nahezu überall auftritt, beschreibt eine Gewohnheit und wird deshalb gesammelt gemeldet statt je Endpunkt einzeln. Identifiziert wird ausschließlich über apiKey. Das weist eine Anwendung aus, nicht den handelnden Benutzer — jede benutzerbezogene Autorisierung muss dann vollständig im Backend stattfinden.
+Empfehlung: Prüfen, ob das Backend die Benutzeridentität selbst auswertet. Für benutzerbezogene Daten zusätzlich OAuth2 oder JWT verlangen.</failure>
+    </testcase>
+    <testcase classname="wm-audit.L12 1_0" name="gw.http_allowed"/>
+    <testcase classname="wm-audit.L12 1_0" name="gw.plaintext_backend"/>
+    <testcase classname="wm-audit.L12 1_0" name="gw.pass_security_headers"/>
+    <testcase classname="wm-audit.L12 1_0" name="gw.no_traffic_limit"/>
+    <testcase classname="wm-audit.L12 1_0" name="gw.throttle_long_window">
+      <failure type="low" message="Lange Zählperiode: das Kontingent bremst keine Lastspitzen">[LOW, wahrscheinlich] Lange Zählperiode: das Kontingent bremst keine Lastspitzen
+Die Traffic-Optimization-Policy erlaubt 999.999.999.999.999.999 Aufrufe je 999.999.999.999.999.999 Wochen. Laut IBM-Dokumentation zählt das Gateway nach dem Token-Bucket-Verfahren und füllt das Kontingent erst nach Ablauf des Intervalls wieder auf. Innerhalb des Intervalls dürfen alle Aufrufe auch in wenigen Minuten eintreffen. Gleichzeitige Aufrufe begrenzt der Bulkhead — ob er gesetzt ist, zeigt dieser Export nicht.
+Empfehlung: Prüfen, ob das Backend eine solche Spitze verkraftet. Wenn nicht: zusätzlich eine Grenze mit kurzem Intervall (etwa je Minute) oder den Bulkhead setzen. Der Lastrechner im HTML-Bericht zeigt die Wirkung.
+Fundstelle: assets/API/API.l12/API.l12 → Traffic Optimization | throttleRule value: 999999999999999999, alertInterval: 999999999999999999, alertIntervalUnit: weeks</failure>
+    </testcase>
+    <testcase classname="wm-audit.L12 1_0" name="gw.log_invocation"/>
+  </testsuite>
+  <testsuite name="API: L13 1.0" tests="10" failures="1" errors="0" skipped="0">
+    <testcase classname="wm-audit.L13 1_0" name="gw.no_identify_policy"/>
+    <testcase classname="wm-audit.L13 1_0" name="gw.anonymous_allowed"/>
+    <testcase classname="wm-audit.L13 1_0" name="gw.identify_or"/>
+    <testcase classname="wm-audit.L13 1_0" name="gw.application_identity_only">
+      <failure type="info" message="Nur Anwendungs-Identifikation, keine Benutzer-Authentifizierung (durchgängig)">[INFO, wahrscheinlich] Nur Anwendungs-Identifikation, keine Benutzer-Authentifizierung (durchgängig)
+Betrifft 14 von 14 APIs. Ein Merkmal, das nahezu überall auftritt, beschreibt eine Gewohnheit und wird deshalb gesammelt gemeldet statt je Endpunkt einzeln. Identifiziert wird ausschließlich über apiKey. Das weist eine Anwendung aus, nicht den handelnden Benutzer — jede benutzerbezogene Autorisierung muss dann vollständig im Backend stattfinden.
+Empfehlung: Prüfen, ob das Backend die Benutzeridentität selbst auswertet. Für benutzerbezogene Daten zusätzlich OAuth2 oder JWT verlangen.</failure>
+    </testcase>
+    <testcase classname="wm-audit.L13 1_0" name="gw.http_allowed"/>
+    <testcase classname="wm-audit.L13 1_0" name="gw.plaintext_backend"/>
+    <testcase classname="wm-audit.L13 1_0" name="gw.pass_security_headers"/>
+    <testcase classname="wm-audit.L13 1_0" name="gw.no_traffic_limit"/>
+    <testcase classname="wm-audit.L13 1_0" name="gw.throttle_long_window"/>
+    <testcase classname="wm-audit.L13 1_0" name="gw.log_invocation"/>
+  </testsuite>
+  <testsuite name="API: L14 1.0" tests="10" failures="1" errors="0" skipped="0">
+    <testcase classname="wm-audit.L14 1_0" name="gw.no_identify_policy"/>
+    <testcase classname="wm-audit.L14 1_0" name="gw.anonymous_allowed"/>
+    <testcase classname="wm-audit.L14 1_0" name="gw.identify_or"/>
+    <testcase classname="wm-audit.L14 1_0" name="gw.application_identity_only">
+      <failure type="info" message="Nur Anwendungs-Identifikation, keine Benutzer-Authentifizierung (durchgängig)">[INFO, wahrscheinlich] Nur Anwendungs-Identifikation, keine Benutzer-Authentifizierung (durchgängig)
+Betrifft 14 von 14 APIs. Ein Merkmal, das nahezu überall auftritt, beschreibt eine Gewohnheit und wird deshalb gesammelt gemeldet statt je Endpunkt einzeln. Identifiziert wird ausschließlich über apiKey. Das weist eine Anwendung aus, nicht den handelnden Benutzer — jede benutzerbezogene Autorisierung muss dann vollständig im Backend stattfinden.
+Empfehlung: Prüfen, ob das Backend die Benutzeridentität selbst auswertet. Für benutzerbezogene Daten zusätzlich OAuth2 oder JWT verlangen.</failure>
+    </testcase>
+    <testcase classname="wm-audit.L14 1_0" name="gw.http_allowed"/>
+    <testcase classname="wm-audit.L14 1_0" name="gw.plaintext_backend"/>
+    <testcase classname="wm-audit.L14 1_0" name="gw.pass_security_headers"/>
+    <testcase classname="wm-audit.L14 1_0" name="gw.no_traffic_limit"/>
+    <testcase classname="wm-audit.L14 1_0" name="gw.throttle_long_window"/>
+    <testcase classname="wm-audit.L14 1_0" name="gw.log_invocation"/>
+  </testsuite>
+  <testsuite name="API: L2 1.0" tests="10" failures="2" errors="0" skipped="0">
+    <testcase classname="wm-audit.L2 1_0" name="gw.no_identify_policy"/>
+    <testcase classname="wm-audit.L2 1_0" name="gw.anonymous_allowed"/>
+    <testcase classname="wm-audit.L2 1_0" name="gw.identify_or"/>
+    <testcase classname="wm-audit.L2 1_0" name="gw.application_identity_only">
+      <failure type="info" message="Nur Anwendungs-Identifikation, keine Benutzer-Authentifizierung (durchgängig)">[INFO, wahrscheinlich] Nur Anwendungs-Identifikation, keine Benutzer-Authentifizierung (durchgängig)
+Betrifft 14 von 14 APIs. Ein Merkmal, das nahezu überall auftritt, beschreibt eine Gewohnheit und wird deshalb gesammelt gemeldet statt je Endpunkt einzeln. Identifiziert wird ausschließlich über apiKey. Das weist eine Anwendung aus, nicht den handelnden Benutzer — jede benutzerbezogene Autorisierung muss dann vollständig im Backend stattfinden.
+Empfehlung: Prüfen, ob das Backend die Benutzeridentität selbst auswertet. Für benutzerbezogene Daten zusätzlich OAuth2 oder JWT verlangen.</failure>
+    </testcase>
+    <testcase classname="wm-audit.L2 1_0" name="gw.http_allowed"/>
+    <testcase classname="wm-audit.L2 1_0" name="gw.plaintext_backend"/>
+    <testcase classname="wm-audit.L2 1_0" name="gw.pass_security_headers"/>
+    <testcase classname="wm-audit.L2 1_0" name="gw.no_traffic_limit"/>
+    <testcase classname="wm-audit.L2 1_0" name="gw.throttle_long_window">
+      <failure type="low" message="Lange Zählperiode: das Kontingent bremst keine Lastspitzen">[LOW, wahrscheinlich] Lange Zählperiode: das Kontingent bremst keine Lastspitzen
+Die Traffic-Optimization-Policy erlaubt 100.000 Aufrufe je Tag. Laut IBM-Dokumentation zählt das Gateway nach dem Token-Bucket-Verfahren und füllt das Kontingent erst nach Ablauf des Intervalls wieder auf. Innerhalb des Intervalls dürfen alle Aufrufe auch in wenigen Minuten eintreffen. Gleichzeitige Aufrufe begrenzt der Bulkhead — ob er gesetzt ist, zeigt dieser Export nicht.
+Empfehlung: Prüfen, ob das Backend eine solche Spitze verkraftet. Wenn nicht: zusätzlich eine Grenze mit kurzem Intervall (etwa je Minute) oder den Bulkhead setzen. Der Lastrechner im HTML-Bericht zeigt die Wirkung.
+Fundstelle: assets/API/API.l2/API.l2 → Traffic Optimization | throttleRule value: 100000, alertInterval: 1, alertIntervalUnit: days</failure>
+    </testcase>
+    <testcase classname="wm-audit.L2 1_0" name="gw.log_invocation"/>
+  </testsuite>
+  <testsuite name="API: L3 1.0" tests="10" failures="1" errors="0" skipped="0">
+    <testcase classname="wm-audit.L3 1_0" name="gw.no_identify_policy"/>
+    <testcase classname="wm-audit.L3 1_0" name="gw.anonymous_allowed"/>
+    <testcase classname="wm-audit.L3 1_0" name="gw.identify_or"/>
+    <testcase classname="wm-audit.L3 1_0" name="gw.application_identity_only">
+      <failure type="info" message="Nur Anwendungs-Identifikation, keine Benutzer-Authentifizierung (durchgängig)">[INFO, wahrscheinlich] Nur Anwendungs-Identifikation, keine Benutzer-Authentifizierung (durchgängig)
+Betrifft 14 von 14 APIs. Ein Merkmal, das nahezu überall auftritt, beschreibt eine Gewohnheit und wird deshalb gesammelt gemeldet statt je Endpunkt einzeln. Identifiziert wird ausschließlich über apiKey. Das weist eine Anwendung aus, nicht den handelnden Benutzer — jede benutzerbezogene Autorisierung muss dann vollständig im Backend stattfinden.
+Empfehlung: Prüfen, ob das Backend die Benutzeridentität selbst auswertet. Für benutzerbezogene Daten zusätzlich OAuth2 oder JWT verlangen.</failure>
+    </testcase>
+    <testcase classname="wm-audit.L3 1_0" name="gw.http_allowed"/>
+    <testcase classname="wm-audit.L3 1_0" name="gw.plaintext_backend"/>
+    <testcase classname="wm-audit.L3 1_0" name="gw.pass_security_headers"/>
+    <testcase classname="wm-audit.L3 1_0" name="gw.no_traffic_limit"/>
+    <testcase classname="wm-audit.L3 1_0" name="gw.throttle_long_window"/>
+    <testcase classname="wm-audit.L3 1_0" name="gw.log_invocation"/>
+  </testsuite>
+  <testsuite name="API: L4 1.0" tests="10" failures="2" errors="0" skipped="0">
+    <testcase classname="wm-audit.L4 1_0" name="gw.no_identify_policy"/>
+    <testcase classname="wm-audit.L4 1_0" name="gw.anonymous_allowed"/>
+    <testcase classname="wm-audit.L4 1_0" name="gw.identify_or"/>
+    <testcase classname="wm-audit.L4 1_0" name="gw.application_identity_only">
+      <failure type="info" message="Nur Anwendungs-Identifikation, keine Benutzer-Authentifizierung (durchgängig)">[INFO, wahrscheinlich] Nur Anwendungs-Identifikation, keine Benutzer-Authentifizierung (durchgängig)
+Betrifft 14 von 14 APIs. Ein Merkmal, das nahezu überall auftritt, beschreibt eine Gewohnheit und wird deshalb gesammelt gemeldet statt je Endpunkt einzeln. Identifiziert wird ausschließlich über apiKey. Das weist eine Anwendung aus, nicht den handelnden Benutzer — jede benutzerbezogene Autorisierung muss dann vollständig im Backend stattfinden.
+Empfehlung: Prüfen, ob das Backend die Benutzeridentität selbst auswertet. Für benutzerbezogene Daten zusätzlich OAuth2 oder JWT verlangen.</failure>
+    </testcase>
+    <testcase classname="wm-audit.L4 1_0" name="gw.http_allowed"/>
+    <testcase classname="wm-audit.L4 1_0" name="gw.plaintext_backend"/>
+    <testcase classname="wm-audit.L4 1_0" name="gw.pass_security_headers"/>
+    <testcase classname="wm-audit.L4 1_0" name="gw.no_traffic_limit"/>
+    <testcase classname="wm-audit.L4 1_0" name="gw.throttle_long_window">
+      <failure type="low" message="Lange Zählperiode: das Kontingent bremst keine Lastspitzen">[LOW, wahrscheinlich] Lange Zählperiode: das Kontingent bremst keine Lastspitzen
+Die Traffic-Optimization-Policy erlaubt 500 Aufrufe je 24 Stunden. Laut IBM-Dokumentation zählt das Gateway nach dem Token-Bucket-Verfahren und füllt das Kontingent erst nach Ablauf des Intervalls wieder auf. Innerhalb des Intervalls dürfen alle Aufrufe auch in wenigen Minuten eintreffen. Gleichzeitige Aufrufe begrenzt der Bulkhead — ob er gesetzt ist, zeigt dieser Export nicht.
+Empfehlung: Prüfen, ob das Backend eine solche Spitze verkraftet. Wenn nicht: zusätzlich eine Grenze mit kurzem Intervall (etwa je Minute) oder den Bulkhead setzen. Der Lastrechner im HTML-Bericht zeigt die Wirkung.
+Fundstelle: assets/API/API.l4/API.l4 → Traffic Optimization | throttleRule value: 500, alertInterval: 24, alertIntervalUnit: hours</failure>
+    </testcase>
+    <testcase classname="wm-audit.L4 1_0" name="gw.log_invocation"/>
+  </testsuite>
+  <testsuite name="API: L5 1.0" tests="10" failures="1" errors="0" skipped="0">
+    <testcase classname="wm-audit.L5 1_0" name="gw.no_identify_policy"/>
+    <testcase classname="wm-audit.L5 1_0" name="gw.anonymous_allowed"/>
+    <testcase classname="wm-audit.L5 1_0" name="gw.identify_or"/>
+    <testcase classname="wm-audit.L5 1_0" name="gw.application_identity_only">
+      <failure type="info" message="Nur Anwendungs-Identifikation, keine Benutzer-Authentifizierung (durchgängig)">[INFO, wahrscheinlich] Nur Anwendungs-Identifikation, keine Benutzer-Authentifizierung (durchgängig)
+Betrifft 14 von 14 APIs. Ein Merkmal, das nahezu überall auftritt, beschreibt eine Gewohnheit und wird deshalb gesammelt gemeldet statt je Endpunkt einzeln. Identifiziert wird ausschließlich über apiKey. Das weist eine Anwendung aus, nicht den handelnden Benutzer — jede benutzerbezogene Autorisierung muss dann vollständig im Backend stattfinden.
+Empfehlung: Prüfen, ob das Backend die Benutzeridentität selbst auswertet. Für benutzerbezogene Daten zusätzlich OAuth2 oder JWT verlangen.</failure>
+    </testcase>
+    <testcase classname="wm-audit.L5 1_0" name="gw.http_allowed"/>
+    <testcase classname="wm-audit.L5 1_0" name="gw.plaintext_backend"/>
+    <testcase classname="wm-audit.L5 1_0" name="gw.pass_security_headers"/>
+    <testcase classname="wm-audit.L5 1_0" name="gw.no_traffic_limit"/>
+    <testcase classname="wm-audit.L5 1_0" name="gw.throttle_long_window"/>
+    <testcase classname="wm-audit.L5 1_0" name="gw.log_invocation"/>
+  </testsuite>
+  <testsuite name="API: L6 1.0" tests="10" failures="1" errors="0" skipped="0">
+    <testcase classname="wm-audit.L6 1_0" name="gw.no_identify_policy"/>
+    <testcase classname="wm-audit.L6 1_0" name="gw.anonymous_allowed"/>
+    <testcase classname="wm-audit.L6 1_0" name="gw.identify_or"/>
+    <testcase classname="wm-audit.L6 1_0" name="gw.application_identity_only">
+      <failure type="info" message="Nur Anwendungs-Identifikation, keine Benutzer-Authentifizierung (durchgängig)">[INFO, wahrscheinlich] Nur Anwendungs-Identifikation, keine Benutzer-Authentifizierung (durchgängig)
+Betrifft 14 von 14 APIs. Ein Merkmal, das nahezu überall auftritt, beschreibt eine Gewohnheit und wird deshalb gesammelt gemeldet statt je Endpunkt einzeln. Identifiziert wird ausschließlich über apiKey. Das weist eine Anwendung aus, nicht den handelnden Benutzer — jede benutzerbezogene Autorisierung muss dann vollständig im Backend stattfinden.
+Empfehlung: Prüfen, ob das Backend die Benutzeridentität selbst auswertet. Für benutzerbezogene Daten zusätzlich OAuth2 oder JWT verlangen.</failure>
+    </testcase>
+    <testcase classname="wm-audit.L6 1_0" name="gw.http_allowed"/>
+    <testcase classname="wm-audit.L6 1_0" name="gw.plaintext_backend"/>
+    <testcase classname="wm-audit.L6 1_0" name="gw.pass_security_headers"/>
+    <testcase classname="wm-audit.L6 1_0" name="gw.no_traffic_limit"/>
+    <testcase classname="wm-audit.L6 1_0" name="gw.throttle_long_window"/>
+    <testcase classname="wm-audit.L6 1_0" name="gw.log_invocation"/>
+  </testsuite>
+  <testsuite name="API: L7 1.0" tests="10" failures="1" errors="0" skipped="0">
+    <testcase classname="wm-audit.L7 1_0" name="gw.no_identify_policy"/>
+    <testcase classname="wm-audit.L7 1_0" name="gw.anonymous_allowed"/>
+    <testcase classname="wm-audit.L7 1_0" name="gw.identify_or"/>
+    <testcase classname="wm-audit.L7 1_0" name="gw.application_identity_only">
+      <failure type="info" message="Nur Anwendungs-Identifikation, keine Benutzer-Authentifizierung (durchgängig)">[INFO, wahrscheinlich] Nur Anwendungs-Identifikation, keine Benutzer-Authentifizierung (durchgängig)
+Betrifft 14 von 14 APIs. Ein Merkmal, das nahezu überall auftritt, beschreibt eine Gewohnheit und wird deshalb gesammelt gemeldet statt je Endpunkt einzeln. Identifiziert wird ausschließlich über apiKey. Das weist eine Anwendung aus, nicht den handelnden Benutzer — jede benutzerbezogene Autorisierung muss dann vollständig im Backend stattfinden.
+Empfehlung: Prüfen, ob das Backend die Benutzeridentität selbst auswertet. Für benutzerbezogene Daten zusätzlich OAuth2 oder JWT verlangen.</failure>
+    </testcase>
+    <testcase classname="wm-audit.L7 1_0" name="gw.http_allowed"/>
+    <testcase classname="wm-audit.L7 1_0" name="gw.plaintext_backend"/>
+    <testcase classname="wm-audit.L7 1_0" name="gw.pass_security_headers"/>
+    <testcase classname="wm-audit.L7 1_0" name="gw.no_traffic_limit"/>
+    <testcase classname="wm-audit.L7 1_0" name="gw.throttle_long_window"/>
+    <testcase classname="wm-audit.L7 1_0" name="gw.log_invocation"/>
+  </testsuite>
+  <testsuite name="API: L8 1.0" tests="10" failures="1" errors="0" skipped="0">
+    <testcase classname="wm-audit.L8 1_0" name="gw.no_identify_policy"/>
+    <testcase classname="wm-audit.L8 1_0" name="gw.anonymous_allowed"/>
+    <testcase classname="wm-audit.L8 1_0" name="gw.identify_or"/>
+    <testcase classname="wm-audit.L8 1_0" name="gw.application_identity_only">
+      <failure type="info" message="Nur Anwendungs-Identifikation, keine Benutzer-Authentifizierung (durchgängig)">[INFO, wahrscheinlich] Nur Anwendungs-Identifikation, keine Benutzer-Authentifizierung (durchgängig)
+Betrifft 14 von 14 APIs. Ein Merkmal, das nahezu überall auftritt, beschreibt eine Gewohnheit und wird deshalb gesammelt gemeldet statt je Endpunkt einzeln. Identifiziert wird ausschließlich über apiKey. Das weist eine Anwendung aus, nicht den handelnden Benutzer — jede benutzerbezogene Autorisierung muss dann vollständig im Backend stattfinden.
+Empfehlung: Prüfen, ob das Backend die Benutzeridentität selbst auswertet. Für benutzerbezogene Daten zusätzlich OAuth2 oder JWT verlangen.</failure>
+    </testcase>
+    <testcase classname="wm-audit.L8 1_0" name="gw.http_allowed"/>
+    <testcase classname="wm-audit.L8 1_0" name="gw.plaintext_backend"/>
+    <testcase classname="wm-audit.L8 1_0" name="gw.pass_security_headers"/>
+    <testcase classname="wm-audit.L8 1_0" name="gw.no_traffic_limit"/>
+    <testcase classname="wm-audit.L8 1_0" name="gw.throttle_long_window"/>
+    <testcase classname="wm-audit.L8 1_0" name="gw.log_invocation"/>
+  </testsuite>
+  <testsuite name="API: L9 1.0" tests="10" failures="2" errors="0" skipped="0">
+    <testcase classname="wm-audit.L9 1_0" name="gw.no_identify_policy"/>
+    <testcase classname="wm-audit.L9 1_0" name="gw.anonymous_allowed"/>
+    <testcase classname="wm-audit.L9 1_0" name="gw.identify_or"/>
+    <testcase classname="wm-audit.L9 1_0" name="gw.application_identity_only">
+      <failure type="info" message="Nur Anwendungs-Identifikation, keine Benutzer-Authentifizierung (durchgängig)">[INFO, wahrscheinlich] Nur Anwendungs-Identifikation, keine Benutzer-Authentifizierung (durchgängig)
+Betrifft 14 von 14 APIs. Ein Merkmal, das nahezu überall auftritt, beschreibt eine Gewohnheit und wird deshalb gesammelt gemeldet statt je Endpunkt einzeln. Identifiziert wird ausschließlich über apiKey. Das weist eine Anwendung aus, nicht den handelnden Benutzer — jede benutzerbezogene Autorisierung muss dann vollständig im Backend stattfinden.
+Empfehlung: Prüfen, ob das Backend die Benutzeridentität selbst auswertet. Für benutzerbezogene Daten zusätzlich OAuth2 oder JWT verlangen.</failure>
+    </testcase>
+    <testcase classname="wm-audit.L9 1_0" name="gw.http_allowed"/>
+    <testcase classname="wm-audit.L9 1_0" name="gw.plaintext_backend"/>
+    <testcase classname="wm-audit.L9 1_0" name="gw.pass_security_headers"/>
+    <testcase classname="wm-audit.L9 1_0" name="gw.no_traffic_limit"/>
+    <testcase classname="wm-audit.L9 1_0" name="gw.throttle_long_window">
+      <failure type="low" message="Lange Zählperiode: das Kontingent bremst keine Lastspitzen">[LOW, wahrscheinlich] Lange Zählperiode: das Kontingent bremst keine Lastspitzen
+Die Traffic-Optimization-Policy erlaubt 123.456.789.012.345.678 Aufrufe je Tag. Laut IBM-Dokumentation zählt das Gateway nach dem Token-Bucket-Verfahren und füllt das Kontingent erst nach Ablauf des Intervalls wieder auf. Innerhalb des Intervalls dürfen alle Aufrufe auch in wenigen Minuten eintreffen. Gleichzeitige Aufrufe begrenzt der Bulkhead — ob er gesetzt ist, zeigt dieser Export nicht.
+Empfehlung: Prüfen, ob das Backend eine solche Spitze verkraftet. Wenn nicht: zusätzlich eine Grenze mit kurzem Intervall (etwa je Minute) oder den Bulkhead setzen. Der Lastrechner im HTML-Bericht zeigt die Wirkung.
+Fundstelle: assets/API/API.l9/API.l9 → Traffic Optimization | throttleRule value: 123456789012345678, alertInterval: 1, alertIntervalUnit: days</failure>
+    </testcase>
+    <testcase classname="wm-audit.L9 1_0" name="gw.log_invocation"/>
+  </testsuite>
+  <testsuite name="Statisch nicht prüfbar" tests="8" failures="0" errors="0" skipped="8">
+    <testcase classname="wm-audit.laufzeit" name="key_verification">
+      <skipped message="Wird ein erfundener API-Key tatsächlich abgewiesen? Ob die Policy im Betrieb greift, zeigt erst eine Anfrage."/>
+    </testcase>
+    <testcase classname="wm-audit.laufzeit" name="jwt_signature">
+      <skipped message="Wird die JWT-Signatur wirklich geprüft? Die Konfiguration nennt das Verfahren, nicht dessen Umsetzung."/>
+    </testcase>
+    <testcase classname="wm-audit.laufzeit" name="object_authorization">
+      <skipped message="Erreicht ein Aufrufer fremde Objekte? Objektbezogene Berechtigung liegt im Backend und braucht zwei Identitäten."/>
+    </testcase>
+    <testcase classname="wm-audit.laufzeit" name="role_enforcement">
+      <skipped message="Wird die Rollenprüfung durchgesetzt? Das Gateway identifiziert; autorisieren muss das Backend."/>
+    </testcase>
+    <testcase classname="wm-audit.laufzeit" name="trust_header">
+      <skipped message="Lässt sich ein Trust-Header fälschen? Hängt davon ab, wie das Backend eingehende Header behandelt."/>
+    </testcase>
+    <testcase classname="wm-audit.laufzeit" name="global_threat_protection">
+      <skipped message="Greift eine globale Threat-Protection? Globale Konfiguration liegt außerhalb des API-Exports."/>
+    </testcase>
+    <testcase classname="wm-audit.laufzeit" name="security_headers">
+      <skipped message="Werden Security-Header in Antworten gesetzt? Antwort-Header stehen in keiner Konfigurationsdatei."/>
+    </testcase>
+    <testcase classname="wm-audit.laufzeit" name="cors">
+      <skipped message="Wie verhält sich CORS tatsächlich? Erst eine Preflight-Anfrage zeigt die wirksame Regel."/>
+    </testcase>
+  </testsuite>
+</testsuites>

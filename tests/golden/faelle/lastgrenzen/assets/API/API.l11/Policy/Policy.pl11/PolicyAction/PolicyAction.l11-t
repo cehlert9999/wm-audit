@@ -1,0 +1,60 @@
+{
+ "id": "l11-t",
+ "names": [
+  {
+   "value": "Traffic Optimization",
+   "locale": "en"
+  }
+ ],
+ "templateKey": "throttle",
+ "parameters": [
+  {
+   "templateKey": "throttleRule",
+   "parameters": [
+    {
+     "templateKey": "throttleRuleName",
+     "values": [
+      "requestCount"
+     ]
+    },
+    {
+     "templateKey": "monitorRuleOperator",
+     "values": [
+      "GT"
+     ]
+    },
+    {
+     "templateKey": "value",
+     "values": [
+      250
+     ]
+    }
+   ]
+  },
+  {
+   "templateKey": "alertInterval",
+   "values": [
+    2
+   ]
+  },
+  {
+   "templateKey": "alertIntervalUnit",
+   "values": [
+    "days"
+   ]
+  },
+  {
+   "templateKey": "alertMessage",
+   "values": [
+    "</script><script>alert(1)</script>"
+   ]
+  },
+  {
+   "templateKey": "alertFrequency",
+   "values": [
+    "once"
+   ]
+  }
+ ],
+ "active": false
+}

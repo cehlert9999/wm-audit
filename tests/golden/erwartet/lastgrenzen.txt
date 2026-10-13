@@ -1,0 +1,50 @@
+wm-audit 1.0.0 · lastgrenzen (verzeichnis)
+14 APIs gelesen (14 eindeutig) · 0 Dateien übersprungen · 0 gesperrte Einträge nicht geöffnet
+
+Befunde: 6 (0 belegt)
+  LOW       wahrscheinlich  gw.throttle_long_window       L11 1.0
+            Lange Zählperiode: das Kontingent bremst keine Lastspitzen
+  LOW       wahrscheinlich  gw.throttle_long_window       L12 1.0
+            Lange Zählperiode: das Kontingent bremst keine Lastspitzen
+  LOW       wahrscheinlich  gw.throttle_long_window       L2 1.0
+            Lange Zählperiode: das Kontingent bremst keine Lastspitzen
+  LOW       wahrscheinlich  gw.throttle_long_window       L4 1.0
+            Lange Zählperiode: das Kontingent bremst keine Lastspitzen
+  LOW       wahrscheinlich  gw.throttle_long_window       L9 1.0
+            Lange Zählperiode: das Kontingent bremst keine Lastspitzen
+  INFO      wahrscheinlich  gw.application_identity_only  14 von 14 APIs
+            Nur Anwendungs-Identifikation, keine Benutzer-Authentifizierung (durchgängig)
+
+Lastgrenzen (Traffic Optimization):
+  L1 1.0: 1.000 Aufrufe je Minute · consumerIds: AnyConsumers
+  L10 1.0: Grenze nicht lesbar
+  L10 1.0: Grenze nicht lesbar
+  L10 1.0: Grenze nicht lesbar
+  L11 1.0: 250 Aufrufe je 2 Tage
+  L12 1.0: 999.999.999.999.999.999 Aufrufe je 999.999.999.999.999.999 Wochen
+  L13 1.0: Grenze nicht lesbar
+  L14 1.0: 100 Aufrufe je 1 DAYS
+  L14 1.0: Grenze nicht lesbar
+  L2 1.0: 100.000 Aufrufe je Tag · consumerIds: AnyConsumers
+  L3 1.0: 5.000 Aufrufe je 2 Wochen
+  L3 1.0: 60 Aufrufe je Minute
+  L4 1.0: 500 Aufrufe je 24 Stunden · consumerIds: a67f6c1e-77ff-423d-a9e7-917e11f5a4e0, zweite
+  L5 1.0: 500 Aufrufe je 23 Stunden
+  L6 1.0: 300 Aufrufe je 1 Calendar Month
+  L7 1.0: 7 Aufrufe je 0 Tage
+  L7 1.0: Grenze nicht lesbar
+  L8 1.0: Grenze nicht lesbar
+  L8 1.0: Grenze nicht lesbar
+  L8 1.0: Grenze nicht lesbar
+  L9 1.0: 123.456.789.012.345.678 Aufrufe je Tag
+  L9 1.0: Grenze nicht lesbar
+
+Statisch nicht prüfbar (8):
+  API2  Wird ein erfundener API-Key tatsächlich abgewiesen?
+  API2  Wird die JWT-Signatur wirklich geprüft?
+  API1  Erreicht ein Aufrufer fremde Objekte?
+  API5  Wird die Rollenprüfung durchgesetzt?
+  API2  Lässt sich ein Trust-Header fälschen?
+  API4  Greift eine globale Threat-Protection?
+  API8  Werden Security-Header in Antworten gesetzt?
+  API8  Wie verhält sich CORS tatsächlich?

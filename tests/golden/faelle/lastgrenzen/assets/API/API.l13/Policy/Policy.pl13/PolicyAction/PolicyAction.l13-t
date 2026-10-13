@@ -1,0 +1,19 @@
+{
+ "id": "l13-t",
+ "names": [
+  {
+   "value": "Altformat",
+   "locale": "en"
+  }
+ ],
+ "templateKey": "throttle",
+ "parameters": [
+  {
+   "templateKey": "maxRequests",
+   "values": [
+    "500"
+   ]
+  }
+ ],
+ "active": false
+}

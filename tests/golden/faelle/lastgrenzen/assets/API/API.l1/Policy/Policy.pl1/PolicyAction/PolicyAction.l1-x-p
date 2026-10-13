@@ -1,0 +1,19 @@
+{
+ "id": "l1-x-p",
+ "names": [
+  {
+   "value": "Protocol",
+   "locale": "en"
+  }
+ ],
+ "templateKey": "entryProtocolPolicy",
+ "parameters": [
+  {
+   "templateKey": "protocol",
+   "values": [
+    "https"
+   ]
+  }
+ ],
+ "active": false
+}

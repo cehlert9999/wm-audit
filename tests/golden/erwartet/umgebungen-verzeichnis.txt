@@ -1,0 +1,24 @@
+wm-audit 1.0.0 · umgebungen (verzeichnis)
+4 APIs gelesen (2 eindeutig) · 0 Dateien übersprungen · 0 gesperrte Einträge nicht geöffnet
+
+Befunde: 2 (2 belegt)
+  HIGH      belegt          gw.no_identify_policy         UmgebungsAPI 1.0
+            API ohne Identify-and-Authorize-Policy
+  HIGH      belegt          gw.plaintext_backend          UmgebungsAPI 1.0
+            Weiterleitung an ein Klartext-Backend
+
+Lastgrenzen (Traffic Optimization):
+  UmgebungsAPI 1.0: 100 Aufrufe, Intervall nicht lesbar
+  NachbarAPI 1.0: 100 Aufrufe, Intervall nicht lesbar
+  UmgebungsAPI 1.0: 100 Aufrufe, Intervall nicht lesbar
+  NachbarAPI 1.0: 100 Aufrufe, Intervall nicht lesbar
+
+Statisch nicht prüfbar (8):
+  API2  Wird ein erfundener API-Key tatsächlich abgewiesen?
+  API2  Wird die JWT-Signatur wirklich geprüft?
+  API1  Erreicht ein Aufrufer fremde Objekte?
+  API5  Wird die Rollenprüfung durchgesetzt?
+  API2  Lässt sich ein Trust-Header fälschen?
+  API4  Greift eine globale Threat-Protection?
+  API8  Werden Security-Header in Antworten gesetzt?
+  API8  Wie verhält sich CORS tatsächlich?

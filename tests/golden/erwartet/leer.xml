@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="wm-audit" tests="8" failures="0" errors="0">
+  <testsuite name="Export" tests="0" failures="0" errors="0" skipped="0">
+    <properties>
+      <property name="werkzeug" value="wm-audit 1.0.0"/>
+      <property name="quelle" value="leer"/>
+      <property name="art" value="verzeichnis"/>
+      <property name="apis_gelesen" value="0"/>
+      <property name="apis_eindeutig" value="0"/>
+      <property name="gesperrt" value="0"/>
+      <property name="uebersprungen" value="0"/>
+    </properties>
+  </testsuite>
+  <testsuite name="Statisch nicht prüfbar" tests="8" failures="0" errors="0" skipped="8">
+    <testcase classname="wm-audit.laufzeit" name="key_verification">
+      <skipped message="Wird ein erfundener API-Key tatsächlich abgewiesen? Ob die Policy im Betrieb greift, zeigt erst eine Anfrage."/>
+    </testcase>
+    <testcase classname="wm-audit.laufzeit" name="jwt_signature">
+      <skipped message="Wird die JWT-Signatur wirklich geprüft? Die Konfiguration nennt das Verfahren, nicht dessen Umsetzung."/>
+    </testcase>
+    <testcase classname="wm-audit.laufzeit" name="object_authorization">
+      <skipped message="Erreicht ein Aufrufer fremde Objekte? Objektbezogene Berechtigung liegt im Backend und braucht zwei Identitäten."/>
+    </testcase>
+    <testcase classname="wm-audit.laufzeit" name="role_enforcement">
+      <skipped message="Wird die Rollenprüfung durchgesetzt? Das Gateway identifiziert; autorisieren muss das Backend."/>
+    </testcase>
+    <testcase classname="wm-audit.laufzeit" name="trust_header">
+      <skipped message="Lässt sich ein Trust-Header fälschen? Hängt davon ab, wie das Backend eingehende Header behandelt."/>
+    </testcase>
+    <testcase classname="wm-audit.laufzeit" name="global_threat_protection">
+      <skipped message="Greift eine globale Threat-Protection? Globale Konfiguration liegt außerhalb des API-Exports."/>
+    </testcase>
+    <testcase classname="wm-audit.laufzeit" name="security_headers">
+      <skipped message="Werden Security-Header in Antworten gesetzt? Antwort-Header stehen in keiner Konfigurationsdatei."/>
+    </testcase>
+    <testcase classname="wm-audit.laufzeit" name="cors">
+      <skipped message="Wie verhält sich CORS tatsächlich? Erst eine Preflight-Anfrage zeigt die wirksame Regel."/>
+    </testcase>
+  </testsuite>
+</testsuites>

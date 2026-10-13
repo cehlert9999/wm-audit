@@ -1,0 +1,36 @@
+{
+ "id": "b7",
+ "apiName": "TageskontingentAPI",
+ "apiVersion": "1.0",
+ "type": "REST",
+ "isActive": true,
+ "maturityState": "Beta",
+ "nativeEndpoint": [
+  {
+   "uri": "https://backend.example/v7",
+   "passSecurityHeaders": false,
+   "alias": false
+  }
+ ],
+ "policies": [
+  "p-b7"
+ ],
+ "apiDefinition": {
+  "openapi": "3.0.1",
+  "info": {
+   "title": "TageskontingentAPI",
+   "version": "1.0"
+  },
+  "paths": {
+   "/zaehler/{id}": {
+    "get": {
+     "responses": {
+      "200": {
+       "description": "ok"
+      }
+     }
+    }
+   }
+  }
+ }
+}
